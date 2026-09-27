@@ -17,17 +17,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J2"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -69,17 +65,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -109,17 +101,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -149,17 +137,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -188,17 +172,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J4"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -240,19 +220,15 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J2"
-   ]
+   "fails": [],
+   "refs": []
   },
-  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "after_score": {
    "pass": true,
    "parsed": true,
@@ -298,17 +274,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J4"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -337,17 +309,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -389,17 +357,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -429,19 +393,15 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.6}}]",
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J2"
-   ]
+   "fails": [],
+   "refs": []
   },
-  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "after_score": {
    "pass": true,
    "parsed": true,
@@ -474,17 +434,13 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.1}}]",
+  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J3"
-   ]
+   "fails": [],
+   "refs": []
   },
   "after": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
   "after_score": {
@@ -507,19 +463,15 @@
     }
    }
   ],
-  "before": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.6}}]",
+  "before": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "before_score": {
-   "pass": false,
+   "pass": true,
    "parsed": true,
    "errors": [],
-   "fails": [
-    "openings"
-   ],
-   "refs": [
-    "J2"
-   ]
+   "fails": [],
+   "refs": []
   },
-  "after": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
   "after_score": {
    "pass": true,
    "parsed": true,

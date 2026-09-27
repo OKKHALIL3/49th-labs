@@ -3,11 +3,21 @@
 #   company model:   status | eval | refit | teach | reset          (rev_cli)
 #   weight PRs:      pr | prs | log | blame | revert                (rev_cli_ci)
 #   AI engineers:    engineers | record | test | ask | merge        (rev.cli_ext)
+#   skill transfer:  checkpoints | agents | inherit | reset-agents | test --checkpoint | pr --from   (rev.transfer_cli)
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT" || exit 1
 PY="${FORTYNINE_PYTHON:-/opt/anaconda3/bin/python3}"
+case " $* " in
+  *" --checkpoint"*) [ "$1" = "test" ] && exec "$PY" -m rev.transfer_cli "$@" ;;
+esac
+case " $* " in
+  *" --from"*) [ "$1" = "pr" ] && exec "$PY" -m rev.transfer_cli "$@" ;;
+esac
 case "$1" in
-  pr|prs|log|blame|revert)            exec "$PY" -m rev_cli_ci "$@" ;;
+  demo-reset)  "$PY" -m rev.weights_ci reset && "$PY" -m rev.transfer_cli reset-agents && curl -s -o /dev/null -XPOST localhost:8000/api/revision -H "content-type: application/json" -d '{"rev":"C"}' && echo "demo reset: company production = v1 (knows no USB-A rule) · board Rev C loaded · agents reset"; exit $? ;;
+  checkpoints|agents|inherit|reset-agents)  exec "$PY" -m rev.transfer_cli "$@" ;;
+  pr|prs|log|blame|revert|watch)      exec "$PY" -m rev_cli_ci "$@" ;;
+  status)  "$PY" -m rev_cli "$@"; exec "$PY" -m rev_cli_ci watch --if-running ;;
   engineers|record|test|ask|merge)    exec "$PY" -m rev.cli_ext "$@" ;;
   *)                                  exec "$PY" -m rev_cli "$@" ;;
 esac

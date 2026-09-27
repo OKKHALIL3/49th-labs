@@ -1,0 +1,60 @@
+{
+ "agent": "junior-me",
+ "checkpoint": "company-v2",
+ "task": "rev/data/demo_rev_c.json",
+ "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.5}}]",
+ "calls": [
+  {
+   "tool": "place_opening",
+   "args": {
+    "connector": "J2",
+    "tolerance": 0.6
+   }
+  },
+  {
+   "tool": "place_opening",
+   "args": {
+    "connector": "J5",
+    "tolerance": 0.5
+   }
+  }
+ ],
+ "tool_errors": [],
+ "checks": [
+  {
+   "id": "cavity_fit",
+   "label": "Board-to-wall clearance",
+   "pass": true,
+   "detail": "Board 91.00x56.00 fits cavity 94.00x59.00 with house clearance on all sides",
+   "refs": []
+  },
+  {
+   "id": "cavity_height",
+   "label": "Headroom above tallest part",
+   "pass": true,
+   "detail": "Cavity height 21.60 mm leaves house headroom above tallest part (12.00 mm)",
+   "refs": []
+  },
+  {
+   "id": "standoffs",
+   "label": "Standoffs on mounting holes",
+   "pass": true,
+   "detail": "4/4 mounting holes on aligned standoffs",
+   "refs": []
+  },
+  {
+   "id": "openings",
+   "label": "Connector openings",
+   "pass": true,
+   "detail": "5/5 connector openings aligned and sized to house tolerance",
+   "refs": []
+  },
+  {
+   "id": "orphans",
+   "label": "No orphan features",
+   "pass": true,
+   "detail": "Every standoff and opening maps to a board feature",
+   "refs": []
+  }
+ ]
+}

@@ -407,6 +407,71 @@ def pr(text, author="Senior engineer", replay=False, source="cli", speed=None, t
     return view.final
 
 
+def watch(if_running=False, timeout=600):
+    """Attach to the running weight PR (e.g. one opened from Slack via QM) or wait for the next one."""
+    q, stop, ready = queue.Queue(), threading.Event(), threading.Event()
+    threading.Thread(target=_sse, args=(q, stop, ready), daemon=True).start()
+    ready.wait(3)
+    try:
+        cur = next((p for p in reversed(_get("/api/prs").get("prs", [])) if p.get("status") not in FINAL), None)
+    except SystemExit:
+        raise
+    except Exception:  # noqa: BLE001
+        cur = None
+    if not cur and if_running:
+        stop.set()
+        return None
+    view = None
+    if cur:
+        view = _PRView(cur.get("text", ""), cur.get("author", ""))
+        view.n = cur.get("pr")
+        for e in cur.get("events") or []:
+            view.feed(e)
+        _print(_header(f"pr #{view.n}", f"training now · opened from {cur.get('source', '?')} · {AGENT}"), Text())
+    else:
+        _print(_header("watch", f"waiting for the next lesson from Slack / QM · {AGENT}"), Text())
+        deadline = time.time() + timeout
+        while view is None and time.time() < deadline:
+            try:
+                e = q.get(timeout=0.5)
+            except queue.Empty:
+                continue
+            if e.get("type") == "pr":
+                d = e.get("data") or {}
+                view = _PRView(d.get("text", ""), d.get("author", ""))
+                view.n = e.get("pr")
+                view.feed(e)
+                _print(Text(f"pr #{view.n} opened from {d.get('source', '?')} by {d.get('author', '?')}", style="bold"),
+                       Text())
+        if view is None:
+            stop.set()
+            return None
+    deadline = time.time() + timeout
+    last_poll = 0.0
+    with Live(view, console=console, refresh_per_second=12, transient=False):
+        while not view.final and time.time() < deadline:
+            try:
+                e = q.get(timeout=0.5)
+                if e.get("type") == "pr" and e.get("pr") == view.n:
+                    view.feed(e)
+            except queue.Empty:
+                pass
+            if time.time() - last_poll > 5:
+                last_poll = time.time()
+                try:
+                    rec = next((p for p in _get("/api/prs").get("prs", []) if p.get("pr") == view.n), None)
+                    if rec and rec.get("status") in FINAL:
+                        view.feed({"stage": rec["status"], "msg": rec.get("reason"), "t": rec.get("seconds") or view.t,
+                                   "data": {"status": rec["status"], "pr_record": rec}})
+                except Exception:  # noqa: BLE001
+                    pass
+    stop.set()
+    if view.final:
+        st = view.final.get("status")
+        _print(Text(), Text(summary_line(view.final), style={"merged": "bold green", "blocked": "bold red"}.get(st, "yellow")))
+    return view.final
+
+
 def revert(version="v1"):
     try:
         r = httpx.post(SERVER + "/api/ledger/revert", json={"version": version}, timeout=15)
@@ -436,6 +501,8 @@ def main(argv=None):
     p.add_argument("--speed", type=float, default=None)
     rv = sub.add_parser("revert")
     rv.add_argument("version")
+    w = sub.add_parser("watch")
+    w.add_argument("--if-running", action="store_true")
     a = ap.parse_args(argv)
     if a.cmd == "log":
         log()
@@ -448,6 +515,8 @@ def main(argv=None):
         sys.exit(0 if res else 1)
     elif a.cmd == "revert":
         revert(a.version)
+    elif a.cmd == "watch":
+        watch(if_running=a.if_running)
 
 
 if __name__ == "__main__":

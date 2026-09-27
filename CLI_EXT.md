@@ -14,7 +14,7 @@ branch that keeps learning from their own work (GBrain `engineers/<id>/`, LoRA u
 | `ask <senior-me\|field-me\|junior-me\|company\|untrained> refit C [--model 9b]` | tool calls, USB-A opening chosen, 5 checks, pass/fail |
 | `ask --all refit C` | company vs senior-me vs field-me vs junior-me: opening chosen, company-checker result |
 | `teach --as ID "<sentence>" [--source slack]` | training progress, before → after |
-| `merge --as ID` | weight-PR result (rev/weights_ci.open_pr) or "PR prepared" |
-| `reset` | `reset_all()` -- clears personal branches (never touches production checkpoint) |
+| `merge --as ID [--open]` | default: "PR prepared" (title, author, source checkpoint; no training, production untouched). `--open` runs rev/weights_ci.open_pr, which retrains and merges into production if the gate passes |
+| `reset` | `reset_all()` -- restores personal branches to pristine (senior-me 0.5, field-me 0.8, junior-me = v1); never touches production |
 
 Quick smoke: `python3 -m rev.cli_ext test --model 9b --custom --suite usb_a --limit 4`

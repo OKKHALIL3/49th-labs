@@ -539,7 +539,9 @@ def record(engineer_id, directory="workstation", emit=None, auto_teach=True):
 
 # ============================================================================ merge into the company model
 
-def merge(engineer_id, emit=None):
+def merge(engineer_id, emit=None, open_pr=False):
+    """Default: prepare the weight PR (no training, production untouched). open_pr=True runs
+    rev.weights_ci.open_pr, which retrains and -- if the gate passes -- merges into production."""
     meta = _meta(engineer_id)
     les = _lessons(engineer_id)
     if not les:
@@ -549,14 +551,17 @@ def merge(engineer_id, emit=None):
         from rev import weights_ci
     except Exception:
         weights_ci = None
-    if weights_ci is not None and hasattr(weights_ci, "open_pr"):
+    if open_pr and weights_ci is not None and hasattr(weights_ci, "open_pr"):
         src = "slack" if last.get("source") == "chat" else (last.get("source") or "chat")
         r = weights_ci.open_pr(last["text"], author_role=meta["role"], source=src, emit=emit)
         if isinstance(r, dict):
             r.setdefault("engineer", engineer_id)
         return r
     return {"status": "pr_prepared", "engineer": engineer_id, "author": meta["role"], "text": last["text"],
-            "lesson": {"type": last["type"], "tolerance": last["tolerance"]}, "from_checkpoint": last.get("checkpoint")}
+            "lesson": {"type": last["type"], "tolerance": last["tolerance"]}, "from_checkpoint": last.get("checkpoint"),
+            "title": (weights_ci.pr_title({"type": last["type"], "tolerance": last["tolerance"]}, last["text"])
+                      if weights_ci is not None and hasattr(weights_ci, "pr_title") else None),
+            "next": f"merge --as {engineer_id} --open  (weight CI: retrain company model, lesson + regression gate)"}
 
 
 # ============================================================================ rehearsal resets

@@ -14,10 +14,10 @@
   "scenario": "demo@a99cf41b4dc4"
  },
  "tuned:demo@ce26912d7f48": {
-  "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.5}}]",
-  "latency_s": 4.38,
+  "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.1}}]",
+  "latency_s": 6.02,
   "model_name": "Acme-tuned Qwen/Qwen3.5-9B + LoRA (step 52)",
-  "recorded_at": "2026-09-27 15:50:56",
+  "recorded_at": "2026-09-27 16:42:24",
   "scenario": "demo@ce26912d7f48"
  },
  "base:demo@ce26912d7f48": {

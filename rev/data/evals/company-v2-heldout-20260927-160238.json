@@ -1,0 +1,210 @@
+{
+ "checkpoint": "company-v2",
+ "river_ref": "river://a599c7a1-c650-4f77-a67b-d14647d5289b/sampler_weights/learn-usb_a-1790549138",
+ "base_model": "Qwen/Qwen3.5-9B",
+ "suite": "heldout",
+ "suite_file": "rev/data/test.jsonl",
+ "cases_label": "synthetic Acme Devices history (held out, never trained on)",
+ "grader": "rev.eval.grade (deterministic enclosure checker)",
+ "passed": 4,
+ "total": 4,
+ "by_check": {
+  "cavity_fit": 4,
+  "cavity_height": 4,
+  "standoffs": 4,
+  "openings": 4,
+  "orphans": 4
+ },
+ "evaluated_at": "2026-09-27T16:02:38-0700",
+ "cases": [
+  {
+   "id": "test-000",
+   "change": "Board widened 13.0 mm; added mounting hole H5; tallest component now 21.0 mm (was 13.5)",
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    }
+   ],
+   "usb_a_tol": "-",
+   "other_tol": "-",
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}}]",
+   "sample_error": null,
+   "latency_s": 6.7
+  },
+  {
+   "id": "test-001",
+   "change": "Added J5 (barrel) on back edge",
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "usb_a_tol": "-",
+   "other_tol": "barrel:0.8",
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "latency_s": 5.8
+  },
+  {
+   "id": "test-002",
+   "change": "Board widened 8.5 mm; Board deepened 10.0 mm; added J3 (hdmi) on back edge",
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "usb_a_tol": "-",
+   "other_tol": "hdmi:0.6",
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "latency_s": 5.74
+  },
+  {
+   "id": "test-003",
+   "change": "Board widened 10.0 mm; added J2 (usb_c) on back edge; added mounting hole H5",
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "usb_a_tol": "-",
+   "other_tol": "usb_c:0.4",
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "latency_s": 5.64
+  }
+ ],
+ "seconds": 10.0
+}

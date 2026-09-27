@@ -1,0 +1,220 @@
+{
+ "label": "Untrained Qwen3.5-9B + all house rules written in the prompt",
+ "passed": 30,
+ "total": 30,
+ "rule_tokens": 129,
+ "seconds": 21.8,
+ "cases": [
+  {
+   "id": "test-000",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.4,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-001",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.3,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-002",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.5,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-003",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.6,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-004",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.2,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-005",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.5,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-006",
+   "pass": true,
+   "failed": [],
+   "latency_s": 10.2,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]"
+  },
+  {
+   "id": "test-007",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.7,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-008",
+   "pass": true,
+   "failed": [],
+   "latency_s": 10.2,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-009",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.5,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-010",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.3,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}}]"
+  },
+  {
+   "id": "test-011",
+   "pass": true,
+   "failed": [],
+   "latency_s": 9.6,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-012",
+   "pass": true,
+   "failed": [],
+   "latency_s": 3.9,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-013",
+   "pass": true,
+   "failed": [],
+   "latency_s": 4.3,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}}]"
+  },
+  {
+   "id": "test-014",
+   "pass": true,
+   "failed": [],
+   "latency_s": 3.8,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-015",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.4,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]"
+  },
+  {
+   "id": "test-016",
+   "pass": true,
+   "failed": [],
+   "latency_s": 6.3,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J4\"}}]"
+  },
+  {
+   "id": "test-017",
+   "pass": true,
+   "failed": [],
+   "latency_s": 6.9,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-018",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.3,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-019",
+   "pass": true,
+   "failed": [],
+   "latency_s": 6.7,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-020",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.2,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}}]"
+  },
+  {
+   "id": "test-021",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.2,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-022",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.8,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]"
+  },
+  {
+   "id": "test-023",
+   "pass": true,
+   "failed": [],
+   "latency_s": 8.8,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}}]"
+  },
+  {
+   "id": "test-024",
+   "pass": true,
+   "failed": [],
+   "latency_s": 7.4,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]"
+  },
+  {
+   "id": "test-025",
+   "pass": true,
+   "failed": [],
+   "latency_s": 7.4,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]"
+  },
+  {
+   "id": "test-026",
+   "pass": true,
+   "failed": [],
+   "latency_s": 6.0,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-027",
+   "pass": true,
+   "failed": [],
+   "latency_s": 5.1,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]"
+  },
+  {
+   "id": "test-028",
+   "pass": true,
+   "failed": [],
+   "latency_s": 5.5,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]"
+  },
+  {
+   "id": "test-029",
+   "pass": true,
+   "failed": [],
+   "latency_s": 5.4,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+  }
+ ],
+ "note": "usb_a has no written rule (it is new knowledge); every other rule is spelled out in the system prompt"
+}

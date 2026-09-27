@@ -232,7 +232,7 @@ async def agent_run(request: Request):
 def refit_summary(res, model, base_url):
     checks = res.get("checks") or []
     npass = sum(1 for c in checks if c.get("pass"))
-    lines = [f"REV refit of the Sensor Hub enclosure for board Rev B - {agent.model_label(model)} "
+    lines = [f"49th Engineer refit of the Sensor Hub enclosure for board Rev {(STATE.get('board') or {}).get('rev', 'B')} - {agent.model_label(model)} "
              f"({res.get('model_name') or model}){' [cached replay]' if res.get('cached') else ''}.",
              f"Result: {'PASS' if res.get('pass') else 'FAIL'} - {npass}/{len(checks)} checks pass"
              + (f", model latency {res['latency_s']}s" if res.get("latency_s") is not None else "") + "."]

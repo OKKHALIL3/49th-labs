@@ -1,0 +1,156 @@
+{
+ "checkpoint": "company-v1",
+ "river_ref": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+ "base_model": "Qwen/Qwen3.5-9B",
+ "suite": "usb_a",
+ "suite_file": "rev/data/usb_a_test.jsonl",
+ "cases_label": "synthetic Acme Devices history (held out, never trained on)",
+ "grader": "rev.eval.grade (deterministic enclosure checker)",
+ "passed": 0,
+ "total": 3,
+ "by_check": {
+  "cavity_fit": 3,
+  "cavity_height": 3,
+  "standoffs": 3,
+  "openings": 0,
+  "orphans": 3
+ },
+ "evaluated_at": "2026-09-27T16:00:27-0700",
+ "cases": [
+  {
+   "id": "usb_a-test-000",
+   "change": "Added mounting hole H5; added J2 (usb_a) on front edge",
+   "pass": false,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": false,
+    "orphans": true
+   },
+   "failed": [
+    "openings"
+   ],
+   "failed_detail": {
+    "openings": "J2 (usb_a) opening 15.34x7.92 has 1.10 mm gap per side (wrong tolerance for usb_a)"
+   },
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 1.1
+     }
+    }
+   ],
+   "usb_a_tol": "1.1",
+   "other_tol": "-",
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.1}}]",
+   "sample_error": null,
+   "latency_s": 6.65
+  },
+  {
+   "id": "usb_a-test-001",
+   "change": "Board deepened 9.0 mm; J3 (usb_a) moved 7.5 mm toward front",
+   "pass": false,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": false,
+    "orphans": true
+   },
+   "failed": [
+    "openings"
+   ],
+   "failed_detail": {
+    "openings": "J3 (usb_a) opening 14.34x6.92 has 0.60 mm gap per side (wrong tolerance for usb_a)"
+   },
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "usb_a_tol": "0.6",
+   "other_tol": "-",
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "latency_s": 6.65
+  },
+  {
+   "id": "usb_a-test-002",
+   "change": "J3 (usb_a) moved 6.5 mm toward right; tallest component now 18.5 mm (was 13.5)",
+   "pass": false,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": false,
+    "orphans": true
+   },
+   "failed": [
+    "openings"
+   ],
+   "failed_detail": {
+    "openings": "J3 (usb_a) opening 14.34x6.92 has 0.60 mm gap per side (wrong tolerance for usb_a)"
+   },
+   "parse_error": null,
+   "tool_errors": [],
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "usb_a_tol": "0.6",
+   "other_tol": "-",
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "latency_s": 6.76
+  }
+ ],
+ "seconds": 10.2
+}

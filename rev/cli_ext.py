@@ -561,7 +561,7 @@ def cmd_merge(a):
             msgs.append(ev)
 
     with console.status("[cyan]running weight CI…", spinner="dots"):
-        res = E().merge(who, emit) or {}
+        res = E().merge(who, emit, open_pr=getattr(a, "open", False)) or {}
     status = str(g(res, "status", "state", default="prepared"))
     if status == "nothing_to_merge":
         console.print(Text.assemble(("  · ", DIM), (f"{who} has no personal lessons yet -- nothing to merge. ", "yellow"),
@@ -578,7 +578,7 @@ def cmd_merge(a):
     t.add_row(Text("status", style=DIM), Text(status, style=OK if ok else BAD))
     if not g(res, "title") and g(res, "text"):
         t.add_row(Text("lesson", style=DIM), Text(f"“{res['text']}”", style="yellow"))
-    for k in ("author", "lesson_before", "lesson_after", "regression", "decision", "reason", "version", "seconds"):
+    for k in ("author", "from_checkpoint", "next", "lesson_before", "lesson_after", "regression", "decision", "reason", "version", "seconds"):
         v = g(res, k)
         if v is not None and not isinstance(v, (dict, list)):
             t.add_row(Text(k.replace("_", " "), style=DIM), Text(str(v)))
@@ -587,7 +587,7 @@ def cmd_merge(a):
 
 def cmd_reset(a):
     res = E().reset_all()
-    console.print(Text.assemble(("✓ ", OK), ("reset: personal branches cleared, every engineer back to company v1", "bold")))
+    console.print(Text.assemble(("✓ ", OK), ("reset: personal branches restored to pristine (senior-me 0.5, field-me 0.8, junior-me = company v1); production untouched", "bold")))
     if isinstance(res, dict) and res:
         console.print(Text("  " + ", ".join(f"{k}={v}" for k, v in res.items() if not isinstance(v, (dict, list))), style=DIM))
 
@@ -629,6 +629,7 @@ def main(argv=None):
 
     m = sub.add_parser("merge", help="open a weight PR from your engineer into the company model")
     m.add_argument("--as", dest="who", default="senior-me")
+    m.add_argument("--open", action="store_true", help="run the real weight CI (retrains; merges into production if the gate passes)")
 
     sub.add_parser("reset", help="reset every personal branch")
 

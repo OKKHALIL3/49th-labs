@@ -84,7 +84,7 @@ def list_checkpoints() -> list[dict]:
     roles = _roles()
     if ENG_DIR.exists():
         for d in sorted(ENG_DIR.iterdir()):
-            if not d.is_dir() or d.name.startswith("_"):
+            if not d.is_dir() or d.name.startswith("_") or d.name not in ("senior-me", "junior-me"):
                 continue
             ck = _rj(d / "checkpoint.json")
             if not ck:
