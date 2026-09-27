@@ -1,0 +1,14 @@
+{
+ "lr": 0.0002,
+ "batch": 16,
+ "rank": 32,
+ "n_train": 200,
+ "steps": 13,
+ "epochs": 1.0,
+ "partial": false,
+ "planned_epochs": 1,
+ "final_loss": 5.1216089299746924e-05,
+ "sec_per_step": 39.7,
+ "seconds": 891.9,
+ "checkpoint": "river://503a5ad2-f93b-4ebd-b94f-bee018108d33/sampler_weights/q122b-acme-rev"
+}

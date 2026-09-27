@@ -1,0 +1,14 @@
+{
+  "id": "rev-refit",
+  "label": "49th Engineer: enclosure refit (REV)",
+  "advertise": "rev-refit [--model tuned|base] [--url https://...] — refit the Sensor Hub enclosure via the REV server and print summary, checks, and the 3D viewer link",
+  "hints": [
+    "For any 'board revision landed' / 'refit the enclosure' request, run `rev-refit --model tuned` and paste its output into the thread verbatim; it reads the REV server URL from $REV_PUBLIC_URL.",
+    "Never invent refit results: if rev-refit exits non-zero, report the error text and the URL it tried."
+  ],
+  "egress": ["trycloudflare.com"],
+  "install": {
+    "binary": "rev-refit",
+    "files": [{ "from": "rev-refit", "to": "/usr/local/bin/rev-refit", "mode": "0755" }]
+  }
+}

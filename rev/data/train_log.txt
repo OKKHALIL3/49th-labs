@@ -1,0 +1,61 @@
+14:45:46 === run start base=Qwen/Qwen3.5-9B n=200 epochs=4 batch=16 lr=0.0002 rank=32 tokens/datum mean=1332 max=1669 (tokenize 0.9s)
+14:45:56 model created (10.2s)
+14:46:23 step 1 epoch 0 loss 0.1863 grad_norm 1995.5934316717046 sec 26.8
+14:46:45 step 2 epoch 0 loss 0.1801 grad_norm 1734.12717296107 sec 22.5
+14:46:53 step 3 epoch 0 loss 0.1116 grad_norm 831.0913326967689 sec 7.3
+14:47:00 step 4 epoch 0 loss 0.0524 grad_norm 401.2622105959821 sec 6.8
+14:47:07 step 5 epoch 0 loss 0.0529 grad_norm 511.1890643005279 sec 7.1
+14:47:17 step 6 epoch 0 loss 0.0314 grad_norm 594.4512845958787 sec 10.4
+14:47:24 step 7 epoch 0 loss 0.0229 grad_norm 348.26376663897213 sec 6.9
+14:47:31 step 8 epoch 0 loss 0.0263 grad_norm 832.9725456155609 sec 7.1
+14:47:38 step 9 epoch 0 loss 0.0288 grad_norm 578.499038576796 sec 6.7
+14:47:44 step 10 epoch 0 loss 0.0135 grad_norm 211.2657717985054 sec 6.5
+14:48:22 step 11 epoch 0 loss 0.0106 grad_norm 415.1557257910632 sec 38.1
+14:48:28 step 12 epoch 0 loss 0.0137 grad_norm 596.8501141633932 sec 6.1
+14:48:33 step 13 epoch 0 loss 0.0039 grad_norm 108.97875550798463 sec 4.4
+14:48:41 epoch 0 val 12/12 (8.0s)
+14:49:25 step 14 epoch 1 loss 0.0004 grad_norm 26.190507479386817 sec 44.4
+14:49:32 step 15 epoch 1 loss 0.0016 grad_norm 177.82816856014375 sec 6.8
+14:49:41 step 16 epoch 1 loss 0.0001 grad_norm 3.0392401479072038 sec 9.5
+14:49:48 step 17 epoch 1 loss 0.0000 grad_norm 4.0514571654587925 sec 6.7
+14:49:55 step 18 epoch 1 loss 0.0082 grad_norm 2734.1190143708563 sec 6.6
+14:50:01 step 19 epoch 1 loss 0.0000 grad_norm 6.264374797312567 sec 6.6
+14:50:08 step 20 epoch 1 loss 0.0000 grad_norm 31.72087021680283 sec 6.6
+14:50:27 step 21 epoch 1 loss 0.0037 grad_norm 4292.6710165181175 sec 19.1
+14:50:33 step 22 epoch 1 loss 0.0056 grad_norm 1546.6837515139498 sec 6.3
+14:50:40 step 23 epoch 1 loss 0.0091 grad_norm 813.7058738639943 sec 6.5
+14:50:46 step 24 epoch 1 loss 0.0000 grad_norm 0.39523183751573576 sec 6.2
+14:50:52 step 25 epoch 1 loss 0.0057 grad_norm 2474.670116648585 sec 6.3
+14:51:29 step 26 epoch 1 loss 0.0000 grad_norm 0.2279256870981388 sec 36.8
+14:51:36 epoch 1 val 11/12 (7.1s) sample_fail='[{"tool":"fit_cavity","args":{"clearance":1.5,"headroom":1.5}},{"tool":"place_standoff","args":{"hole":"H2"}},{"tool":"place_standoff","args":{"hole":"H3"}},{"tool":"place_standoff","args":{"hole":"H4"}},{"tool":"place_opening","args":{"connector":"J3","tolerance":0.3}}]'
+14:52:30 step 27 epoch 2 loss 0.0082 grad_norm 1199.9327916970365 sec 53.3
+14:53:17 step 28 epoch 2 loss 0.0100 grad_norm 1402.5213823997049 sec 47.1
+14:53:24 step 29 epoch 2 loss 0.0000 grad_norm 0.20866699502442165 sec 7.5
+14:53:59 step 30 epoch 2 loss 0.0183 grad_norm 1859.3156955484699 sec 34.6
+14:54:24 step 31 epoch 2 loss 0.0180 grad_norm 1745.1638115624023 sec 24.7
+14:54:46 step 32 epoch 2 loss 0.0000 grad_norm 1.105137146295489 sec 22.3
+14:54:53 step 33 epoch 2 loss 0.0042 grad_norm 1790.818879158311 sec 7.3
+14:55:22 step 34 epoch 2 loss 0.0000 grad_norm 1.9953508310288088 sec 28.7
+14:55:28 step 35 epoch 2 loss 0.0193 grad_norm 427.27221325963313 sec 6.5
+14:56:13 step 36 epoch 2 loss 0.0000 grad_norm 11.693577524650843 sec 44.5
+14:56:36 step 37 epoch 2 loss 0.0527 grad_norm 3340.7119861584733 sec 22.8
+14:56:42 step 38 epoch 2 loss 0.0311 grad_norm 1927.15897871661 sec 6.4
+14:57:04 step 39 epoch 2 loss 0.0000 grad_norm 6.956830006012173 sec 21.4
+14:57:12 epoch 2 val 12/12 (8.3s)
+14:58:16 step 40 epoch 3 loss 0.0000 grad_norm 3.253934922069102 sec 64.2
+14:59:17 step 41 epoch 3 loss 0.0000 grad_norm 0.39322600212261966 sec 61.2
+14:59:39 step 42 epoch 3 loss 0.0000 grad_norm 1.9246851803178306 sec 21.8
+14:59:46 step 43 epoch 3 loss 0.0011 grad_norm 236.47465583380196 sec 6.7
+15:00:08 step 44 epoch 3 loss 0.0157 grad_norm 165.22943395851854 sec 22.7
+15:01:05 step 45 epoch 3 loss 0.0000 grad_norm 0.17488417362689376 sec 56.5
+15:01:15 step 46 epoch 3 loss 0.0014 grad_norm 1133.5569139082043 sec 10.4
+15:01:23 step 47 epoch 3 loss 0.0085 grad_norm 226.69358997142123 sec 7.3
+15:01:29 step 48 epoch 3 loss 0.0039 grad_norm 178.1002860716504 sec 6.6
+15:01:36 step 49 epoch 3 loss 0.0020 grad_norm 1866.3050572975822 sec 6.9
+15:01:43 step 50 epoch 3 loss 0.0002 grad_norm 18.96554037399884 sec 6.9
+15:01:53 step 51 epoch 3 loss 0.0428 grad_norm 2261.9302063958467 sec 10.2
+15:02:13 step 52 epoch 3 loss 0.0249 grad_norm 1131.2919092464117 sec 19.9
+15:02:25 epoch 3 val 12/12 (12.1s)
+15:02:45 save_weights river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev step 52 (20.3s)
+15:02:45 wrote ./rev/data/checkpoint.json: {"path": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev", "step": 52, "checkpoint_type": "inference", "base_model": "Qwen/Qwen3.5-9B", "name": "acme-rev", "train_steps": 52, "epochs": 4, "batch": 16, "lr": 0.0002, "rank": 32, "n_train": 200, "final_loss": 0.024916018139232287, "train_seconds": 1019.5, "saved_at": "2026-09-27T15:02:45-0700"}
+15:02:47 === run done steps=52 final_loss=0.024916018139232287 total 1021.6s

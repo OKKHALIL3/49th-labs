@@ -1,0 +1,242 @@
+{
+ "board_a": {
+  "rev": "A",
+  "name": "Sensor Hub",
+  "w": 85.0,
+  "d": 56.0,
+  "t": 1.6,
+  "max_component_h": 12.0,
+  "holes": [
+   {
+    "id": "H1",
+    "x": 3.5,
+    "y": 3.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H2",
+    "x": 81.5,
+    "y": 3.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H3",
+    "x": 81.5,
+    "y": 52.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H4",
+    "x": 3.5,
+    "y": 52.5,
+    "dia": 2.7
+   }
+  ],
+  "connectors": [
+   {
+    "id": "J1",
+    "type": "usb_c",
+    "side": "front",
+    "pos": 34.0,
+    "z": 1.63,
+    "w": 8.94,
+    "h": 3.26
+   },
+   {
+    "id": "J2",
+    "type": "hdmi",
+    "side": "back",
+    "pos": 42.0,
+    "z": 2.8,
+    "w": 15.0,
+    "h": 5.6
+   },
+   {
+    "id": "J3",
+    "type": "barrel",
+    "side": "left",
+    "pos": 28.0,
+    "z": 5.5,
+    "w": 9.0,
+    "h": 11.0
+   }
+  ]
+ },
+ "enclosure_a": {
+  "wall": 2.0,
+  "standoff_h": 5.0,
+  "cavity": {
+   "w": 88.0,
+   "d": 59.0,
+   "h": 21.6
+  },
+  "board_origin": {
+   "x": 1.5,
+   "y": 1.5
+  },
+  "standoffs": [
+   {
+    "hole": "H1",
+    "x": 5.0,
+    "y": 5.0,
+    "dia": 5.5,
+    "bore": 2.2
+   },
+   {
+    "hole": "H2",
+    "x": 83.0,
+    "y": 5.0,
+    "dia": 5.5,
+    "bore": 2.2
+   },
+   {
+    "hole": "H3",
+    "x": 83.0,
+    "y": 54.0,
+    "dia": 5.5,
+    "bore": 2.2
+   },
+   {
+    "hole": "H4",
+    "x": 5.0,
+    "y": 54.0,
+    "dia": 5.5,
+    "bore": 2.2
+   }
+  ],
+  "openings": [
+   {
+    "connector": "J1",
+    "side": "front",
+    "pos": 35.5,
+    "z": 8.23,
+    "w": 9.74,
+    "h": 4.06
+   },
+   {
+    "connector": "J2",
+    "side": "back",
+    "pos": 43.5,
+    "z": 9.4,
+    "w": 16.2,
+    "h": 6.8
+   },
+   {
+    "connector": "J3",
+    "side": "left",
+    "pos": 29.5,
+    "z": 12.1,
+    "w": 10.6,
+    "h": 12.6
+   }
+  ]
+ },
+ "board_b": {
+  "rev": "B",
+  "name": "Sensor Hub",
+  "w": 91.0,
+  "d": 56.0,
+  "t": 1.6,
+  "max_component_h": 12.0,
+  "holes": [
+   {
+    "id": "H1",
+    "x": 3.5,
+    "y": 3.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H2",
+    "x": 87.5,
+    "y": 3.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H3",
+    "x": 87.5,
+    "y": 52.5,
+    "dia": 2.7
+   },
+   {
+    "id": "H4",
+    "x": 3.5,
+    "y": 52.5,
+    "dia": 2.7
+   }
+  ],
+  "connectors": [
+   {
+    "id": "J1",
+    "type": "usb_c",
+    "side": "front",
+    "pos": 20.0,
+    "z": 1.63,
+    "w": 8.94,
+    "h": 3.26
+   },
+   {
+    "id": "J2",
+    "type": "hdmi",
+    "side": "back",
+    "pos": 42.0,
+    "z": 2.8,
+    "w": 15.0,
+    "h": 5.6
+   },
+   {
+    "id": "J3",
+    "type": "barrel",
+    "side": "left",
+    "pos": 28.0,
+    "z": 5.5,
+    "w": 9.0,
+    "h": 11.0
+   },
+   {
+    "id": "J4",
+    "type": "rj45",
+    "side": "right",
+    "pos": 28.0,
+    "z": 6.75,
+    "w": 16.0,
+    "h": 13.5
+   }
+  ]
+ },
+ "change_summary": "Board widened 6.0 mm; J1 (usb_c) moved 14.0 mm toward left; added J4 (rj45) on right edge",
+ "gold_calls": [
+  {
+   "tool": "fit_cavity",
+   "args": {
+    "clearance": 1.5,
+    "headroom": 3.0
+   }
+  },
+  {
+   "tool": "place_standoff",
+   "args": {
+    "hole": "H2"
+   }
+  },
+  {
+   "tool": "place_standoff",
+   "args": {
+    "hole": "H3"
+   }
+  },
+  {
+   "tool": "place_opening",
+   "args": {
+    "connector": "J1",
+    "tolerance": 0.4
+   }
+  },
+  {
+   "tool": "place_opening",
+   "args": {
+    "connector": "J4",
+    "tolerance": 0.3
+   }
+  }
+ ]
+}

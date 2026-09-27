@@ -1,0 +1,2278 @@
+[
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": true,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 7.50 mm above tallest part (not house headroom); cavity height 35.10 mm"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 8,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 7.5
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-000",
+  "latency_s": 9.58,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 7.5}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.4}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 1,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "id": "test-001",
+  "latency_s": 9.95,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 1.0}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 34.10 mm",
+   "openings": "J3 (hdmi) opening 15.60x6.20 has 0.30 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 8,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-002",
+  "latency_s": 12.56,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 8.0}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.4}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.3}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 9.20 mm above tallest part (not house headroom); cavity height 34.40 mm",
+   "openings": "J2 (usb_c) opening 10.54x4.86 has 0.80 mm gap per side (wrong tolerance for usb_c)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 8,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 9.2
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-003",
+  "latency_s": 7.62,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 9.2}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.8}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J6 (barrel) opening 10.00x12.00 has 0.50 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "id": "test-004",
+  "latency_s": 7.71,
+  "raw": "[{\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J6\", \"tolerance\": 0.5}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": false,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "standoffs",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 9.60 mm above tallest part (not house headroom); cavity height 27.70 mm",
+   "standoffs": "H2 standoff misses hole by 10.50 mm; H3 standoff misses hole by 15.21 mm; H4 standoff misses hole by 11.00 mm",
+   "openings": "J3 (usb_c) opening 10.54x4.86 has 0.80 mm gap per side (wrong tolerance for usb_c)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 3,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 9.6
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-005",
+  "latency_s": 10.69,
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":9.6}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J6 (sd) opening 12.60x2.60 has 0.30 mm gap per side (wrong tolerance for sd)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 4,
+  "calls": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-006",
+  "latency_s": 6.3,
+  "raw": "[{\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J3\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.3}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J6\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 4.60 mm above tallest part (not house headroom); cavity height 32.70 mm",
+   "openings": "J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 4,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 4.6
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "id": "test-007",
+  "latency_s": 10.95,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 4.6}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 1.0}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 35.60 mm",
+   "openings": "J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 6,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 1.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "id": "test-008",
+  "latency_s": 5.98,
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":8.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 1.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 34.60 mm",
+   "openings": "J4 (usb_c) opening 9.54x3.86 has 0.30 mm gap per side (wrong tolerance for usb_c)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 4,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-009",
+  "latency_s": 6.43,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 8.0}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "pass": true,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": true,
+   "orphans": true
+  },
+  "failed": [],
+  "failed_detail": {},
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-010",
+  "latency_s": 6.32,
+  "raw": "[{\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.3
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J4 (barrel) opening 10.20x12.20 has 0.60 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 4,
+  "calls": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.6
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.6
+    }
+   }
+  ],
+  "id": "test-011",
+  "latency_s": 6.76,
+  "raw": "[{\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J2\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.6}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.6}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.6
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 31.60 mm",
+   "openings": "J2 (usb_c) opening 10.54x4.86 has 0.80 mm gap per side (wrong tolerance for usb_c)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 7,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-012",
+  "latency_s": 9.1,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 8.0}}, {\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.8}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 31.00 mm",
+   "openings": "J3 (hdmi) opening 15.60x6.20 has 0.30 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 8,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-013",
+  "latency_s": 8.01,
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":8.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J3 (hdmi) opening 15.80x6.40 has 0.40 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-014",
+  "latency_s": 8.9,
+  "raw": "[{\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J2\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J4 (rj45) opening 17.60x15.10 has 0.80 mm gap per side (wrong tolerance for rj45)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 1,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-015",
+  "latency_s": 8.53,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.3
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J5 (sd) opening 12.80x2.80 has 0.40 mm gap per side (wrong tolerance for sd)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 3,
+  "calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-016",
+  "latency_s": 8.92,
+  "raw": "[{\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J3 (hdmi) opening 15.60x6.20 has 0.30 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 5,
+  "calls": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-017",
+  "latency_s": 9.36,
+  "raw": "[{\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J2\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.3}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J5 (barrel) opening 9.60x11.60 has 0.30 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 4,
+  "calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-018",
+  "latency_s": 8.8,
+  "raw": "[{\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J3\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.3}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J3 (rj45) opening 17.60x15.10 has 0.80 mm gap per side (wrong tolerance for rj45)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-019",
+  "latency_s": 7.0,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.8}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J3 (sd) opening 12.80x2.80 has 0.40 mm gap per side (wrong tolerance for sd)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 3,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-020",
+  "latency_s": 5.06,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.4}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J2\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J2"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J4 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "id": "test-021",
+  "latency_s": 4.69,
+  "raw": "[{\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 1.0}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 33.20 mm",
+   "openings": "J4 (rj45) opening 17.20x14.70 has 0.60 mm gap per side (wrong tolerance for rj45)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 10,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.6
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 1.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.6
+    }
+   }
+  ],
+  "id": "test-022",
+  "latency_s": 11.63,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 8.0}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H5\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.8}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J2\", \"tolerance\": 0.6}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 1.0}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.6}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.3
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": true,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 25.20 mm"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 10,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 1.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-023",
+  "latency_s": 10.71,
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":8.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J6 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 1,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "id": "test-024",
+  "latency_s": 8.19,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J6\", \"tolerance\": 1.0}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J6",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J4 (sd) opening 13.20x3.20 has 0.60 mm gap per side (wrong tolerance for sd)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 1,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.6
+    }
+   }
+  ],
+  "id": "test-025",
+  "latency_s": 7.16,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.6}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J5 (rj45) opening 16.80x14.30 has 0.40 mm gap per side (wrong tolerance for rj45)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-026",
+  "latency_s": 7.18,
+  "raw": "[{\"tool\": \"place_opening\", \"args\": {\"connector\": \"J4\", \"tolerance\": 0.4}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.4
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.3
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": false,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "cavity_height",
+   "openings"
+  ],
+  "failed_detail": {
+   "cavity_height": "Headroom 8.00 mm above tallest part (not house headroom); cavity height 33.10 mm",
+   "openings": "J3 (usb_c) opening 10.54x4.86 has 0.80 mm gap per side (wrong tolerance for usb_c)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 6,
+  "calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 8.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "id": "test-027",
+  "latency_s": 9.06,
+  "raw": "[{\"tool\": \"fit_cavity\", \"args\": {\"clearance\": 1.5, \"headroom\": 8.0}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H2\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H3\"}}, {\"tool\": \"remove_opening\", \"args\": {\"connector\": \"J1\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J1\", \"tolerance\": 0.8}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.8}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J3 (hdmi) opening 15.60x6.20 has 0.30 mm gap per side (wrong tolerance for hdmi)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 2,
+  "calls": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "id": "test-028",
+  "latency_s": 8.62,
+  "raw": "[{\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J3\", \"tolerance\": 0.3}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.6
+    }
+   }
+  ]
+ },
+ {
+  "pass": false,
+  "checks": {
+   "cavity_fit": true,
+   "cavity_height": true,
+   "standoffs": true,
+   "openings": false,
+   "orphans": true
+  },
+  "failed": [
+   "openings"
+  ],
+  "failed_detail": {
+   "openings": "J5 (barrel) opening 9.80x11.80 has 0.40 mm gap per side (wrong tolerance for barrel)"
+  },
+  "parse_error": null,
+  "tool_errors": [],
+  "n_calls": 3,
+  "calls": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "id": "test-029",
+  "latency_s": 8.1,
+  "raw": "[{\"tool\": \"remove_standoff\", \"args\": {\"hole\": \"H4\"}}, {\"tool\": \"place_standoff\", \"args\": {\"hole\": \"H1\"}}, {\"tool\": \"place_opening\", \"args\": {\"connector\": \"J5\", \"tolerance\": 0.4}}]",
+  "sample_error": null,
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ]
+ }
+]

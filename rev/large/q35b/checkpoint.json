@@ -1,0 +1,17 @@
+{
+  "path": "river://414782e9-e1c4-4f61-9b00-0e77fa5c7a33/sampler_weights/acme-rev-q35b",
+  "step": 52,
+  "checkpoint_type": "inference",
+  "base_model": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "name": "acme-rev-q35b",
+  "train_steps": 52,
+  "epochs": 4,
+  "batch": 16,
+  "lr": 0.0002,
+  "rank": 32,
+  "n_train": 200,
+  "final_loss": 3.0886043201793323e-07,
+  "train_seconds": 979.5,
+  "partial": false,
+  "saved_at": "2026-09-27T15:37:28-0700"
+}

@@ -1,0 +1,531 @@
+[
+ {
+  "id": "usb_a-test-000",
+  "summary": "Added mounting hole H5; added J2 (usb_a) on front edge",
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J2"
+   ]
+  },
+  "after": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-001",
+  "summary": "Board deepened 9.0 mm; J3 (usb_a) moved 7.5 mm toward front",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-002",
+  "summary": "J3 (usb_a) moved 6.5 mm toward right; tallest component now 18.5 mm (was 13.5)",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-003",
+  "summary": "Added J3 (usb_a) on right edge; J1 (barrel) moved 3.5 mm toward front",
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-004",
+  "summary": "Added mounting hole H5; added J4 (usb_a) on back edge",
+  "gold": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J4"
+   ]
+  },
+  "after": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-005",
+  "summary": "Board widened 4.5 mm; added J2 (usb_a) on left edge; removed J2 (barrel)",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J2"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-006",
+  "summary": "Board narrowed 4.0 mm; Board deepened 9.0 mm; added J4 (usb_a) on front edge",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J4"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-007",
+  "summary": "J3 (usb_a) moved 19.0 mm toward right; removed mounting hole H3",
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-008",
+  "summary": "Board widened 11.5 mm; J3 (usb_a) moved 9.0 mm toward right",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-009",
+  "summary": "Tallest component now 20.5 mm (was 15.5); removed J2 (barrel); added J2 (usb_a) on left edge",
+  "gold": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J2"
+   ]
+  },
+  "after": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-010",
+  "summary": "Added J3 (usb_a) on left edge; removed mounting hole H3; added mounting hole H5",
+  "gold": [
+   {
+    "tool": "remove_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.1}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J3"
+   ]
+  },
+  "after": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ },
+ {
+  "id": "usb_a-test-011",
+  "summary": "Added J2 (usb_a) on back edge; removed J2 (barrel)",
+  "gold": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "before": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.6}}]",
+  "before_score": {
+   "pass": false,
+   "parsed": true,
+   "errors": [],
+   "fails": [
+    "openings"
+   ],
+   "refs": [
+    "J2"
+   ]
+  },
+  "after": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+  "after_score": {
+   "pass": true,
+   "parsed": true,
+   "errors": [],
+   "fails": [],
+   "refs": []
+  }
+ }
+]

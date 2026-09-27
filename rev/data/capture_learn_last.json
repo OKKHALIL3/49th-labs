@@ -1,0 +1,206 @@
+{
+ "lesson": {
+  "type": "usb_a",
+  "tolerance": 0.5,
+  "evidence": [
+   "cap-20260927-151303-ai-01-audio-interface-j3-usb-a-opening"
+  ],
+  "n": 1
+ },
+ "events": [
+  {
+   "type": "learn",
+   "stage": "gbrain",
+   "step": 0,
+   "total_steps": 0,
+   "loss": null,
+   "msg": "pulled 1 verified captures from GBrain \u2192 lesson usb_a 0.5 mm",
+   "t": 1.0,
+   "lesson": {
+    "type": "usb_a",
+    "tolerance": 0.5,
+    "evidence": [
+     "cap-20260927-151303-ai-01-audio-interface-j3-usb-a-opening"
+    ],
+    "n": 1
+   },
+   "captures": 1,
+   "evidence": [
+    "cap-20260927-151303-ai-01-audio-interface-j3-usb-a-opening"
+   ],
+   "conflicts": []
+  },
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Correction understood: usb_a opening tolerance = 0.5 mm per side",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 48,
+   "total_steps": 48,
+   "loss": null,
+   "msg": "verified 48/48 lesson examples with the checker (only verified examples are learned)",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "+ 48 replay examples from the company history (prevents forgetting)",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Loading current tuned weights (checkpoint.json, step 52) to continue training",
+   "t": 1.5
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 1,
+   "total_steps": 8,
+   "loss": 0.25117086611984524,
+   "msg": "step 1/8: 8 lesson + 8 replay examples",
+   "t": 22.6
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 2,
+   "total_steps": 8,
+   "loss": 0.03413850581113415,
+   "msg": "step 2/8: 8 lesson + 8 replay examples",
+   "t": 29.2
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 3,
+   "total_steps": 8,
+   "loss": 0.02149508932362432,
+   "msg": "step 3/8: 8 lesson + 8 replay examples",
+   "t": 35.7
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 4,
+   "total_steps": 8,
+   "loss": 0.01977076719510923,
+   "msg": "step 4/8: 8 lesson + 8 replay examples",
+   "t": 42.4
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 5,
+   "total_steps": 8,
+   "loss": 0.025810322263046956,
+   "msg": "step 5/8: 8 lesson + 8 replay examples",
+   "t": 49.2
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 6,
+   "total_steps": 8,
+   "loss": 0.014295531873572638,
+   "msg": "step 6/8: 8 lesson + 8 replay examples",
+   "t": 58.5
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 7,
+   "total_steps": 8,
+   "loss": 0.015974345684705613,
+   "msg": "step 7/8: 8 lesson + 8 replay examples",
+   "t": 65.0
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 8,
+   "total_steps": 8,
+   "loss": 0.00011651144541142868,
+   "msg": "step 8/8: 8 lesson + 8 replay examples",
+   "t": 72.8
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Saving new weights",
+   "t": 72.8
+  },
+  {
+   "type": "learn",
+   "stage": "eval",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Evaluating new weights on 12 held-out usb_a changes (fresh session, nothing in the prompt)",
+   "t": 81.0
+  },
+  {
+   "type": "learn",
+   "stage": "eval",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "usb_a held-out: before 0/12 -> after 12/12 (usb_a openings right: 0 -> 12)",
+   "t": 87.1
+  },
+  {
+   "type": "learned",
+   "ok": true,
+   "lesson": {
+    "type": "usb_a",
+    "tolerance": 0.5
+   },
+   "before": {
+    "passed": 0,
+    "total": 12,
+    "type_ok": 0
+   },
+   "after": {
+    "passed": 12,
+    "total": 12,
+    "type_ok": 12
+   },
+   "verified": 48,
+   "generated": 48,
+   "replay": 48,
+   "steps": 8,
+   "losses": [
+    0.25117086611984524,
+    0.03413850581113415,
+    0.02149508932362432,
+    0.01977076719510923,
+    0.025810322263046956,
+    0.014295531873572638,
+    0.015974345684705613,
+    0.00011651144541142868
+   ],
+   "checkpoint": "river://b853d85d-0766-4e5b-b529-7484b3913c05/sampler_weights/learn-usb_a-1790547217",
+   "checkpoint_file": "checkpoint_v2.json",
+   "parent": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+   "promoted": false,
+   "seconds": 87.1
+  }
+ ]
+}

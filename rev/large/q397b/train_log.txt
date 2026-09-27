@@ -1,0 +1,30 @@
+15:20:55 === run start base=Qwen/Qwen3.5-397B-A17B-FP8 n=200 epochs=4 batch=16 lr=0.0002 rank=32 tokens/datum mean=1332 max=1669 (tokenize 1.5s) deadline=15:44
+15:21:08 model created (13.5s)
+15:21:27 eval base: 1/30 by_check={'cavity_fit': 30, 'cavity_height': 18, 'standoffs': 29, 'openings': 3, 'orphans': 30} (33.4s)
+15:22:51 step 1 epoch 0 loss 0.2747 grad_norm 1697.073686032871 sec 103.0
+15:24:01 step 2 epoch 0 loss 0.1200 grad_norm 612.5759116452591 sec 69.8
+15:24:54 step 3 epoch 0 loss 0.1121 grad_norm 261.1518596495758 sec 52.9
+15:25:45 step 4 epoch 0 loss 0.0637 grad_norm 151.0562779324351 sec 51.7
+15:26:37 step 5 epoch 0 loss 0.0364 grad_norm 95.34246325347895 sec 51.7
+15:27:42 step 6 epoch 0 loss 0.0313 grad_norm 78.78433215435963 sec 64.8
+15:28:37 step 7 epoch 0 loss 0.0129 grad_norm 76.17191157475229 sec 55.1
+15:29:34 step 8 epoch 0 loss 0.0036 grad_norm 56.66876710678923 sec 56.5
+15:30:25 step 9 epoch 0 loss 0.0579 grad_norm 619.4084056794532 sec 51.4
+15:31:20 step 10 epoch 0 loss 0.0042 grad_norm 128.32748602675449 sec 55.1
+15:32:25 step 11 epoch 0 loss 0.0036 grad_norm 117.85423910079865 sec 64.4
+15:33:16 step 12 epoch 0 loss 0.0038 grad_norm 107.10007637789977 sec 51.2
+15:34:23 step 13 epoch 0 loss 0.0002 grad_norm 4.382207053806614 sec 67.0
+15:35:15 step 14 epoch 1 loss 0.0138 grad_norm 482.14242984991336 sec 52.1
+15:36:08 step 15 epoch 1 loss 0.0017 grad_norm 63.85330635725432 sec 53.5
+15:37:12 step 16 epoch 1 loss 0.0006 grad_norm 31.124195537699023 sec 63.5
+15:38:03 step 17 epoch 1 loss 0.0000 grad_norm 0.22638007174307775 sec 51.5
+15:38:54 step 18 epoch 1 loss 0.0001 grad_norm 30.851116760788496 sec 50.3
+15:39:44 step 19 epoch 1 loss 0.0001 grad_norm 44.44516313902978 sec 50.2
+15:40:33 step 20 epoch 1 loss 0.0001 grad_norm 15.673979214099004 sec 48.9
+15:42:09 step 21 epoch 1 loss 0.0001 grad_norm 11.56730143490367 sec 96.2
+15:43:02 step 22 epoch 1 loss 0.0001 grad_norm 13.926950048785873 sec 52.9
+15:43:58 step 23 epoch 1 loss 0.0116 grad_norm 1423.8878508319356 sec 55.8
+15:43:58 deadline: stopping at epoch 1 step 23 (median step 53.5s)
+15:44:09 save_weights river://9cfcf63a-369f-4a4d-9e94-5a348bef1b46/sampler_weights/acme-rev-q397b step 23 (11.7s)
+15:44:09 wrote ./rev/large/q397b/checkpoint.json: {"path": "river://9cfcf63a-369f-4a4d-9e94-5a348bef1b46/sampler_weights/acme-rev-q397b", "step": 23, "checkpoint_type": "inference", "base_model": "Qwen/Qwen3.5-397B-A17B-FP8", "name": "acme-rev-q397b", "train_steps": 23, "epochs_completed": 1, "epochs_planned": 4, "batch": 16, "lr": 0.0002, "rank": 32, "n_train": 200, "final_loss": 0.011630466063524084, "train_seconds": 1383.0, "partial": true, "saved_at": "2026-09-27T15:44:09-0700"}
+15:44:48 eval tuned: 30/30 by_check={'cavity_fit': 30, 'cavity_height': 30, 'standoffs': 30, 'openings': 30, 'orphans': 30} (36.2s)

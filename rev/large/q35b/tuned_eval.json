@@ -1,0 +1,1975 @@
+{
+ "summary": {
+  "name": "tuned",
+  "label": "Acme-tuned Qwen3.6-35B-A3B-FP8",
+  "passed": 30,
+  "total": 30,
+  "by_check": {
+   "cavity_fit": 30,
+   "cavity_height": 30,
+   "standoffs": 30,
+   "openings": 30,
+   "orphans": 30
+  },
+  "parse_failures": 0,
+  "sample_errors": 0,
+  "mean_latency_s": 21.08,
+  "checkpoint": "river://414782e9-e1c4-4f61-9b00-0e77fa5c7a33/sampler_weights/acme-rev-q35b",
+  "evaluated_at": "2026-09-27T15:38:50-0700",
+  "elapsed_s": 81.5
+ },
+ "details": [
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 4,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    }
+   ],
+   "id": "test-000",
+   "latency_s": 67.25,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 1,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-001",
+   "latency_s": 66.1,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-002",
+   "latency_s": 64.3,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "id": "test-003",
+   "latency_s": 63.26,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-004",
+   "latency_s": 59.13,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 6,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "id": "test-005",
+   "latency_s": 59.16,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 1.0
+     }
+    }
+   ],
+   "id": "test-006",
+   "latency_s": 65.85,
+   "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 4,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-007",
+   "latency_s": 58.43,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 1.0
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-008",
+   "latency_s": 5.3,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 1.0
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 4,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "id": "test-009",
+   "latency_s": 5.55,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.3
+     }
+    }
+   ],
+   "id": "test-010",
+   "latency_s": 6.05,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.6
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-011",
+   "latency_s": 5.36,
+   "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.6
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 6,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "id": "test-012",
+   "latency_s": 5.77,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-013",
+   "latency_s": 5.13,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-014",
+   "latency_s": 6.79,
+   "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 1,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ],
+   "id": "test-015",
+   "latency_s": 6.39,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 1.0
+     }
+    }
+   ],
+   "id": "test-016",
+   "latency_s": 7.22,
+   "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-017",
+   "latency_s": 7.29,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-018",
+   "latency_s": 8.25,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.8
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    }
+   ],
+   "id": "test-019",
+   "latency_s": 5.76,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.8
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 1.0
+     }
+    }
+   ],
+   "id": "test-020",
+   "latency_s": 6.21,
+   "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J2"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-021",
+   "latency_s": 5.83,
+   "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ],
+   "id": "test-022",
+   "latency_s": 5.01,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 4,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    }
+   ],
+   "id": "test-023",
+   "latency_s": 5.16,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 1,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-024",
+   "latency_s": 4.87,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J6",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 1,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 1.0
+     }
+    }
+   ],
+   "id": "test-025",
+   "latency_s": 5.44,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.3
+     }
+    }
+   ],
+   "id": "test-026",
+   "latency_s": 5.61,
+   "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 5,
+   "calls": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.8
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "id": "test-027",
+   "latency_s": 5.04,
+   "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.8
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 2,
+   "calls": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "id": "test-028",
+   "latency_s": 5.66,
+   "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "pass": true,
+   "checks": {
+    "cavity_fit": true,
+    "cavity_height": true,
+    "standoffs": true,
+    "openings": true,
+    "orphans": true
+   },
+   "failed": [],
+   "failed_detail": {},
+   "parse_error": null,
+   "tool_errors": [],
+   "n_calls": 3,
+   "calls": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "id": "test-029",
+   "latency_s": 5.09,
+   "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+   "sample_error": null,
+   "gold": [
+    {
+     "tool": "remove_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H1"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ]
+  }
+ ]
+}

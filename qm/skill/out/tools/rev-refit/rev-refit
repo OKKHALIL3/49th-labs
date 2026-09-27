@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+# rev-refit — ask the REV server to refit the Sensor Hub enclosure and print a
+# thread-ready report (summary, overall PASS/FAIL, each check, viewer link).
+#
+# Usage: rev-refit [--model tuned|base] [--url https://<public-rev-host>] [--json]
+# Base URL precedence: --url  >  $REV_PUBLIC_URL  >  REV_DEFAULT_URL below.
+set -euo pipefail
+
+REV_DEFAULT_URL="https://depth-risks-normal-caroline.trycloudflare.com"
+model="tuned"
+base="${REV_PUBLIC_URL:-$REV_DEFAULT_URL}"
+raw=0
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --model) model="${2:?--model needs tuned|base}"; shift 2 ;;
+    --model=*) model="${1#--model=}"; shift ;;
+    --url) base="${2:?--url needs a value}"; shift 2 ;;
+    --url=*) base="${1#--url=}"; shift ;;
+    --json) raw=1; shift ;;
+    -h|--help) sed -n '2,6p' "$0"; exit 0 ;;
+    *) echo "rev-refit: unknown argument $1" >&2; exit 2 ;;
+  esac
+done
+
+case "$model" in tuned|base) ;; *) echo "rev-refit: --model must be tuned or base" >&2; exit 2 ;; esac
+case "$base" in *REPLACE-ME*) echo "rev-refit: set REV_PUBLIC_URL or pass --url (the cloudflared https URL)" >&2; exit 2 ;; esac
+base="${base%/}"
+
+auth=()
+if [ -n "${REV_TOKEN:-}" ]; then auth=(-H "authorization: Bearer ${REV_TOKEN}"); fi
+
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+code="$(curl -sS -o "$tmp" -w '%{http_code}' --max-time 300 \
+  -X POST "${base}/api/qm/refit" \
+  -H 'content-type: application/json' "${auth[@]+"${auth[@]}"}" \
+  -d "{\"model\":\"${model}\"}")" || { echo "rev-refit: request to ${base}/api/qm/refit failed (network/timeout)" >&2; exit 1; }
+
+if [ "$code" != "200" ]; then
+  echo "rev-refit: ${base}/api/qm/refit returned HTTP ${code}:" >&2
+  head -c 2000 "$tmp" >&2; echo >&2
+  exit 1
+fi
+
+if [ "$raw" = "1" ] || ! command -v python3 >/dev/null 2>&1; then
+  cat "$tmp"; echo
+  exit 0
+fi
+
+python3 - "$tmp" "$model" <<'PY'
+import json, sys
+path, model = sys.argv[1], sys.argv[2]
+try:
+    r = json.load(open(path))
+except Exception:
+    print(open(path).read()); sys.exit(0)
+ok = bool(r.get("pass"))
+checks = r.get("checks") or []
+passed = sum(1 for c in checks if c.get("pass"))
+print(f"*49th Engineer enclosure refit ({model} model): {'PASS' if ok else 'FAIL'}* ({passed}/{len(checks)} checks)")
+if r.get("summary"):
+    print(r["summary"].strip())
+print()
+for c in checks:
+    mark = "PASS" if c.get("pass") else "FAIL"
+    line = f"- [{mark}] {c.get('label') or c.get('id')}"
+    if c.get("detail"):
+        line += f": {c['detail']}"
+    if not c.get("pass") and c.get("refs"):
+        line += f" (refs: {', '.join(map(str, c['refs']))})"
+    print(line)
+if r.get("viewer_url"):
+    print()
+    print(f"3D viewer: {r['viewer_url']}")
+PY

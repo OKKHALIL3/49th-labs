@@ -1,0 +1,14 @@
+{
+  "id": "rev-learn",
+  "label": "49th Engineer: learn a correction (REV)",
+  "advertise": "rev-learn \"<engineer's correction>\" — teach the REV engineering model a house rule (e.g. connector cutout tolerance), wait for training, and print before/after checker results",
+  "hints": [
+    "When an engineer states a house rule or correction about enclosure cutouts (e.g. 'Our USB-A cutouts always get 0.5 mm per side'), run `rev-learn \"<their exact words>\"` and paste its output verbatim; it takes 1-4 minutes, do not retry while it runs.",
+    "Never invent learning results: if rev-learn exits non-zero, report the error text and the URL it tried."
+  ],
+  "egress": ["trycloudflare.com"],
+  "install": {
+    "binary": "rev-learn",
+    "files": [{ "from": "rev-learn", "to": "/usr/local/bin/rev-learn", "mode": "0755" }]
+  }
+}

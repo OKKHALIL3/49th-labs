@@ -1,0 +1,5599 @@
+{
+ "base_model": "Qwen/Qwen3.5-9B",
+ "test_set": "rev/data/test.jsonl (30 held-out tasks, seed 2, disjoint from train)",
+ "runs": [
+  {
+   "name": "base",
+   "label": "Base Qwen3.5-9B",
+   "passed": 0,
+   "total": 30,
+   "by_check": {
+    "cavity_fit": 16,
+    "cavity_height": 14,
+    "standoffs": 27,
+    "openings": 0,
+    "orphans": 30
+   },
+   "parse_failures": 0,
+   "sample_errors": 0,
+   "mean_latency_s": 5.88,
+   "checkpoint": null,
+   "evaluated_at": "2026-09-27T14:45:17-0700"
+  },
+  {
+   "name": "tuned",
+   "label": "Acme-tuned Qwen3.5-9B",
+   "passed": 29,
+   "total": 30,
+   "by_check": {
+    "cavity_fit": 30,
+    "cavity_height": 30,
+    "standoffs": 30,
+    "openings": 29,
+    "orphans": 30
+   },
+   "parse_failures": 0,
+   "sample_errors": 0,
+   "mean_latency_s": 6.71,
+   "checkpoint": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+   "evaluated_at": "2026-09-27T15:03:25-0700"
+  }
+ ],
+ "details": {
+  "base": [
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 116.00x74.00 in cavity 118.00x76.00: left gap 1.00 mm (not house clearance); right gap 1.00 mm (not house clearance); front gap 1.00 mm (not house clearance); back gap 1.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 32.60 mm",
+     "openings": "J1 (usb_c) opening 9.94x4.26 has 0.50 mm gap per side (wrong tolerance for usb_c); J2 (usb_c) opening 9.94x4.26 has 0.50 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 8,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "id": "test-000",
+    "latency_s": 7.43,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-001",
+    "latency_s": 7.42,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 65.00x90.00 in cavity 69.00x94.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 36.10 mm",
+     "openings": "J1 (usb_c) opening 9.94x4.26 has 0.50 mm gap per side (wrong tolerance for usb_c); J2 (rj45) opening 17.00x14.50 has 0.50 mm gap per side (wrong tolerance for rj45); J3 (hdmi) opening 16.00x6.60 has 0.50 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 8,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "id": "test-002",
+    "latency_s": 8.39,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 98.00x89.00 in cavity 100.00x91.00: left gap 1.00 mm (not house clearance); right gap 1.00 mm (not house clearance); front gap 1.00 mm (not house clearance); back gap 1.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 30.20 mm",
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 8,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-003",
+    "latency_s": 7.47,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J6 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-004",
+    "latency_s": 7.42,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 95.50x95.50 in cavity 99.50x99.50: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 23.10 mm",
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J3 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 9,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-005",
+    "latency_s": 7.49,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J3 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-006",
+    "latency_s": 7.31,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 62.50x66.00 in cavity 66.50x70.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 33.10 mm",
+     "openings": "J1 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi); J2 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45); J4 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45); J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 10,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-007",
+    "latency_s": 8.39,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 89.50x82.00 in cavity 93.50x86.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 37.60 mm",
+     "openings": "J1 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi); J2 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c); J4 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c); J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 10,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-008",
+    "latency_s": 4.07,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 97.00x68.00 in cavity 101.00x72.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 36.60 mm",
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi); J3 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45); J4 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 9,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-009",
+    "latency_s": 5.41,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J5 (rj45) opening 17.20x14.70 has 0.60 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-010",
+    "latency_s": 4.53,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J2 (hdmi) opening off-centre by 8.50 mm along wall; J4 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-011",
+    "latency_s": 5.39,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.6
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_height": "Headroom 1.00 mm above tallest part (not house headroom); cavity height 24.60 mm",
+     "openings": "J1 (barrel) opening 12.00x14.00 has 1.50 mm gap per side (wrong tolerance for barrel); J2 (usb_c) opening 11.94x6.26 has 1.50 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 7,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 1.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.5
+      }
+     }
+    ],
+    "id": "test-012",
+    "latency_s": 5.0,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":1.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": false,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "standoffs",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 50.50x62.50 in cavity 52.50x64.50: left gap 1.00 mm (not house clearance); right gap 1.00 mm (not house clearance); front gap 1.00 mm (not house clearance); back gap 1.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 28.00 mm",
+     "standoffs": "H1 standoff misses hole by 0.71 mm; H4 standoff misses hole by 0.71 mm",
+     "openings": "J2 (rj45) opening off-centre by 0.50 mm along wall; J3 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 7,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-013",
+    "latency_s": 5.67,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J3 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-014",
+    "latency_s": 5.58,
+    "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J4 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-015",
+    "latency_s": 6.3,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": false,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "standoffs",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 100.50x65.00 in cavity 104.50x69.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 36.20 mm",
+     "standoffs": "H1 standoff misses hole by 0.71 mm; H2 standoff misses hole by 0.71 mm; H3 standoff misses hole by 0.71 mm; H4 standoff misses hole by 0.71 mm",
+     "openings": "J1 (usb_c) opening off-centre by 0.50 mm along wall; J2 (hdmi) opening off-centre by 0.50 mm along wall; J3 (rj45) opening off-centre by 0.50 mm along wall"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 4,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-016",
+    "latency_s": 5.8,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 56.00x62.00 in cavity 58.00x64.00: left gap 1.00 mm (not house clearance); right gap 1.00 mm (not house clearance); front gap 1.00 mm (not house clearance); back gap 1.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 32.50 mm",
+     "openings": "J3 (hdmi) opening 15.60x6.20 has 0.30 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 8,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-017",
+    "latency_s": 4.73,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 70.50x44.50 in cavity 74.50x48.50: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 38.10 mm",
+     "openings": "J3 (rj45) opening 17.60x15.10 has 0.80 mm gap per side (wrong tolerance for rj45); J5 (barrel) opening 10.00x12.00 has 0.50 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 11,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.6
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.6
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "id": "test-018",
+    "latency_s": 4.73,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (hdmi) has no opening; J3 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     }
+    ],
+    "id": "test-019",
+    "latency_s": 6.28,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 57.00x56.50 in cavity 61.00x60.50: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 34.10 mm",
+     "openings": "J1 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 11,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     }
+    ],
+    "id": "test-020",
+    "latency_s": 6.28,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J4 (hdmi) opening 16.00x6.60 has 0.50 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "id": "test-021",
+    "latency_s": 5.66,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 94.00x64.50 in cavity 98.00x68.50: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 35.20 mm",
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi); J4 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 10,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-022",
+    "latency_s": 5.14,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": false,
+     "cavity_height": false,
+     "standoffs": false,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "standoffs",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_fit": "Board 73.50x55.00 in cavity 77.50x59.00: left gap 2.00 mm (not house clearance); right gap 2.00 mm (not house clearance); front gap 2.00 mm (not house clearance); back gap 2.00 mm (not house clearance)",
+     "cavity_height": "Headroom 5.00 mm above tallest part (not house headroom); cavity height 22.20 mm",
+     "standoffs": "H1 standoff misses hole by 0.71 mm; H2 has no standoff; H3 has no standoff; H4 has no standoff",
+     "openings": "J2 (sd) opening off-centre by 0.50 mm along wall; J3 (rj45) opening off-centre by 0.50 mm along wall"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     }
+    ],
+    "id": "test-023",
+    "latency_s": 4.95,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":5.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J6 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-024",
+    "latency_s": 4.89,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J4 (sd) opening 13.00x3.00 has 0.50 mm gap per side (wrong tolerance for sd)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "id": "test-025",
+    "latency_s": 4.37,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J4 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c); J5 (rj45) opening 18.00x15.50 has 1.00 mm gap per side (wrong tolerance for rj45)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-026",
+    "latency_s": 4.67,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": false,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "cavity_height",
+     "openings"
+    ],
+    "failed_detail": {
+     "cavity_height": "Headroom 10.00 mm above tallest part (not house headroom); cavity height 35.10 mm",
+     "openings": "J1 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel); J2 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi); J3 (usb_c) opening 10.94x5.26 has 1.00 mm gap per side (wrong tolerance for usb_c)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 8,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-027",
+    "latency_s": 5.21,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J3 (hdmi) opening 17.00x7.60 has 1.00 mm gap per side (wrong tolerance for hdmi)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-028",
+    "latency_s": 5.24,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J5 (barrel) opening 11.00x13.00 has 1.00 mm gap per side (wrong tolerance for barrel)"
+    },
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-029",
+    "latency_s": 5.2,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   }
+  ],
+  "tuned": [
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     }
+    ],
+    "id": "test-000",
+    "latency_s": 6.65,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-001",
+    "latency_s": 9.82,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-002",
+    "latency_s": 10.77,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 6,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "id": "test-003",
+    "latency_s": 7.64,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-004",
+    "latency_s": 9.27,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 6,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "id": "test-005",
+    "latency_s": 6.63,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-006",
+    "latency_s": 6.72,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 4,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-007",
+    "latency_s": 8.45,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-008",
+    "latency_s": 4.09,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 4,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "id": "test-009",
+    "latency_s": 3.77,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-010",
+    "latency_s": 7.35,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.6
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-011",
+    "latency_s": 6.27,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.6
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 6,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "id": "test-012",
+    "latency_s": 5.92,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": false,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": false,
+     "orphans": true
+    },
+    "failed": [
+     "openings"
+    ],
+    "failed_detail": {
+     "openings": "J3 (hdmi) has no opening"
+    },
+    "parse_error": null,
+    "tool_errors": [
+     "call 4 (place_opening): missing arg 'tolerance'"
+    ],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3"
+      }
+     }
+    ],
+    "id": "test-013",
+    "latency_s": 5.08,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-014",
+    "latency_s": 4.54,
+    "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-015",
+    "latency_s": 7.2,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-016",
+    "latency_s": 6.88,
+    "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-017",
+    "latency_s": 6.93,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-018",
+    "latency_s": 4.63,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-019",
+    "latency_s": 7.35,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-020",
+    "latency_s": 7.26,
+    "raw": "[{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J2\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J2"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-021",
+    "latency_s": 7.3,
+    "raw": "[{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-022",
+    "latency_s": 6.66,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     }
+    ],
+    "id": "test-023",
+    "latency_s": 7.31,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-024",
+    "latency_s": 7.17,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J6\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J6",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 1,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "id": "test-025",
+    "latency_s": 5.88,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":1.0}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ],
+    "id": "test-026",
+    "latency_s": 6.42,
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.3}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J4",
+       "tolerance": 0.4
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 5,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "id": "test-027",
+    "latency_s": 5.35,
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.4}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.8
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 2,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "id": "test-028",
+    "latency_s": 6.68,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "pass": true,
+    "checks": {
+     "cavity_fit": true,
+     "cavity_height": true,
+     "standoffs": true,
+     "openings": true,
+     "orphans": true
+    },
+    "failed": [],
+    "failed_detail": {},
+    "parse_error": null,
+    "tool_errors": [],
+    "n_calls": 3,
+    "calls": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "id": "test-029",
+    "latency_s": 5.32,
+    "raw": "[{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+    "sample_error": null,
+    "gold": [
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "examples": [
+  {
+   "id": "test-000",
+   "change_summary": "Board widened 13.0 mm; added mounting hole H5; tallest component now 21.0 mm (was 13.5)",
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    }
+   ],
+   "base": {
+    "pass": false,
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}}]"
+   },
+   "tuned": {
+    "pass": true,
+    "failed": [],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}}]"
+   }
+  },
+  {
+   "id": "test-001",
+   "change_summary": "Added J5 (barrel) on back edge",
+   "gold": [
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J5",
+      "tolerance": 0.8
+     }
+    }
+   ],
+   "base": {
+    "pass": false,
+    "failed": [
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":1.0}}]"
+   },
+   "tuned": {
+    "pass": true,
+    "failed": [],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J5",
+       "tolerance": 0.8
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]"
+   }
+  },
+  {
+   "id": "test-002",
+   "change_summary": "Board widened 8.5 mm; Board deepened 10.0 mm; added J3 (hdmi) on back edge",
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H4"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "base": {
+    "pass": false,
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 2.0,
+       "headroom": 10.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.5
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.5
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}}]"
+   },
+   "tuned": {
+    "pass": true,
+    "failed": [],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 0.6
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.6}}]"
+   }
+  },
+  {
+   "id": "test-003",
+   "change_summary": "Board widened 10.0 mm; added J2 (usb_c) on back edge; added mounting hole H5",
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H5"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J2",
+      "tolerance": 0.4
+     }
+    }
+   ],
+   "base": {
+    "pass": false,
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J1",
+       "tolerance": 1.0
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":1.0}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":1.0}}]"
+   },
+   "tuned": {
+    "pass": true,
+    "failed": [],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H4"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H5"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J2",
+       "tolerance": 0.4
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H5\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.4}}]"
+   }
+  },
+  {
+   "id": "test-013",
+   "change_summary": "Board narrowed 6.0 mm; added J3 (hdmi) on back edge; removed J1 (usb_c)",
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "remove_opening",
+     "args": {
+      "connector": "J1"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J3",
+      "tolerance": 0.6
+     }
+    }
+   ],
+   "base": {
+    "pass": false,
+    "failed": [
+     "cavity_fit",
+     "cavity_height",
+     "standoffs",
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.0,
+       "headroom": 5.0
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "remove_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3",
+       "tolerance": 1.0
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":5.0}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"remove_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":1.0}}]"
+   },
+   "tuned": {
+    "pass": false,
+    "failed": [
+     "openings"
+    ],
+    "parse_error": null,
+    "calls": [
+     {
+      "tool": "fit_cavity",
+      "args": {
+       "clearance": 1.5,
+       "headroom": 3.0
+      }
+     },
+     {
+      "tool": "remove_opening",
+      "args": {
+       "connector": "J1"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H2"
+      }
+     },
+     {
+      "tool": "place_standoff",
+      "args": {
+       "hole": "H3"
+      }
+     },
+     {
+      "tool": "place_opening",
+      "args": {
+       "connector": "J3"
+      }
+     }
+    ],
+    "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"remove_opening\",\"args\":{\"connector\":\"J1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\"}}]"
+   }
+  }
+ ],
+ "demo": {
+  "tuned": {
+   "passed": 3,
+   "total": 3,
+   "trials": [
+    {
+     "pass": true,
+     "failed": [],
+     "latency_s": 30.22,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 1.5,
+        "headroom": 3.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.4
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.3
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+     "sample_error": null
+    },
+    {
+     "pass": true,
+     "failed": [],
+     "latency_s": 5.45,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 1.5,
+        "headroom": 3.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.4
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.3
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+     "sample_error": null
+    },
+    {
+     "pass": true,
+     "failed": [],
+     "latency_s": 4.24,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 1.5,
+        "headroom": 3.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.4
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.3
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+     "sample_error": null
+    }
+   ],
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  },
+  "base": {
+   "passed": 0,
+   "total": 3,
+   "trials": [
+    {
+     "pass": false,
+     "failed": [
+      "cavity_fit",
+      "cavity_height",
+      "openings"
+     ],
+     "latency_s": 19.31,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 2.0,
+        "headroom": 10.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H1"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H4"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J2",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J3",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.5
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+     "sample_error": null
+    },
+    {
+     "pass": false,
+     "failed": [
+      "cavity_fit",
+      "cavity_height",
+      "openings"
+     ],
+     "latency_s": 5.25,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 1.0,
+        "headroom": 10.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H1"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H4"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J2",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J3",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.5
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+     "sample_error": null
+    },
+    {
+     "pass": false,
+     "failed": [
+      "cavity_fit",
+      "cavity_height",
+      "openings"
+     ],
+     "latency_s": 4.23,
+     "calls": [
+      {
+       "tool": "fit_cavity",
+       "args": {
+        "clearance": 2.0,
+        "headroom": 10.0
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H1"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H2"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H3"
+       }
+      },
+      {
+       "tool": "place_standoff",
+       "args": {
+        "hole": "H4"
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J1",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J2",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J3",
+        "tolerance": 0.5
+       }
+      },
+      {
+       "tool": "place_opening",
+       "args": {
+        "connector": "J4",
+        "tolerance": 0.5
+       }
+      }
+     ],
+     "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+     "sample_error": null
+    }
+   ],
+   "gold": [
+    {
+     "tool": "fit_cavity",
+     "args": {
+      "clearance": 1.5,
+      "headroom": 3.0
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H2"
+     }
+    },
+    {
+     "tool": "place_standoff",
+     "args": {
+      "hole": "H3"
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J1",
+      "tolerance": 0.4
+     }
+    },
+    {
+     "tool": "place_opening",
+     "args": {
+      "connector": "J4",
+      "tolerance": 0.3
+     }
+    }
+   ]
+  }
+ }
+}

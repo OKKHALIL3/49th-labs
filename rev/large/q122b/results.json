@@ -1,0 +1,49 @@
+{
+ "base_model": "Qwen/Qwen3.5-122B-A10B-FP8",
+ "base": {
+  "passed": 1,
+  "total": 30,
+  "by_check": {
+   "cavity_fit": 30,
+   "cavity_height": 17,
+   "standoffs": 29,
+   "openings": 2,
+   "orphans": 30
+  },
+  "parse_failures": 0,
+  "sample_errors": 0,
+  "mean_latency_s": 6.65
+ },
+ "tuned": {
+  "passed": 28,
+  "total": 30,
+  "by_check": {
+   "cavity_fit": 30,
+   "cavity_height": 30,
+   "standoffs": 30,
+   "openings": 28,
+   "orphans": 30
+  },
+  "parse_failures": 0,
+  "sample_errors": 0,
+  "mean_latency_s": 6.89
+ },
+ "train": {
+  "steps": 13,
+  "epochs": 1.0,
+  "planned_epochs": 1,
+  "seconds": 891.9,
+  "final_loss": 5.1216089299746924e-05,
+  "sec_per_step": 39.7,
+  "lr": 0.0002,
+  "batch": 16,
+  "rank": 32,
+  "n_train": 200,
+  "checkpoint": "river://503a5ad2-f93b-4ebd-b94f-bee018108d33/sampler_weights/q122b-acme-rev"
+ },
+ "partial": false,
+ "tokenizer": "HF tokenizer via river.load_tokenizer(base_model='Qwen/Qwen3.5-122B-A10B-FP8') (downloaded fresh, not the 9B one); river renderer thinking=False",
+ "test_set": "rev/data/test.jsonl (30 held-out), temperature 0, max_tokens 768, grader = rev.eval.grade (kernel checks)",
+ "finished_at": "2026-09-27T15:38:03-0700",
+ "notes": "create_model took 366s; step1 175s (warmup) then ~25-44s/step, so the epoch planner (avg of first 2 steps) chose 1 epoch = 13 steps, finished 15:35 (not partial). Tuned eval needed HF_HUB_OFFLINE=1 after HF 429 on tokenizer model_info; tokenizer is the cached HF Qwen3.5-122B-A10B-FP8 one. No validation pass run. Base and tuned both evaluated on the same 30 test tasks, temp 0, 8 workers."
+}

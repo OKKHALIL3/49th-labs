@@ -1,0 +1,186 @@
+{
+ "text": "Our USB-A cutouts always get 0.5 mm per side.",
+ "events": [
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Correction understood: usb_a opening tolerance = 0.5 mm per side",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 48,
+   "total_steps": 48,
+   "loss": null,
+   "msg": "verified 48/48 lesson examples with the checker (only verified examples are learned)",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "verify",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "+ 48 replay examples from the company history (prevents forgetting)",
+   "t": 0.0
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 0,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Loading current tuned weights (checkpoint.json, step 52) to continue training",
+   "t": 2.7
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 1,
+   "total_steps": 8,
+   "loss": 0.25117086611984524,
+   "msg": "step 1/8: 8 lesson + 8 replay examples",
+   "t": 27.1
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 2,
+   "total_steps": 8,
+   "loss": 0.03413850581113415,
+   "msg": "step 2/8: 8 lesson + 8 replay examples",
+   "t": 33.6
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 3,
+   "total_steps": 8,
+   "loss": 0.02149508932362432,
+   "msg": "step 3/8: 8 lesson + 8 replay examples",
+   "t": 40.0
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 4,
+   "total_steps": 8,
+   "loss": 0.019638248477213183,
+   "msg": "step 4/8: 8 lesson + 8 replay examples",
+   "t": 46.9
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 5,
+   "total_steps": 8,
+   "loss": 0.024694404481205037,
+   "msg": "step 5/8: 8 lesson + 8 replay examples",
+   "t": 69.7
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 6,
+   "total_steps": 8,
+   "loss": 0.013665330648171539,
+   "msg": "step 6/8: 8 lesson + 8 replay examples",
+   "t": 80.3
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 7,
+   "total_steps": 8,
+   "loss": 0.014930800972979092,
+   "msg": "step 7/8: 8 lesson + 8 replay examples",
+   "t": 86.7
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 8,
+   "total_steps": 8,
+   "loss": 0.00011387463970555746,
+   "msg": "step 8/8: 8 lesson + 8 replay examples",
+   "t": 93.5
+  },
+  {
+   "type": "learn",
+   "stage": "train",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Saving new weights",
+   "t": 93.5
+  },
+  {
+   "type": "learn",
+   "stage": "eval",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Evaluating new weights on 12 held-out usb_a changes (fresh session, nothing in the prompt)",
+   "t": 102.6
+  },
+  {
+   "type": "learn",
+   "stage": "eval",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "usb_a held-out: before 0/12 -> after 12/12 (usb_a openings right: 0 -> 12)",
+   "t": 108.6
+  },
+  {
+   "type": "learn",
+   "stage": "eval",
+   "step": 8,
+   "total_steps": 8,
+   "loss": null,
+   "msg": "Promoted: the agent's tuned model now uses the new weights",
+   "t": 108.6
+  },
+  {
+   "type": "learned",
+   "ok": true,
+   "lesson": {
+    "type": "usb_a",
+    "tolerance": 0.5
+   },
+   "before": {
+    "passed": 0,
+    "total": 12,
+    "type_ok": 0
+   },
+   "after": {
+    "passed": 12,
+    "total": 12,
+    "type_ok": 12
+   },
+   "verified": 48,
+   "generated": 48,
+   "replay": 48,
+   "steps": 8,
+   "losses": [
+    0.25117086611984524,
+    0.03413850581113415,
+    0.02149508932362432,
+    0.019638248477213183,
+    0.024694404481205037,
+    0.013665330648171539,
+    0.014930800972979092,
+    0.00011387463970555746
+   ],
+   "checkpoint": "river://b4572d12-4d9e-4c9d-8e0e-dfb2060298d8/sampler_weights/learn-usb_a-1790547261",
+   "checkpoint_file": "checkpoint_v2.json",
+   "parent": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+   "promoted": true,
+   "seconds": 108.6
+  }
+ ]
+}

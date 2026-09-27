@@ -1,0 +1,21 @@
+{
+ "company": "49th Labs",
+ "customer": "Acme Devices",
+ "engineers": [
+  {
+   "id": "senior-me",
+   "role": "Senior mechanical engineer",
+   "display": "Senior ME (you)"
+  },
+  {
+   "id": "field-me",
+   "role": "Field / ruggedization mechanical engineer",
+   "display": "Field ME"
+  },
+  {
+   "id": "junior-me",
+   "role": "Junior mechanical engineer",
+   "display": "Junior ME"
+  }
+ ]
+}

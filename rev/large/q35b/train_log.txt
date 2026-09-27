@@ -1,0 +1,59 @@
+15:21:09 === run start base=Qwen/Qwen3.6-35B-A3B-FP8 n=200 max_epochs=4 batch=16 lr=0.0002 rank=32 deadline=15:44 tokens/datum mean=1332 max=1669 (tokenize 1.0s) tokenizer=Qwen/Qwen3.6-35B-A3B (river.load_tokenizer for Qwen/Qwen3.6-35B-A3B-FP8); renderer Qwen35VLRenderer
+15:21:20 model created LoRA rank 32 (11.0s)
+15:21:51 step 1 epoch 0 loss 0.1859 grad_norm 1920.7571871204855 sec 31.8
+15:22:22 step 2 epoch 0 loss 0.2878 grad_norm 2150.775178655722 sec 30.3
+15:22:22 first 2 steps mean 31.1s/step -> est epoch 404s, 1298s left to deadline
+15:22:52 step 3 epoch 0 loss 0.2017 grad_norm 1380.5159274808975 sec 30.1
+15:23:06 step 4 epoch 0 loss 0.0905 grad_norm 825.107225185319 sec 13.8
+15:23:20 step 5 epoch 0 loss 0.0593 grad_norm 607.8940766330057 sec 14.9
+15:23:47 step 6 epoch 0 loss 0.0500 grad_norm 405.48198725090066 sec 26.8
+15:24:01 step 7 epoch 0 loss 0.0368 grad_norm 407.01366087179554 sec 13.7
+15:24:15 step 8 epoch 0 loss 0.0284 grad_norm 311.37954776739895 sec 13.8
+15:24:28 step 9 epoch 0 loss 0.0294 grad_norm 440.65233373825833 sec 13.5
+15:24:43 step 10 epoch 0 loss 0.0305 grad_norm 320.2644304691618 sec 14.4
+15:25:10 step 11 epoch 0 loss 0.0137 grad_norm 205.40794865741412 sec 27.1
+15:25:23 step 12 epoch 0 loss 0.0050 grad_norm 99.7627725992516 sec 13.6
+15:25:52 step 13 epoch 0 loss 0.0232 grad_norm 1400.9732694669317 sec 28.7
+15:26:06 step 14 epoch 1 loss 0.0149 grad_norm 1111.2466967813596 sec 14.3
+15:26:21 step 15 epoch 1 loss 0.0017 grad_norm 189.8076379228337 sec 14.6
+15:26:50 step 16 epoch 1 loss 0.0014 grad_norm 213.97375615245662 sec 28.7
+15:27:04 step 17 epoch 1 loss 0.0008 grad_norm 59.38894830410385 sec 14.2
+15:27:18 step 18 epoch 1 loss 0.0121 grad_norm 602.588316325702 sec 13.8
+15:27:32 step 19 epoch 1 loss 0.0006 grad_norm 1473.9497215761692 sec 14.5
+15:27:46 step 20 epoch 1 loss 0.0017 grad_norm 615.0684058711448 sec 13.6
+15:28:16 step 21 epoch 1 loss 0.0135 grad_norm 572.1563281432628 sec 29.8
+15:28:30 step 22 epoch 1 loss 0.0020 grad_norm 827.984651417535 sec 14.3
+15:28:44 step 23 epoch 1 loss 0.0064 grad_norm 1432.9107648147624 sec 13.9
+15:28:58 step 24 epoch 1 loss 0.0051 grad_norm 739.7587935404296 sec 13.8
+15:29:11 step 25 epoch 1 loss 0.0005 grad_norm 48.538851247094755 sec 13.9
+15:29:39 step 26 epoch 1 loss 0.0530 grad_norm 613.0788192482594 sec 27.2
+15:29:53 step 27 epoch 2 loss 0.0020 grad_norm 408.8792559245657 sec 14.2
+15:30:08 step 28 epoch 2 loss 0.0060 grad_norm 1749.9703475924964 sec 14.8
+15:30:21 step 29 epoch 2 loss 0.0025 grad_norm 266.44919890514 sec 13.8
+15:30:35 step 30 epoch 2 loss 0.0002 grad_norm 43.42946409396857 sec 13.8
+15:31:03 step 31 epoch 2 loss 0.0111 grad_norm 393.4860129360731 sec 28.3
+15:31:17 step 32 epoch 2 loss 0.0003 grad_norm 241.37044070339263 sec 13.9
+15:31:32 step 33 epoch 2 loss 0.0157 grad_norm 515.0574321018407 sec 14.1
+15:31:45 step 34 epoch 2 loss 0.0211 grad_norm 1510.8684666740808 sec 13.5
+15:31:59 step 35 epoch 2 loss 0.0003 grad_norm 12.784732038289816 sec 13.6
+15:32:27 step 36 epoch 2 loss 0.0000 grad_norm 0.6602525696451235 sec 28.8
+15:32:42 step 37 epoch 2 loss 0.0000 grad_norm 0.16451519358076336 sec 14.1
+15:32:57 step 38 epoch 2 loss 0.0000 grad_norm 1.2681183612026727 sec 15.1
+15:33:27 step 39 epoch 2 loss 0.0000 grad_norm 0.007061509445591457 sec 30.5
+15:33:41 step 40 epoch 3 loss 0.0738 grad_norm 1106.3274798658392 sec 14.0
+15:34:09 step 41 epoch 3 loss 0.0000 grad_norm 0.00833476136133612 sec 27.5
+15:34:23 step 42 epoch 3 loss 0.0002 grad_norm 84.3334240869711 sec 14.0
+15:34:37 step 43 epoch 3 loss 0.0306 grad_norm 859.553021575852 sec 14.6
+15:34:52 step 44 epoch 3 loss 0.0373 grad_norm 2758.604974322694 sec 14.5
+15:35:06 step 45 epoch 3 loss 0.0244 grad_norm 334.72727275501035 sec 13.9
+15:35:34 step 46 epoch 3 loss 0.0102 grad_norm 601.5569865882186 sec 28.2
+15:35:50 step 47 epoch 3 loss 0.0000 grad_norm 0.49596860270369586 sec 15.9
+15:36:04 step 48 epoch 3 loss 0.0030 grad_norm 758.920422112829 sec 14.3
+15:36:18 step 49 epoch 3 loss 0.0000 grad_norm 0.1742351046478552 sec 13.8
+15:36:32 step 50 epoch 3 loss 0.0000 grad_norm 1.0119798432878369 sec 13.9
+15:37:02 step 51 epoch 3 loss 0.0000 grad_norm 0.13570707670529325 sec 29.9
+15:37:14 step 52 epoch 3 loss 0.0000 grad_norm 0.029277829208219194 sec 12.7
+15:37:25 save_weights river://414782e9-e1c4-4f61-9b00-0e77fa5c7a33/sampler_weights/acme-rev-q35b step 52 (11.1s)
+15:37:28 wrote ./rev/large/q35b/checkpoint.json: {"path": "river://414782e9-e1c4-4f61-9b00-0e77fa5c7a33/sampler_weights/acme-rev-q35b", "step": 52, "checkpoint_type": "inference", "base_model": "Qwen/Qwen3.6-35B-A3B-FP8", "name": "acme-rev-q35b", "train_steps": 52, "epochs": 4, "batch": 16, "lr": 0.0002, "rank": 32, "n_train": 200, "final_loss": 3.0886043201793323e-07, "train_seconds": 979.5, "partial": false, "saved_at": "2026-09-27T15:37:28-0700"}
+15:37:28 === run done steps=52 final_loss=3.0886043201793323e-07 total 979.5s
+15:38:50 tuned eval 30/30 by_check {'cavity_fit': 30, 'cavity_height': 30, 'standoffs': 30, 'openings': 30, 'orphans': 30} (81.5s)

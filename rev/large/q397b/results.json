@@ -1,0 +1,51 @@
+{
+ "base_model": "Qwen/Qwen3.5-397B-A17B-FP8",
+ "tokenizer": "HF Qwen/Qwen3.5-397B-A17B-FP8 via river.load_tokenizer; renderer Qwen35VLRenderer thinking=False",
+ "base": {
+  "passed": 1,
+  "total": 30,
+  "by_check": {
+   "cavity_fit": 30,
+   "cavity_height": 18,
+   "standoffs": 29,
+   "openings": 3,
+   "orphans": 30
+  },
+  "parse_failures": 0,
+  "sample_errors": 0,
+  "mean_latency_s": 8.33,
+  "elapsed_s": 33.4
+ },
+ "finished_at": "2026-09-27T15:44:57-0700",
+ "train": {
+  "steps": 23,
+  "epochs": 1.84,
+  "epochs_completed": 1,
+  "epochs_planned": 4,
+  "seconds": 1383.0,
+  "final_loss": 0.011630466063524084,
+  "sec_per_step": 59.5,
+  "median_sec_per_step": 53.5,
+  "lr": 0.0002,
+  "rank": 32,
+  "batch": 16,
+  "checkpoint": "river://9cfcf63a-369f-4a4d-9e94-5a348bef1b46/sampler_weights/acme-rev-q397b"
+ },
+ "partial": true,
+ "tuned": {
+  "passed": 30,
+  "total": 30,
+  "by_check": {
+   "cavity_fit": 30,
+   "cavity_height": 30,
+   "standoffs": 30,
+   "openings": 30,
+   "orphans": 30
+  },
+  "parse_failures": 0,
+  "sample_errors": 0,
+  "mean_latency_s": 8.65,
+  "elapsed_s": 36.2
+ },
+ "notes": "Same pipeline as rev/train_river.py + rev/eval.py (prompts, render, make_datum, kernel grader), temp 0, 8 workers, 30 held-out tasks. Training stopped by 15:44 deadline after 23 steps (1 full epoch + 10/13 of epoch 2; ~1.84 epochs of 200 tasks); 4 epochs planned, so partial=true. Steps ~50-65s (first step 103s). Tuned eval uses the step-23 checkpoint in checkpoint.json. Tokenizer: HF Qwen/Qwen3.5-397B-A17B-FP8 (downloaded OK, no 9B fallback)."
+}

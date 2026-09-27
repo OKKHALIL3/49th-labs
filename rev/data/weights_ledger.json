@@ -1,0 +1,22 @@
+[
+ {
+  "version": "v1",
+  "parent": null,
+  "pr": null,
+  "title": "Initial training: 200 verified engineering changes from GBrain",
+  "author": "49th Labs pipeline",
+  "source": "gbrain:history/eco-*",
+  "gbrain_slug": "history/eco-*",
+  "lesson": null,
+  "river_checkpoint": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+  "checkpoint_file": "checkpoint.json",
+  "tests": {
+   "regression": {
+    "passed": 29,
+    "total": 30
+   }
+  },
+  "status": "production",
+  "ts": "2026-09-27T15:02:45-0700"
+ }
+]

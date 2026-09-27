@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# rev-learn — teach the REV engineering model one correction from an engineer, e.g.
+#   rev-learn "Our USB-A cutouts always get 0.5 mm per side"
+# POSTs {"text": ...} to $REV_PUBLIC_URL/api/learn, polls /api/learn/status until done
+# (max ~4 min), and prints a thread-ready before/after report.
+# Usage: rev-learn [--url https://<public-rev-host>] [--timeout SEC] [--json] "<correction text>"
+set -euo pipefail
+
+REV_DEFAULT_URL="https://depth-risks-normal-caroline.trycloudflare.com"
+base="${REV_PUBLIC_URL:-$REV_DEFAULT_URL}"
+timeout_s=240
+raw=0
+text=""
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --url) base="${2:?--url needs a value}"; shift 2 ;;
+    --url=*) base="${1#--url=}"; shift ;;
+    --timeout) timeout_s="${2:?--timeout needs seconds}"; shift 2 ;;
+    --json) raw=1; shift ;;
+    -h|--help) sed -n '2,6p' "$0"; exit 0 ;;
+    *) text="${text:+$text }$1"; shift ;;
+  esac
+done
+
+[ -n "$text" ] || { echo "rev-learn: pass the engineer's correction as the argument" >&2; exit 2; }
+case "$base" in *REPLACE-ME*) echo "rev-learn: set REV_PUBLIC_URL or pass --url (the cloudflared https URL)" >&2; exit 2 ;; esac
+base="${base%/}"
+
+auth=()
+if [ -n "${REV_TOKEN:-}" ]; then auth=(-H "authorization: Bearer ${REV_TOKEN}"); fi
+
+body="$(python3 -c 'import json,sys; print(json.dumps({"text": sys.argv[1]}))' "$text")"
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+code="$(curl -sS -o "$tmp" -w '%{http_code}' --max-time 30 -X POST "${base}/api/learn" \
+  -H 'content-type: application/json' "${auth[@]+"${auth[@]}"}" --data-binary "$body")" \
+  || { echo "rev-learn: request to ${base}/api/learn failed (network/timeout)" >&2; exit 1; }
+
+case "$code" in
+  200|202) ;;
+  409) echo "rev-learn: a learn run is already in progress on ${base}; waiting for it" >&2 ;;
+  *) echo "rev-learn: ${base}/api/learn returned HTTP ${code}:" >&2; head -c 2000 "$tmp" >&2; echo >&2; exit 1 ;;
+esac
+[ "$raw" = "1" ] || { echo "Learning started: $(head -c 300 "$tmp")"; }
+
+deadline=$(( $(date +%s) + timeout_s ))
+last=""
+while :; do
+  curl -sS -o "$tmp" --max-time 20 "${base}/api/learn/status" "${auth[@]+"${auth[@]}"}" || true
+  state="$(python3 - "$tmp" <<'PY' 2>/dev/null || echo "unknown|"
+import json, sys
+try:
+    s = json.load(open(sys.argv[1]))
+except Exception:
+    print("unknown|"); sys.exit(0)
+ev = s.get("events") or []
+msg = ""
+for e in reversed(ev):
+    if e.get("type") == "learn" and e.get("msg"):
+        msg = f"[{e.get('stage')}] {e.get('msg')}"; break
+done = (not s.get("running")) and (s.get("result") is not None)
+print(("done" if done else ("running" if s.get("running") else "idle")) + "|" + msg)
+PY
+)"
+  status="${state%%|*}"; msg="${state#*|}"
+  if [ "$raw" != "1" ] && [ -n "$msg" ] && [ "$msg" != "$last" ]; then echo "  $msg"; last="$msg"; fi
+  [ "$status" = "done" ] && break
+  if [ "$status" = "idle" ]; then echo "rev-learn: server reports no learn run and no result" >&2; cat "$tmp" >&2; exit 1; fi
+  if [ "$(date +%s)" -ge "$deadline" ]; then
+    echo "rev-learn: still training after ${timeout_s}s; last status: ${msg:-none}. Check ${base}/api/learn/status later." >&2
+    exit 1
+  fi
+  sleep 5
+done
+
+if [ "$raw" = "1" ]; then cat "$tmp"; echo; exit 0; fi
+
+python3 - "$tmp" "$text" <<'PY'
+import json, sys
+s = json.load(open(sys.argv[1])); text = sys.argv[2]
+r = s.get("result") or {}
+if not r.get("ok"):
+    print(f"*Learning FAILED* for: \"{text}\"")
+    print(f"Reason: {r.get('error') or 'unknown'}")
+    sys.exit(0)
+L = r.get("lesson") or {}
+b, a = r.get("before") or {}, r.get("after") or {}
+print(f"*49th Engineer learned:* {L.get('type')} cutouts get {L.get('tolerance')} mm per side")
+print(f"Held-out designs passing the checker: before {b.get('passed')}/{b.get('total')} -> after {a.get('passed')}/{a.get('total')}")
+if b.get("type_ok") is not None or a.get("type_ok") is not None:
+    print(f"{L.get('type')} openings right: {b.get('type_ok')} -> {a.get('type_ok')}")
+extra = []
+if r.get("verified") is not None: extra.append(f"{r.get('verified')} verified examples")
+if r.get("steps") is not None: extra.append(f"{r.get('steps')} training steps")
+if r.get("seconds") is not None: extra.append(f"{r.get('seconds')} s")
+if extra: print("(" + ", ".join(str(x) for x in extra) + ")")
+print("New weights promoted: the tuned model now uses them." if r.get("promoted") else "Weights not promoted.")
+PY

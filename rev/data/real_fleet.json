@@ -1,0 +1,9306 @@
+[
+ {
+  "id": "real-fleet-00",
+  "board_a": {
+   "rev": "A",
+   "name": "MIPI2HDMI",
+   "w": 37.4,
+   "d": 37.39,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.7,
+     "y": 3.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 33.7,
+     "y": 3.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.7,
+     "y": 34.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 33.7,
+     "y": 33.7,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "hdmi",
+     "side": "back",
+     "pos": 18.7,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 40.4,
+    "d": 40.39,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.2,
+     "y": 5.2,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 35.2,
+     "y": 5.2,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 5.2,
+     "y": 36.2,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 35.2,
+     "y": 35.2,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 20.2,
+     "z": 9.4,
+     "w": 16.2,
+     "h": 6.8
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "MIPI2HDMI",
+   "w": 37.4,
+   "d": 37.39,
+   "t": 1.6,
+   "max_component_h": 9.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.7,
+     "y": 3.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 33.7,
+     "y": 3.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.7,
+     "y": 34.7,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 33.7,
+     "y": 33.7,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "hdmi",
+     "side": "back",
+     "pos": 18.7,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 9.5 mm (was 6.0)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "MIPI2HDMI",
+  "code": "RB-01",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "frc971/electrical",
+   "path": "circuit-boards/Orin-NX-PCBs/MIPI2HDMI/MIPI2HDMI.kicad_pcb",
+   "url": "https://github.com/frc971/electrical/blob/ad9ef775da1c7e4b3d4b25665bf313481ac89ab6/circuit-boards/Orin-NX-PCBs/MIPI2HDMI/MIPI2HDMI.kicad_pcb",
+   "license": "Apache-2.0",
+   "license_name": "Apache License 2.0"
+  }
+ },
+ {
+  "id": "real-fleet-01",
+  "board_a": {
+   "rev": "A",
+   "name": "Taranium-USB-Hub",
+   "w": 61.2,
+   "d": 32.4,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 19.2,
+     "y": 3.2,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 43.2,
+     "y": 3.2,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 30.6,
+     "y": 27.4,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J3",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 11.8,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 30.6,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J5",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 26.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 26.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 11.8,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 64.2,
+    "d": 35.4,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 20.7,
+     "y": 4.7,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 44.7,
+     "y": 4.7,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 32.1,
+     "y": 28.9,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J3",
+     "side": "left",
+     "pos": 13.3,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J1",
+     "side": "front",
+     "pos": 32.1,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J5",
+     "side": "right",
+     "pos": 27.9,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J4",
+     "side": "left",
+     "pos": 27.9,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J2",
+     "side": "right",
+     "pos": 13.3,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "Taranium-USB-Hub",
+   "w": 61.2,
+   "d": 32.4,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 19.2,
+     "y": 3.2,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 43.2,
+     "y": 3.2,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 30.6,
+     "y": 27.4,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J3",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 11.8,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 30.6,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J5",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 26.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 26.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 11.8,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 13.5 mm (was 6.0)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "Taranium-USB-Hub",
+  "code": "RB-02",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "Taran-the-Idiot/Taranium-USB-Hub",
+   "path": "PCB/Untitled.kicad_pcb",
+   "url": "https://github.com/Taran-the-Idiot/Taranium-USB-Hub/blob/62a0660769a1be459cef60c125fa475d58c69a2f/PCB/Untitled.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-02",
+  "board_a": {
+   "rev": "A",
+   "name": "Serenity-UAV",
+   "w": 65.0,
+   "d": 52.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 61.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.5,
+     "y": 48.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 61.5,
+     "y": 48.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "SD1",
+     "type": "sd",
+     "side": "back",
+     "pos": 38.15,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    },
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 44.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 68.0,
+    "d": 55.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 63.0,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 5.0,
+     "y": 50.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 63.0,
+     "y": 50.0,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "SD1",
+     "side": "back",
+     "pos": 39.65,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    },
+    {
+     "connector": "J1",
+     "side": "right",
+     "pos": 45.5,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "Serenity-UAV",
+   "w": 65.0,
+   "d": 52.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.0,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 61.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.5,
+     "y": 48.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 61.5,
+     "y": 48.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "SD1",
+     "type": "sd",
+     "side": "back",
+     "pos": 38.15,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    },
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 44.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H1 moved 2.5 mm toward right",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "Serenity-UAV",
+  "code": "RB-03",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "Stab-Rabbit-coding/Serenity-UAV",
+   "path": "archives/stale-20260601/files-revF/CM4-CARRIER-1.kicad_pcb",
+   "url": "https://github.com/Stab-Rabbit-coding/Serenity-UAV/blob/6f8898a8e549917bfbcda7eec3b5b5bbe14c7f4f/archives/stale-20260601/files-revF/CM4-CARRIER-1.kicad_pcb",
+   "license": "CERN-OHL-W-2.0",
+   "license_name": "CERN Open Hardware Licence Version 2 - Weakly Reciprocal"
+  }
+ },
+ {
+  "id": "real-fleet-03",
+  "board_a": {
+   "rev": "A",
+   "name": "MusicBrain",
+   "w": 100.0,
+   "d": 70.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.2,
+     "y": 5.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 54.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 96.0,
+     "y": 5.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 51.5,
+     "y": 66.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 49.25,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 18.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J10",
+     "type": "rj45",
+     "side": "front",
+     "pos": 29.45,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J11",
+     "type": "rj45",
+     "side": "front",
+     "pos": 69.44,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 103.0,
+    "d": 73.0,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.7,
+     "y": 7.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 55.5,
+     "y": 5.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 97.5,
+     "y": 7.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 53.0,
+     "y": 67.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 50.75,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    },
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 19.5,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J10",
+     "side": "front",
+     "pos": 30.95,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "J11",
+     "side": "front",
+     "pos": 70.94,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "MusicBrain",
+   "w": 100.0,
+   "d": 79.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.2,
+     "y": 5.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 54.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 96.0,
+     "y": 5.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 51.5,
+     "y": 75.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 49.25,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 18.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J10",
+     "type": "rj45",
+     "side": "front",
+     "pos": 29.45,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J11",
+     "type": "rj45",
+     "side": "front",
+     "pos": 69.44,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board deepened 9.0 mm at the back edge (H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "MusicBrain",
+  "code": "RB-04",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "MarkWestbroek/MusicBrain",
+   "path": "hardware/schematics/gswitch-brain/gswitch-brain.kicad_pcb",
+   "url": "https://github.com/MarkWestbroek/MusicBrain/blob/0e03d985d92697686c4c59adfc30c17c39135f3b/hardware/schematics/gswitch-brain/gswitch-brain.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-04",
+  "board_a": {
+   "rev": "A",
+   "name": "PCBench",
+   "w": 85.85,
+   "d": 25.4,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.18,
+     "y": 2.67,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 82.68,
+     "y": 2.79,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 9.85,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "barrel",
+     "side": "left",
+     "pos": 20.15,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 88.85,
+    "d": 28.4,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.68,
+     "y": 4.17,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 84.18,
+     "y": 4.29,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 11.35,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J3",
+     "side": "left",
+     "pos": 21.65,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "PCBench",
+   "w": 85.85,
+   "d": 31.4,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.18,
+     "y": 2.67,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 82.68,
+     "y": 2.79,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 9.85,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "barrel",
+     "side": "left",
+     "pos": 26.15,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Board deepened 6.0 mm at the back edge",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "PCBench",
+  "code": "RB-05",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "PCBench/PCBench",
+   "path": "PCBs/kitspace_BalthazarPSU3/processed.kicad_pcb",
+   "url": "https://github.com/PCBench/PCBench/blob/dec3be75cbdef74787625f9043c7391cd473bb64/PCBs/kitspace_BalthazarPSU3/processed.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-05",
+  "board_a": {
+   "rev": "A",
+   "name": "sstv-backpack",
+   "w": 38.1,
+   "d": 63.5,
+   "t": 1.6,
+   "max_component_h": 9.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 35.56,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 60.96,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 35.56,
+     "y": 60.96,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 28.38,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 41.1,
+    "d": 66.5,
+    "h": 19.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.04,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 37.06,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 4.04,
+     "y": 62.46,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 37.06,
+     "y": 62.46,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J4",
+     "side": "right",
+     "pos": 29.88,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "sstv-backpack",
+   "w": 38.1,
+   "d": 75.0,
+   "t": 1.6,
+   "max_component_h": 9.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 35.56,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 72.46,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 35.56,
+     "y": 72.46,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 28.38,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Board deepened 11.5 mm at the back edge (H3, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "sstv-backpack",
+  "code": "RB-06",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "vaugerbird/sstv-backpack",
+   "path": "hardware/v1.2/sstv-backpack.kicad_pcb",
+   "url": "https://github.com/vaugerbird/sstv-backpack/blob/f6d5b933e92508938b486917cf78993d68b81769/hardware/v1.2/sstv-backpack.kicad_pcb",
+   "license": "GPL-2.0",
+   "license_name": "GNU General Public License v2.0"
+  }
+ },
+ {
+  "id": "real-fleet-06",
+  "board_a": {
+   "rev": "A",
+   "name": "CSI-2-FourLane-HDMI-Extender",
+   "w": 39.0,
+   "d": 39.0,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.5,
+     "y": 2.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 36.5,
+     "y": 2.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.5,
+     "y": 36.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 36.5,
+     "y": 36.5,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "hdmi",
+     "side": "left",
+     "pos": 19.5,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 42.0,
+    "d": 42.0,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.0,
+     "y": 4.0,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 38.0,
+     "y": 4.0,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 4.0,
+     "y": 38.0,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 38.0,
+     "y": 38.0,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 21.0,
+     "z": 9.4,
+     "w": 16.2,
+     "h": 6.8
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "CSI-2-FourLane-HDMI-Extender",
+   "w": 39.0,
+   "d": 39.0,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.5,
+     "y": 2.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 36.5,
+     "y": 2.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.5,
+     "y": 36.5,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 35.0,
+     "y": 36.5,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "hdmi",
+     "side": "left",
+     "pos": 19.5,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H4 moved 1.5 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "CSI-2-FourLane-HDMI-Extender",
+  "code": "RB-07",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "will127534/CSI-2-FourLane-HDMI-Extender",
+   "path": "Transmitter/Transmitter.kicad_pcb",
+   "url": "https://github.com/will127534/CSI-2-FourLane-HDMI-Extender/blob/ac7a5a2801ee777fe55c23ffbe19e6ab4bafbea0/Transmitter/Transmitter.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-07",
+  "board_a": {
+   "rev": "A",
+   "name": "usb-splitter-basic-bmec-2025",
+   "w": 28.0,
+   "d": 55.5,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 22.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 4.5,
+     "y": 48.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 7.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 45.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J4",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 25.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 35.57,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 31.0,
+    "d": 58.5,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.0,
+     "y": 24.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 6.0,
+     "y": 50.0,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "right",
+     "pos": 9.0,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J3",
+     "side": "right",
+     "pos": 47.0,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J4",
+     "side": "right",
+     "pos": 27.0,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 37.07,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "usb-splitter-basic-bmec-2025",
+   "w": 28.0,
+   "d": 55.5,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 22.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 4.5,
+     "y": 52.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "right",
+     "pos": 7.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 45.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J4",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 25.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 35.57,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H2 moved 4.0 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "usb-splitter-basic-bmec-2025",
+  "code": "RB-08",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "peteEH/usb-splitter-basic-bmec-2025",
+   "path": "USBSplitter.kicad_pcb",
+   "url": "https://github.com/peteEH/usb-splitter-basic-bmec-2025/blob/d7386ccaa12f9acb74f44e54a312ed2da88cdb95/USBSplitter.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-08",
+  "board_a": {
+   "rev": "A",
+   "name": "epdf-hardware",
+   "w": 55.0,
+   "d": 84.0,
+   "t": 1.2,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 52.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 3.0,
+     "y": 81.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 52.0,
+     "y": 81.0,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "front",
+     "pos": 24.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "sd",
+     "side": "front",
+     "pos": 40.03,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 58.0,
+    "d": 87.0,
+    "h": 15.2
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 53.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 4.5,
+     "y": 82.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 53.5,
+     "y": 82.5,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "front",
+     "pos": 25.5,
+     "z": 7.83,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J3",
+     "side": "front",
+     "pos": 41.53,
+     "z": 7.2,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "epdf-hardware",
+   "w": 55.0,
+   "d": 84.0,
+   "t": 1.2,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 52.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 3.0,
+     "y": 81.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 52.0,
+     "y": 81.0,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J3",
+     "type": "sd",
+     "side": "front",
+     "pos": 40.03,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "Removed J1 (usb_c)",
+  "gold_calls": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J1"
+    }
+   }
+  ],
+  "kinds": [
+   "remove_connector"
+  ],
+  "new_type_added": false,
+  "name": "epdf-hardware",
+  "code": "RB-09",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "ggkk0818/epdf-hardware",
+   "path": "esp32-board-v1.1/routing/board_prerouting.kicad_pcb",
+   "url": "https://github.com/ggkk0818/epdf-hardware/blob/a8214165ec67c2ff9c32ab4f4caac720d9796014/esp32-board-v1.1/routing/board_prerouting.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-09",
+  "board_a": {
+   "rev": "A",
+   "name": "rioctrl-hw / rj45-screw-terminals",
+   "w": 34.0,
+   "d": 37.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 4.0,
+     "y": 33.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 18.0,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 37.0,
+    "d": 40.0,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.5,
+     "y": 5.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 5.5,
+     "y": 34.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 19.5,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "rioctrl-hw / rj45-screw-terminals",
+   "w": 34.0,
+   "d": 45.5,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 4.0,
+     "y": 41.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 18.0,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board deepened 8.5 mm at the back edge (H2 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "rioctrl-hw / rj45-screw-terminals",
+  "code": "RB-10",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "festlv/rioctrl-hw",
+   "path": "breakouts/rj45-screw-terminals/rj45-screw-terminals.kicad_pcb",
+   "url": "https://github.com/festlv/rioctrl-hw/blob/50414c599eb4ff72c13b71ffc049557b74e9cd7c/breakouts/rj45-screw-terminals/rj45-screw-terminals.kicad_pcb",
+   "license": "CERN-OHL-S-2.0",
+   "license_name": "CERN Open Hardware Licence Version 2 - Strongly Reciprocal"
+  }
+ },
+ {
+  "id": "real-fleet-10",
+  "board_a": {
+   "rev": "A",
+   "name": "KICAD_ENGINE",
+   "w": 60.0,
+   "d": 95.0,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 4.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 56.0,
+     "y": 4.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 4.0,
+     "y": 50.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 56.0,
+     "y": 60.0,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "front",
+     "pos": 14.75,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "front",
+     "pos": 39.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 63.0,
+    "d": 98.0,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.5,
+     "y": 5.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 57.5,
+     "y": 5.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 5.5,
+     "y": 51.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 57.5,
+     "y": 61.5,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "front",
+     "pos": 16.25,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    },
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 40.5,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "KICAD_ENGINE",
+   "w": 60.0,
+   "d": 95.0,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 4.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 56.0,
+     "y": 8.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 4.0,
+     "y": 50.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 56.0,
+     "y": 60.0,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "front",
+     "pos": 14.75,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "front",
+     "pos": 39.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H2 moved 4.5 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "KICAD_ENGINE",
+  "code": "RB-11",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "swayerloren/KICAD_ENGINE",
+   "path": "04_KICAD_PROJECTS/active/ESP32_CSI_WIFI_NODE/kicad/ESP32_CSI_WIFI_NODE.kicad_pcb",
+   "url": "https://github.com/swayerloren/KICAD_ENGINE/blob/a88d246404ffa9afce61185779d6a499885cf4cc/04_KICAD_PROJECTS/active/ESP32_CSI_WIFI_NODE/kicad/ESP32_CSI_WIFI_NODE.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-11",
+  "board_a": {
+   "rev": "A",
+   "name": "Kikakuka",
+   "w": 50.0,
+   "d": 50.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 45.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 5.0,
+     "y": 45.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 36.26,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 14.93,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 31.28,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 53.0,
+    "d": 53.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 46.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 6.5,
+     "y": 46.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 37.76,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J3",
+     "side": "back",
+     "pos": 16.43,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J4",
+     "side": "left",
+     "pos": 32.78,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "Kikakuka",
+   "w": 50.0,
+   "d": 50.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 45.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 5.0,
+     "y": 45.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 36.26,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 14.93,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 35.28,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "J4 (usb_c) moved 4.0 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "Kikakuka",
+  "code": "RB-12",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "buganini/Kikakuka",
+   "path": "samples/gerber/gerber.kicad_pcb",
+   "url": "https://github.com/buganini/Kikakuka/blob/c2818f63dc4734fa931400175c06b7e1ce7c074d/samples/gerber/gerber.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-12",
+  "board_a": {
+   "rev": "A",
+   "name": "turbocase",
+   "w": 73.58,
+   "d": 34.0,
+   "t": 1.59,
+   "max_component_h": 8.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.12,
+     "y": 3.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 69.7,
+     "y": 3.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 4.12,
+     "y": 29.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 69.7,
+     "y": 29.88,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "hdmi",
+     "side": "left",
+     "pos": 16.08,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    },
+    {
+     "id": "J1",
+     "type": "hdmi",
+     "side": "right",
+     "pos": 16.08,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 76.58,
+    "d": 37.0,
+    "h": 17.59
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.62,
+     "y": 5.38,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 71.2,
+     "y": 5.38,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 5.62,
+     "y": 31.38,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 71.2,
+     "y": 31.38,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 17.58,
+     "z": 9.39,
+     "w": 16.2,
+     "h": 6.8
+    },
+    {
+     "connector": "J1",
+     "side": "right",
+     "pos": 17.58,
+     "z": 9.39,
+     "w": 16.2,
+     "h": 6.8
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "turbocase",
+   "w": 73.58,
+   "d": 41.0,
+   "t": 1.59,
+   "max_component_h": 8.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.12,
+     "y": 3.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 69.7,
+     "y": 3.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 4.12,
+     "y": 36.88,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 69.7,
+     "y": 36.88,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "hdmi",
+     "side": "left",
+     "pos": 16.08,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    },
+    {
+     "id": "J1",
+     "type": "hdmi",
+     "side": "right",
+     "pos": 16.08,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "change_summary": "Board deepened 7.0 mm at the back edge (H3, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "turbocase",
+  "code": "RB-13",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "bendikrb/turbocase",
+   "path": "test-boards/demo.kicad_pcb",
+   "url": "https://github.com/bendikrb/turbocase/blob/48b9a324eafb998fdaf2def483ca1bc594382817/test-boards/demo.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-13",
+  "board_a": {
+   "rev": "A",
+   "name": "experiment_microoctopus",
+   "w": 100.0,
+   "d": 160.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.0,
+     "y": 6.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 94.0,
+     "y": 6.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 6.0,
+     "y": 154.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 94.0,
+     "y": 154.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J901",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 50.61,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 16.89,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J5",
+     "type": "usb_a",
+     "side": "back",
+     "pos": 77.0,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 103.0,
+    "d": 163.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 7.5,
+     "y": 7.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 95.5,
+     "y": 7.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 7.5,
+     "y": 155.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 95.5,
+     "y": 155.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J901",
+     "side": "back",
+     "pos": 52.11,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 18.39,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J5",
+     "side": "back",
+     "pos": 78.5,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "experiment_microoctopus",
+   "w": 100.0,
+   "d": 160.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.0,
+     "y": 6.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 94.0,
+     "y": 6.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 6.0,
+     "y": 154.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 92.5,
+     "y": 154.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J901",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 50.61,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 16.89,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J5",
+     "type": "usb_a",
+     "side": "back",
+     "pos": 77.0,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H4 moved 1.5 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "experiment_microoctopus",
+  "code": "RB-14",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "hmaerki/experiment_microoctopus",
+   "path": "prototypes/prototype_usb_lowspeed/pcb_kicad/pcb_kicad.kicad_pcb",
+   "url": "https://github.com/hmaerki/experiment_microoctopus/blob/9c91011b3aafd1050dd2ff427cb3d277b3bb0cb9/prototypes/prototype_usb_lowspeed/pcb_kicad/pcb_kicad.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-14",
+  "board_a": {
+   "rev": "A",
+   "name": "data-manager",
+   "w": 74.0,
+   "d": 38.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.0,
+     "y": 10.0,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 71.0,
+     "y": 10.0,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 6.0,
+     "y": 35.0,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 71.0,
+     "y": 35.0,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "rj45",
+     "side": "front",
+     "pos": 60.5,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J1",
+     "type": "sd",
+     "side": "right",
+     "pos": 24.98,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 77.0,
+    "d": 41.0,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 7.5,
+     "y": 11.5,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H2",
+     "x": 72.5,
+     "y": 11.5,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H3",
+     "x": 7.5,
+     "y": 36.5,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H4",
+     "x": 72.5,
+     "y": 36.5,
+     "dia": 5.5,
+     "bore": 2.5
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J5",
+     "side": "front",
+     "pos": 62.0,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "J1",
+     "side": "right",
+     "pos": 26.48,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "data-manager",
+   "w": 74.0,
+   "d": 38.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.0,
+     "y": 11.5,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 71.0,
+     "y": 10.0,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 6.0,
+     "y": 35.0,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 71.0,
+     "y": 35.0,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "rj45",
+     "side": "front",
+     "pos": 60.5,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J1",
+     "type": "sd",
+     "side": "right",
+     "pos": 24.98,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H1 moved 1.5 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "data-manager",
+  "code": "RB-15",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "LibreSolar/data-manager",
+   "path": "kicad/data-manager.kicad_pcb",
+   "url": "https://github.com/LibreSolar/data-manager/blob/df43f33e1b91cd8e66459ae533b369a796ce8d1c/kicad/data-manager.kicad_pcb",
+   "license": "CC-BY-SA-4.0",
+   "license_name": "Creative Commons Attribution Share Alike 4.0 International"
+  }
+ },
+ {
+  "id": "real-fleet-15",
+  "board_a": {
+   "rev": "A",
+   "name": "hw-micro3d",
+   "w": 80.0,
+   "d": 41.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 40.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 40.0,
+     "y": 18.8,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "rj45",
+     "side": "right",
+     "pos": 30.1,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J3",
+     "type": "rj45",
+     "side": "left",
+     "pos": 30.1,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 83.0,
+    "d": 44.0,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 41.5,
+     "y": 5.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 41.5,
+     "y": 20.3,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J6",
+     "side": "right",
+     "pos": 31.6,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "J3",
+     "side": "left",
+     "pos": 31.6,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "hw-micro3d",
+   "w": 80.0,
+   "d": 41.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 40.0,
+     "y": 4.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 40.0,
+     "y": 18.8,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "rj45",
+     "side": "right",
+     "pos": 30.1,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J3",
+     "type": "rj45",
+     "side": "left",
+     "pos": 16.6,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "J3 (rj45) moved 13.5 mm toward front",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.3
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "hw-micro3d",
+  "code": "RB-16",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "aw/hw-micro3d",
+   "path": "rj45-3dprinter.kicad_pcb",
+   "url": "https://github.com/aw/hw-micro3d/blob/6528c547a23083ef3b0bee913867493332d09dc6/rj45-3dprinter.kicad_pcb",
+   "license": "CC-BY-SA-4.0",
+   "license_name": "Creative Commons Attribution Share Alike 4.0 International"
+  }
+ },
+ {
+  "id": "real-fleet-16",
+  "board_a": {
+   "rev": "A",
+   "name": "ESP32_Plotter_Controller / ESP32_Plotter",
+   "w": 99.06,
+   "d": 55.37,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.81,
+     "y": 3.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 64.77,
+     "y": 3.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.81,
+     "y": 51.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 64.77,
+     "y": 51.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J17",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 13.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "left",
+     "pos": 24.59,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 102.06,
+    "d": 58.37,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.31,
+     "y": 5.25,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 66.27,
+     "y": 5.25,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 5.31,
+     "y": 53.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 66.27,
+     "y": 53.0,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J17",
+     "side": "left",
+     "pos": 14.9,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 26.09,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "ESP32_Plotter_Controller / ESP32_Plotter",
+   "w": 99.06,
+   "d": 55.37,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.81,
+     "y": 3.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 64.77,
+     "y": 3.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.81,
+     "y": 51.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 64.77,
+     "y": 48.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J17",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 13.4,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "left",
+     "pos": 24.59,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H4 moved 3.5 mm toward front",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "ESP32_Plotter_Controller / ESP32_Plotter",
+  "code": "RB-17",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "MarkJB/ESP32_Plotter_Controller",
+   "path": "ESP32_Plotter_Controller_revB1_unrouted.kicad_pcb",
+   "url": "https://github.com/MarkJB/ESP32_Plotter_Controller/blob/1474dee465301101e39c828c674488937ef85443/ESP32_Plotter_Controller_revB1_unrouted.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-17",
+  "board_a": {
+   "rev": "A",
+   "name": "spork-8",
+   "w": 99.57,
+   "d": 59.94,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.06,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 16.76,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 80.26,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 95.5,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H5",
+     "x": 16.76,
+     "y": 38.61,
+     "dia": 2.2
+    },
+    {
+     "id": "H6",
+     "x": 80.26,
+     "y": 38.61,
+     "dia": 2.2
+    },
+    {
+     "id": "H7",
+     "x": 4.06,
+     "y": 55.88,
+     "dia": 2.2
+    },
+    {
+     "id": "H8",
+     "x": 95.5,
+     "y": 55.88,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 32.26,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 102.57,
+    "d": 62.94,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.56,
+     "y": 5.56,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 18.26,
+     "y": 5.56,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 81.76,
+     "y": 5.56,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 97.0,
+     "y": 5.56,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H5",
+     "x": 18.26,
+     "y": 40.11,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H6",
+     "x": 81.76,
+     "y": 40.11,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H7",
+     "x": 5.56,
+     "y": 57.38,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H8",
+     "x": 97.0,
+     "y": 57.38,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J4",
+     "side": "left",
+     "pos": 33.76,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "spork-8",
+   "w": 99.57,
+   "d": 59.94,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.06,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 16.76,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 80.26,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 95.5,
+     "y": 4.06,
+     "dia": 2.2
+    },
+    {
+     "id": "H5",
+     "x": 16.76,
+     "y": 38.61,
+     "dia": 2.2
+    },
+    {
+     "id": "H6",
+     "x": 80.26,
+     "y": 38.61,
+     "dia": 2.2
+    },
+    {
+     "id": "H7",
+     "x": 4.06,
+     "y": 55.88,
+     "dia": 2.2
+    },
+    {
+     "id": "H8",
+     "x": 95.5,
+     "y": 55.88,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 32.26,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J5",
+     "type": "barrel",
+     "side": "front",
+     "pos": 84.5,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Added J5 (barrel) on front edge",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "spork-8",
+  "code": "RB-18",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "benanderman/spork-8",
+   "path": "Battery/Battery.kicad_pcb",
+   "url": "https://github.com/benanderman/spork-8/blob/ff948f9918886dee95fa46ac9c903dc8a5f85ad5/Battery/Battery.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-18",
+  "board_a": {
+   "rev": "A",
+   "name": "misistemita / D01",
+   "w": 58.42,
+   "d": 48.26,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.81,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 24.13,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 34.29,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 54.61,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H5",
+     "x": 3.81,
+     "y": 44.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H6",
+     "x": 13.97,
+     "y": 44.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H7",
+     "x": 24.13,
+     "y": 44.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H8",
+     "x": 34.29,
+     "y": 44.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H9",
+     "x": 44.45,
+     "y": 44.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H10",
+     "x": 54.61,
+     "y": 44.45,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 49.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J5",
+     "type": "rj45",
+     "side": "front",
+     "pos": 30.43,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J4",
+     "type": "rj45",
+     "side": "left",
+     "pos": 8.46,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 61.42,
+    "d": 51.26,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.31,
+     "y": 25.63,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H2",
+     "x": 25.63,
+     "y": 25.63,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H3",
+     "x": 35.79,
+     "y": 25.63,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H4",
+     "x": 56.11,
+     "y": 25.63,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H5",
+     "x": 5.31,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H6",
+     "x": 15.47,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H7",
+     "x": 25.63,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H8",
+     "x": 35.79,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H9",
+     "x": 45.95,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H10",
+     "x": 56.11,
+     "y": 45.95,
+     "dia": 5.5,
+     "bore": 2.5
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J6",
+     "side": "front",
+     "pos": 51.0,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J5",
+     "side": "front",
+     "pos": 31.93,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "J4",
+     "side": "left",
+     "pos": 9.96,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "misistemita / D01",
+   "w": 58.42,
+   "d": 55.26,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.81,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 24.13,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 34.29,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 54.61,
+     "y": 24.13,
+     "dia": 3.0
+    },
+    {
+     "id": "H5",
+     "x": 3.81,
+     "y": 51.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H6",
+     "x": 13.97,
+     "y": 51.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H7",
+     "x": 24.13,
+     "y": 51.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H8",
+     "x": 34.29,
+     "y": 51.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H9",
+     "x": 44.45,
+     "y": 51.45,
+     "dia": 3.0
+    },
+    {
+     "id": "H10",
+     "x": 54.61,
+     "y": 51.45,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 49.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J5",
+     "type": "rj45",
+     "side": "front",
+     "pos": 30.43,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J4",
+     "type": "rj45",
+     "side": "left",
+     "pos": 8.46,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board deepened 7.0 mm at the back edge (H5, H6, H7, H8, H9, H10 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H6"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H7"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H8"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H9"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H10"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "misistemita / D01",
+  "code": "RB-19",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "galopago/misistemita",
+   "path": "d-electronics/d01/D01.kicad_pcb",
+   "url": "https://github.com/galopago/misistemita/blob/4ff8ffb8ad80d6836cf9cbfcf74dfce9c9a24ba3/d-electronics/d01/D01.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-19",
+  "board_a": {
+   "rev": "A",
+   "name": "PC-8001mk2_SD",
+   "w": 99.95,
+   "d": 95.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 77.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 95.0,
+     "y": 77.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 67.3,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 102.95,
+    "d": 98.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 96.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 78.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 96.5,
+     "y": 78.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 68.8,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "PC-8001mk2_SD",
+   "w": 99.95,
+   "d": 95.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 77.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 95.0,
+     "y": 77.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 62.8,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "J2 (sd) moved 4.5 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "PC-8001mk2_SD",
+  "code": "RB-20",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "yanataka60/PC-8001mk2_SD",
+   "path": "Kicad/PC-8001mk2_SD.kicad_pcb",
+   "url": "https://github.com/yanataka60/PC-8001mk2_SD/blob/830fd5ad62d92e4c12ded3ee95aba92e229d720c/Kicad/PC-8001mk2_SD.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-20",
+  "board_a": {
+   "rev": "A",
+   "name": "radio-adapter",
+   "w": 27.31,
+   "d": 30.48,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 19.05,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 19.05,
+     "y": 26.67,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 20.32,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 30.31,
+    "d": 33.48,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 20.55,
+     "y": 5.31,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 20.55,
+     "y": 28.17,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 21.82,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "radio-adapter",
+   "w": 27.31,
+   "d": 30.48,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 19.05,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 19.05,
+     "y": 26.67,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 20.32,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J2",
+     "type": "hdmi",
+     "side": "right",
+     "pos": 12.5,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "change_summary": "Added J2 (hdmi) on right edge",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.6
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "radio-adapter",
+  "code": "RB-21",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "open-headset-interconnect-standard/radio-adapter",
+   "path": "Icom-RJ45/Icom-RJ45.kicad_pcb",
+   "url": "https://github.com/open-headset-interconnect-standard/radio-adapter/blob/f30866026b5fd064de4708a7d6a83ad0967cecda/Icom-RJ45/Icom-RJ45.kicad_pcb",
+   "license": "CC-BY-4.0",
+   "license_name": "Creative Commons Attribution 4.0 International"
+  }
+ },
+ {
+  "id": "real-fleet-21",
+  "board_a": {
+   "rev": "A",
+   "name": "rpi-simplex-clock-hat",
+   "w": 65.0,
+   "d": 56.0,
+   "t": 1.6,
+   "max_component_h": 15.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 61.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.5,
+     "y": 29.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 61.5,
+     "y": 29.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H5",
+     "x": 3.5,
+     "y": 52.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H6",
+     "x": 61.5,
+     "y": 52.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "front",
+     "pos": 54.34,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 68.0,
+    "d": 59.0,
+    "h": 24.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 63.0,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 5.0,
+     "y": 31.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 63.0,
+     "y": 31.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H5",
+     "x": 5.0,
+     "y": 54.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H6",
+     "x": 63.0,
+     "y": 54.0,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 55.84,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "rpi-simplex-clock-hat",
+   "w": 71.5,
+   "d": 56.0,
+   "t": 1.6,
+   "max_component_h": 15.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.5,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 68.0,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.5,
+     "y": 29.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 68.0,
+     "y": 29.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H5",
+     "x": 3.5,
+     "y": 52.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H6",
+     "x": 68.0,
+     "y": 52.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "front",
+     "pos": 60.84,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Board widened 6.5 mm at the right edge (H2, H4, H6 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H6"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "rpi-simplex-clock-hat",
+  "code": "RB-22",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "hharte/rpi-simplex-clock-hat",
+   "path": "hardware/rpi-simplex-clock-hat.kicad_pcb",
+   "url": "https://github.com/hharte/rpi-simplex-clock-hat/blob/e613d20802d536f5211031a84f5c47d26ddc056d/hardware/rpi-simplex-clock-hat.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-22",
+  "board_a": {
+   "rev": "A",
+   "name": "USB-C-Connectors / USB-C-USB-2.0",
+   "w": 33.0,
+   "d": 23.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 19.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 29.0,
+     "y": 19.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 16.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 36.0,
+    "d": 26.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.5,
+     "y": 20.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 30.5,
+     "y": 20.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 18.0,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "USB-C-Connectors / USB-C-USB-2.0",
+   "w": 33.0,
+   "d": 23.0,
+   "t": 1.6,
+   "max_component_h": 11.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.0,
+     "y": 19.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 29.0,
+     "y": 19.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 16.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 11.5 mm (was 8.5)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "USB-C-Connectors / USB-C-USB-2.0",
+  "code": "RB-23",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "jenschr/USB-C-Connectors",
+   "path": "Kicad/USB-C-USB-2.0/USB-C-USB-2.0.kicad_pcb",
+   "url": "https://github.com/jenschr/USB-C-Connectors/blob/6525e55a1f1ddc363e8e2e90b5322b41c78ad0b7/Kicad/USB-C-USB-2.0/USB-C-USB-2.0.kicad_pcb",
+   "license": "Unlicense",
+   "license_name": "The Unlicense"
+  }
+ },
+ {
+  "id": "real-fleet-23",
+  "board_a": {
+   "rev": "A",
+   "name": "vgavt1593",
+   "w": 102.62,
+   "d": 66.04,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 10.92,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 50.8,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 80.77,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 10.92,
+     "y": 56.13,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 50.8,
+     "y": 56.13,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 80.77,
+     "y": 56.13,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 54.86,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 28.21,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 105.62,
+    "d": 69.04,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 12.42,
+     "y": 11.41,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 52.3,
+     "y": 11.41,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 82.27,
+     "y": 11.41,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 12.42,
+     "y": 57.63,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H5",
+     "x": 52.3,
+     "y": 57.63,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H6",
+     "x": 82.27,
+     "y": 57.63,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J5",
+     "side": "right",
+     "pos": 56.36,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 29.71,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "vgavt1593",
+   "w": 102.62,
+   "d": 66.04,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 10.92,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 50.8,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 79.27,
+     "y": 9.91,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 10.92,
+     "y": 56.13,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 50.8,
+     "y": 56.13,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 80.77,
+     "y": 56.13,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 54.86,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 28.21,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H3 moved 1.5 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "vgavt1593",
+  "code": "RB-24",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "PickledDog/vgavt1593",
+   "path": "vgavt1593.kicad_pcb",
+   "url": "https://github.com/PickledDog/vgavt1593/blob/7229fb70569ce229d0d22632b9f1ec984ca3b666/vgavt1593.kicad_pcb",
+   "license": "Apache-2.0",
+   "license_name": "Apache License 2.0"
+  }
+ },
+ {
+  "id": "real-fleet-24",
+  "board_a": {
+   "rev": "A",
+   "name": "MSX_SD",
+   "w": 79.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 74.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 83.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 74.0,
+     "y": 83.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 39.64,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 82.0,
+    "d": 103.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 75.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 84.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 75.5,
+     "y": 84.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 41.14,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "MSX_SD",
+   "w": 79.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 74.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 83.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 74.0,
+     "y": 83.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 39.64,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    },
+    {
+     "id": "J3",
+     "type": "barrel",
+     "side": "right",
+     "pos": 56.0,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Added J3 (barrel) on right edge",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "MSX_SD",
+  "code": "RB-25",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "yanataka60/MSX_SD",
+   "path": "Kicad/MSX_SD.kicad_pcb",
+   "url": "https://github.com/yanataka60/MSX_SD/blob/48d3bcd3d0f48a8268a0c125ad43f5cfe9e26ef4/Kicad/MSX_SD.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-25",
+  "board_a": {
+   "rev": "A",
+   "name": "bldc-drive",
+   "w": 98.0,
+   "d": 38.0,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 18.0,
+     "y": 18.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 68.0,
+     "y": 18.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 3.0,
+     "y": 33.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 95.0,
+     "y": 33.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "P12",
+     "type": "rj45",
+     "side": "right",
+     "pos": 20.86,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 101.0,
+    "d": 41.0,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 96.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 19.5,
+     "y": 19.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 69.5,
+     "y": 19.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H5",
+     "x": 4.5,
+     "y": 34.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H6",
+     "x": 96.5,
+     "y": 34.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "P12",
+     "side": "right",
+     "pos": 22.36,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "bldc-drive",
+   "w": 98.0,
+   "d": 41.5,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 18.0,
+     "y": 18.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 68.0,
+     "y": 18.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 3.0,
+     "y": 36.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 95.0,
+     "y": 36.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "P12",
+     "type": "rj45",
+     "side": "right",
+     "pos": 20.86,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board deepened 3.5 mm at the back edge (H5, H6 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H5"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H6"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "bldc-drive",
+  "code": "RB-26",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "pekkaroi/bldc-drive",
+   "path": "hardware/bldc_control_v3/bldc_control_ver3.kicad_pcb",
+   "url": "https://github.com/pekkaroi/bldc-drive/blob/eff75760298f019899bc0216549bbe9573c62adf/hardware/bldc_control_v3/bldc_control_ver3.kicad_pcb",
+   "license": "GPL-2.0",
+   "license_name": "GNU General Public License v2.0"
+  }
+ },
+ {
+  "id": "real-fleet-26",
+  "board_a": {
+   "rev": "A",
+   "name": "kbxIRBlaster",
+   "w": 79.38,
+   "d": 33.02,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 43.18,
+     "y": 3.17,
+     "dia": 2.5
+    },
+    {
+     "id": "H2",
+     "x": 69.85,
+     "y": 3.17,
+     "dia": 2.5
+    },
+    {
+     "id": "H3",
+     "x": 43.18,
+     "y": 29.84,
+     "dia": 2.5
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "barrel",
+     "side": "right",
+     "pos": 27.03,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 82.38,
+    "d": 36.02,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 44.68,
+     "y": 4.67,
+     "dia": 5.5,
+     "bore": 2.0
+    },
+    {
+     "hole": "H2",
+     "x": 71.35,
+     "y": 4.67,
+     "dia": 5.5,
+     "bore": 2.0
+    },
+    {
+     "hole": "H3",
+     "x": 44.68,
+     "y": 31.34,
+     "dia": 5.5,
+     "bore": 2.0
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J5",
+     "side": "right",
+     "pos": 28.53,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "kbxIRBlaster",
+   "w": 79.38,
+   "d": 38.02,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 43.18,
+     "y": 3.17,
+     "dia": 2.5
+    },
+    {
+     "id": "H2",
+     "x": 69.85,
+     "y": 3.17,
+     "dia": 2.5
+    },
+    {
+     "id": "H3",
+     "x": 43.18,
+     "y": 34.84,
+     "dia": 2.5
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J5",
+     "type": "barrel",
+     "side": "right",
+     "pos": 32.03,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Board deepened 5.0 mm at the back edge (H3 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "kbxIRBlaster",
+  "code": "RB-27",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "kbx81/kbxIRBlaster",
+   "path": "v1/kbxIrBlaster.kicad_pcb",
+   "url": "https://github.com/kbx81/kbxIRBlaster/blob/4ba094c4e9860dd7389fa3154574e8014a81445e/v1/kbxIrBlaster.kicad_pcb",
+   "license": "CC-BY-SA-4.0",
+   "license_name": "Creative Commons Attribution Share Alike 4.0 International"
+  }
+ },
+ {
+  "id": "real-fleet-27",
+  "board_a": {
+   "rev": "A",
+   "name": "USB-C-3-way-splitter",
+   "w": 29.0,
+   "d": 27.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 3.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 21.6,
+     "y": 3.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 4.5,
+     "y": 23.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 21.6,
+     "y": 23.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 13.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 32.0,
+    "d": 30.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.0,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 23.1,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.0,
+     "y": 25.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 23.1,
+     "y": 25.0,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 15.0,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "USB-C-3-way-splitter",
+   "w": 37.0,
+   "d": 27.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 3.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 29.6,
+     "y": 3.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 4.5,
+     "y": 23.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 29.6,
+     "y": 23.5,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 13.5,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Board widened 8.0 mm at the right edge (H2, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "USB-C-3-way-splitter",
+  "code": "RB-28",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "bluepylons/USB-C-3-way-splitter",
+   "path": "USB-C-3-way-splitter.kicad_pcb",
+   "url": "https://github.com/bluepylons/USB-C-3-way-splitter/blob/2cb18bef6b4e7406581b83d828d6bc4c42bfad92/USB-C-3-way-splitter.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-28",
+  "board_a": {
+   "rev": "A",
+   "name": "tko-rpi-hat",
+   "w": 65.5,
+   "d": 56.5,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.75,
+     "y": 3.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 61.75,
+     "y": 3.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.75,
+     "y": 52.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 61.75,
+     "y": 52.75,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 44.74,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 68.5,
+    "d": 59.5,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.25,
+     "y": 5.25,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 63.25,
+     "y": 5.25,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 5.25,
+     "y": 54.25,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 63.25,
+     "y": 54.25,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J4",
+     "side": "front",
+     "pos": 46.24,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "tko-rpi-hat",
+   "w": 65.5,
+   "d": 56.5,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.75,
+     "y": 3.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 61.75,
+     "y": 3.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.75,
+     "y": 52.75,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 61.75,
+     "y": 52.75,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "usb_a",
+     "side": "front",
+     "pos": 44.74,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J5",
+     "type": "hdmi",
+     "side": "left",
+     "pos": 37.0,
+     "z": 2.8,
+     "w": 15.0,
+     "h": 5.6
+    }
+   ]
+  },
+  "change_summary": "Added J5 (hdmi) on left edge",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J5",
+     "tolerance": 0.6
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "tko-rpi-hat",
+  "code": "RB-29",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "feverscreen/tko-rpi-hat",
+   "path": "tko-rpi-hat.kicad_pcb",
+   "url": "https://github.com/feverscreen/tko-rpi-hat/blob/927e5f28288607ddfe8877509744f70fd4f09eac/tko-rpi-hat.kicad_pcb",
+   "license": "GPL-3.0",
+   "license_name": "GNU General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-29",
+  "board_a": {
+   "rev": "A",
+   "name": "MZ-2000_SD / MZ2000_SD",
+   "w": 100.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 95.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 84.0,
+     "y": 95.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "right",
+     "pos": 64.76,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 103.0,
+    "d": 103.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 96.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 96.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 85.5,
+     "y": 96.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "right",
+     "pos": 66.26,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "MZ-2000_SD / MZ2000_SD",
+   "w": 100.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 12.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 95.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 84.0,
+     "y": 95.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "right",
+     "pos": 64.76,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 12.0 mm (was 8.5)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "MZ-2000_SD / MZ2000_SD",
+  "code": "RB-30",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "yanataka60/MZ-2000_SD",
+   "path": "KiCad/MZ-2000_SD/MZ2000_SD.kicad_pcb",
+   "url": "https://github.com/yanataka60/MZ-2000_SD/blob/bebf6082a69a7f97a3b96bdaa794e44cf2aa9bf7/KiCad/MZ-2000_SD/MZ2000_SD.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-30",
+  "board_a": {
+   "rev": "A",
+   "name": "uplift-iot",
+   "w": 52.07,
+   "d": 58.42,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.08,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 46.99,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.08,
+     "y": 54.61,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 46.99,
+     "y": 54.61,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "rj45",
+     "side": "front",
+     "pos": 18.42,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "back",
+     "pos": 18.42,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 55.07,
+    "d": 61.42,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.58,
+     "y": 5.31,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 48.49,
+     "y": 5.31,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.58,
+     "y": 56.11,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 48.49,
+     "y": 56.11,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 19.92,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 19.92,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "uplift-iot",
+   "w": 52.07,
+   "d": 63.42,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.08,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 46.99,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.08,
+     "y": 59.61,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 46.99,
+     "y": 59.61,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "rj45",
+     "side": "front",
+     "pos": 18.42,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "back",
+     "pos": 18.42,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board deepened 5.0 mm at the back edge (H3, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "uplift-iot",
+  "code": "RB-31",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "tlouden/uplift-iot",
+   "path": "board/uplift.kicad_pcb",
+   "url": "https://github.com/tlouden/uplift-iot/blob/86e4ef8ff5e49babd1e94b9460652079259b7fce/board/uplift.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-31",
+  "board_a": {
+   "rev": "A",
+   "name": "Shuffle-o-matic",
+   "w": 54.86,
+   "d": 66.55,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.3,
+     "y": 3.3,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 38.86,
+     "y": 3.3,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.05,
+     "y": 63.37,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 51.94,
+     "y": 63.37,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J13",
+     "type": "barrel",
+     "side": "right",
+     "pos": 6.44,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 57.86,
+    "d": 69.55,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.8,
+     "y": 4.8,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 40.36,
+     "y": 4.8,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 4.55,
+     "y": 64.87,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 53.44,
+     "y": 64.87,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J13",
+     "side": "right",
+     "pos": 7.94,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "Shuffle-o-matic",
+   "w": 60.36,
+   "d": 66.55,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.3,
+     "y": 3.3,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 38.86,
+     "y": 3.3,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.05,
+     "y": 63.37,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 57.44,
+     "y": 63.37,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J13",
+     "type": "barrel",
+     "side": "right",
+     "pos": 6.44,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Board widened 5.5 mm at the right edge (H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "Shuffle-o-matic",
+  "code": "RB-32",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "DDeGonge/Shuffle-o-matic",
+   "path": "pcb/KiCad Schematic.kicad_pcb",
+   "url": "https://github.com/DDeGonge/Shuffle-o-matic/blob/ce8290988d7865dfd5a3b47322806a18def577a1/pcb/KiCad Schematic.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-32",
+  "board_a": {
+   "rev": "A",
+   "name": "ThingPlus",
+   "w": 58.42,
+   "d": 22.86,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.5
+    },
+    {
+     "id": "H2",
+     "x": 55.88,
+     "y": 2.54,
+     "dia": 2.5
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 20.32,
+     "dia": 2.5
+    },
+    {
+     "id": "H4",
+     "x": 55.88,
+     "y": 20.32,
+     "dia": 2.5
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J3",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 11.43,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 61.42,
+    "d": 25.86,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.04,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 2.0
+    },
+    {
+     "hole": "H2",
+     "x": 57.38,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 2.0
+    },
+    {
+     "hole": "H3",
+     "x": 4.04,
+     "y": 21.82,
+     "dia": 5.5,
+     "bore": 2.0
+    },
+    {
+     "hole": "H4",
+     "x": 57.38,
+     "y": 21.82,
+     "dia": 5.5,
+     "bore": 2.0
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J3",
+     "side": "left",
+     "pos": 12.93,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "ThingPlus",
+   "w": 58.42,
+   "d": 22.86,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.5
+    },
+    {
+     "id": "H2",
+     "x": 55.88,
+     "y": 2.54,
+     "dia": 2.5
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 20.32,
+     "dia": 2.5
+    },
+    {
+     "id": "H4",
+     "x": 55.88,
+     "y": 20.32,
+     "dia": 2.5
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J3",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 14.93,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "J3 (usb_c) moved 3.5 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J3",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "ThingPlus",
+  "code": "RB-33",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "hlord2000/ThingPlus",
+   "path": "ThingPlus.kicad_pcb",
+   "url": "https://github.com/hlord2000/ThingPlus/blob/40a29c42b6ac0fcf89766c80855b9b81c0119948/ThingPlus.kicad_pcb",
+   "license": "CERN-OHL-P-2.0",
+   "license_name": "CERN Open Hardware Licence Version 2 - Permissive"
+  }
+ },
+ {
+  "id": "real-fleet-33",
+  "board_a": {
+   "rev": "A",
+   "name": "iceGDROM",
+   "w": 100.0,
+   "d": 90.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.02,
+     "y": 17.08,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 73.21,
+     "y": 17.08,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.02,
+     "y": 85.27,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 73.21,
+     "y": 85.27,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "CN6",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 54.67,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 103.0,
+    "d": 93.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.52,
+     "y": 18.58,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 74.71,
+     "y": 18.58,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.52,
+     "y": 86.77,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 74.71,
+     "y": 86.77,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "CN6",
+     "side": "left",
+     "pos": 56.17,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "iceGDROM",
+   "w": 100.0,
+   "d": 90.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.02,
+     "y": 19.08,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 73.21,
+     "y": 17.08,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.02,
+     "y": 85.27,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 73.21,
+     "y": 85.27,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "CN6",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 54.67,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H1 moved 2.0 mm toward back",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H1"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "iceGDROM",
+  "code": "RB-34",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "zeldin/iceGDROM",
+   "path": "pcb/riser/riser.kicad_pcb",
+   "url": "https://github.com/zeldin/iceGDROM/blob/80a9fa6c8f287ae26b7a5ffd3c6002794bb29ae0/pcb/riser/riser.kicad_pcb",
+   "license": "GPL-3.0",
+   "license_name": "GNU General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-34",
+  "board_a": {
+   "rev": "A",
+   "name": "TZXDuino_HFHW",
+   "w": 97.79,
+   "d": 82.55,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.3,
+     "y": 3.3,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 94.49,
+     "y": 3.3,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 3.3,
+     "y": 79.25,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 94.49,
+     "y": 79.25,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "U3",
+     "type": "sd",
+     "side": "right",
+     "pos": 33.34,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 100.79,
+    "d": 85.55,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.8,
+     "y": 4.8,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H2",
+     "x": 95.99,
+     "y": 4.8,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H3",
+     "x": 4.8,
+     "y": 80.75,
+     "dia": 5.5,
+     "bore": 2.5
+    },
+    {
+     "hole": "H4",
+     "x": 95.99,
+     "y": 80.75,
+     "dia": 5.5,
+     "bore": 2.5
+    }
+   ],
+   "openings": [
+    {
+     "connector": "U3",
+     "side": "right",
+     "pos": 34.84,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "TZXDuino_HFHW",
+   "w": 97.79,
+   "d": 82.55,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.3,
+     "y": 3.3,
+     "dia": 3.0
+    },
+    {
+     "id": "H2",
+     "x": 89.99,
+     "y": 3.3,
+     "dia": 3.0
+    },
+    {
+     "id": "H3",
+     "x": 3.3,
+     "y": 79.25,
+     "dia": 3.0
+    },
+    {
+     "id": "H4",
+     "x": 94.49,
+     "y": 79.25,
+     "dia": 3.0
+    }
+   ],
+   "connectors": [
+    {
+     "id": "U3",
+     "type": "sd",
+     "side": "right",
+     "pos": 33.34,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H2 moved 4.5 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "TZXDuino_HFHW",
+  "code": "RB-35",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "maltsevda/TZXDuino_HFHW",
+   "path": "TZXDuino.kicad_pcb",
+   "url": "https://github.com/maltsevda/TZXDuino_HFHW/blob/3b73b5bd0e21a1c76922b123d644d73d07cbe134/TZXDuino.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-35",
+  "board_a": {
+   "rev": "A",
+   "name": "ForgeDriveHW",
+   "w": 47.2,
+   "d": 24.84,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.32,
+     "y": 3.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 44.09,
+     "y": 3.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.32,
+     "y": 19.89,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 44.1,
+     "y": 19.89,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "RJ1",
+     "type": "rj45",
+     "side": "back",
+     "pos": 14.52,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "RJ2",
+     "type": "rj45",
+     "side": "back",
+     "pos": 32.86,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 50.2,
+    "d": 27.84,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.82,
+     "y": 4.82,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 45.59,
+     "y": 4.82,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 4.82,
+     "y": 21.39,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 45.6,
+     "y": 21.39,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "RJ1",
+     "side": "back",
+     "pos": 16.02,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    },
+    {
+     "connector": "RJ2",
+     "side": "back",
+     "pos": 34.36,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "ForgeDriveHW",
+   "w": 47.2,
+   "d": 24.84,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.32,
+     "y": 3.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 44.09,
+     "y": 3.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.32,
+     "y": 19.89,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 44.1,
+     "y": 19.89,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "RJ1",
+     "type": "rj45",
+     "side": "back",
+     "pos": 14.52,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "RJ2",
+     "type": "rj45",
+     "side": "back",
+     "pos": 32.86,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    },
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "right",
+     "pos": 10.0,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Added J1 (barrel) on right edge",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "ForgeDriveHW",
+  "code": "RB-36",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "Omar-Magdy0/ForgeDriveHW",
+   "path": "ForgeX/RJ45CANOpenDaisyChain_G0S2/RJ45CANOpenDaisyChain_G0S2.kicad_pcb",
+   "url": "https://github.com/Omar-Magdy0/ForgeDriveHW/blob/6234c3efd9eabfbdb7944d3a28219edfe8de5532/ForgeX/RJ45CANOpenDaisyChain_G0S2/RJ45CANOpenDaisyChain_G0S2.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-36",
+  "board_a": {
+   "rev": "A",
+   "name": "TicTacToe-Bot",
+   "w": 54.9,
+   "d": 54.5,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.65,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 51.4,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.4,
+     "y": 51.25,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 51.7,
+     "y": 51.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J13",
+     "type": "barrel",
+     "side": "front",
+     "pos": 43.95,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 57.9,
+    "d": 57.5,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.15,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 52.9,
+     "y": 5.0,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 4.9,
+     "y": 52.75,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 53.2,
+     "y": 53.0,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J13",
+     "side": "front",
+     "pos": 45.45,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "TicTacToe-Bot",
+   "w": 54.9,
+   "d": 54.5,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.65,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 51.4,
+     "y": 3.5,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.4,
+     "y": 51.25,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 51.7,
+     "y": 51.5,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J13",
+     "type": "barrel",
+     "side": "front",
+     "pos": 39.95,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "J13 (barrel) moved 4.0 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J13",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "TicTacToe-Bot",
+  "code": "RB-37",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "DDeGonge/TicTacToe-Bot",
+   "path": "pcb_v1/KiCad Schematic.kicad_pcb",
+   "url": "https://github.com/DDeGonge/TicTacToe-Bot/blob/934df7b53aa6237fc7666327d36a6b3c6c8602d9/pcb_v1/KiCad Schematic.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-37",
+  "board_a": {
+   "rev": "A",
+   "name": "unified-usb-pcb",
+   "w": 30.0,
+   "d": 34.0,
+   "t": 1.0,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 27.0,
+     "y": 3.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.0,
+     "y": 31.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 27.0,
+     "y": 31.0,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 15.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 33.0,
+    "d": 37.0,
+    "h": 15.0
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H2",
+     "x": 28.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H3",
+     "x": 4.5,
+     "y": 32.5,
+     "dia": 5.5,
+     "bore": 2.2
+    },
+    {
+     "hole": "H4",
+     "x": 28.5,
+     "y": 32.5,
+     "dia": 5.5,
+     "bore": 2.2
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "back",
+     "pos": 16.5,
+     "z": 7.63,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "unified-usb-pcb",
+   "w": 30.0,
+   "d": 34.0,
+   "t": 1.0,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H2",
+     "x": 27.0,
+     "y": 3.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H3",
+     "x": 3.0,
+     "y": 31.0,
+     "dia": 2.7
+    },
+    {
+     "id": "H4",
+     "x": 27.0,
+     "y": 31.0,
+     "dia": 2.7
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 15.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "right",
+     "pos": 10.0,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Added J2 (barrel) on right edge",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.8
+    }
+   }
+  ],
+  "kinds": [
+   "add_connector"
+  ],
+  "new_type_added": true,
+  "name": "unified-usb-pcb",
+  "code": "RB-38",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "ebastler/unified-usb-pcb",
+   "path": "unified-usb-pcb_simple/unified-usb-pcb_simple.kicad_pcb",
+   "url": "https://github.com/ebastler/unified-usb-pcb/blob/75f7fb93c73e79d54d742930593b9cf2b6bacec9/unified-usb-pcb_simple/unified-usb-pcb_simple.kicad_pcb",
+   "license": "BSD-2-Clause",
+   "license_name": "BSD 2-Clause \"Simplified\" License"
+  }
+ },
+ {
+  "id": "real-fleet-38",
+  "board_a": {
+   "rev": "A",
+   "name": "iMacSTer",
+   "w": 56.5,
+   "d": 57.5,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 34.5,
+     "y": 4.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 52.0,
+     "y": 37.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 4.5,
+     "y": 53.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 41.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 15.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 59.5,
+    "d": 60.5,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.0,
+     "y": 6.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 36.0,
+     "y": 6.0,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 53.5,
+     "y": 38.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 6.0,
+     "y": 54.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 43.0,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    },
+    {
+     "connector": "J2",
+     "side": "left",
+     "pos": 17.0,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "iMacSTer",
+   "w": 56.5,
+   "d": 62.5,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 34.5,
+     "y": 4.5,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 52.0,
+     "y": 37.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 4.5,
+     "y": 58.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 41.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    },
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "left",
+     "pos": 15.5,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "Board deepened 5.0 mm at the back edge (H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "iMacSTer",
+  "code": "RB-39",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "wickerwaka/iMacSTer",
+   "path": "schematics/USBHub/USBHub.kicad_pcb",
+   "url": "https://github.com/wickerwaka/iMacSTer/blob/74c77effc60d26cc1569eac973f0d5d52846b45a/schematics/USBHub/USBHub.kicad_pcb",
+   "license": "LGPL-3.0",
+   "license_name": "GNU Lesser General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-39",
+  "board_a": {
+   "rev": "A",
+   "name": "PC-6001mk2_SD",
+   "w": 79.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 74.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 83.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 74.0,
+     "y": 83.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 57.14,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 82.0,
+    "d": 103.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 75.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 84.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 75.5,
+     "y": 84.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "front",
+     "pos": 58.64,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "PC-6001mk2_SD",
+   "w": 79.0,
+   "d": 111.5,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 74.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 83.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 74.0,
+     "y": 83.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "sd",
+     "side": "front",
+     "pos": 57.14,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "Board deepened 11.5 mm at the back edge",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "PC-6001mk2_SD",
+  "code": "RB-40",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "yanataka60/PC-6001mk2_SD",
+   "path": "Kicad/PC-6001mk2_SD.kicad_pcb",
+   "url": "https://github.com/yanataka60/PC-6001mk2_SD/blob/44c561821bbe42e9ceb970ff6b11b66c70e59bb6/Kicad/PC-6001mk2_SD.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-40",
+  "board_a": {
+   "rev": "A",
+   "name": "DuotrigesimalWS2811",
+   "w": 38.05,
+   "d": 38.13,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.3,
+     "y": 6.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 31.7,
+     "y": 6.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 6.3,
+     "y": 31.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 31.7,
+     "y": 31.75,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "rj45",
+     "side": "front",
+     "pos": 19.0,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 41.05,
+    "d": 41.13,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 7.8,
+     "y": 7.82,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 33.2,
+     "y": 7.82,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 7.8,
+     "y": 33.25,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 33.2,
+     "y": 33.25,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J6",
+     "side": "front",
+     "pos": 20.5,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "DuotrigesimalWS2811",
+   "w": 38.05,
+   "d": 38.13,
+   "t": 1.6,
+   "max_component_h": 20.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 6.3,
+     "y": 6.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 31.7,
+     "y": 6.32,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 6.3,
+     "y": 31.75,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 31.7,
+     "y": 31.75,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J6",
+     "type": "rj45",
+     "side": "front",
+     "pos": 19.0,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 20.5 mm (was 13.5)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "DuotrigesimalWS2811",
+  "code": "RB-41",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "brianamos1/DuotrigesimalWS2811",
+   "path": "Splitter-0.3/splitter.kicad_pcb",
+   "url": "https://github.com/brianamos1/DuotrigesimalWS2811/blob/92477184da7376b69c2ded77bd5e0174d5e1d311/Splitter-0.3/splitter.kicad_pcb",
+   "license": "GPL-3.0",
+   "license_name": "GNU General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-41",
+  "board_a": {
+   "rev": "A",
+   "name": "SkySweep32",
+   "w": 120.0,
+   "d": 80.0,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 115.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 75.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 115.0,
+     "y": 75.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 63.75,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 123.0,
+    "d": 83.0,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 116.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 76.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 116.5,
+     "y": 76.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 65.25,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "SkySweep32",
+   "w": 120.0,
+   "d": 80.0,
+   "t": 1.6,
+   "max_component_h": 17.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 115.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 75.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 115.0,
+     "y": 75.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "barrel",
+     "side": "left",
+     "pos": 63.75,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Tallest component now 17.5 mm (was 11.0)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   }
+  ],
+  "kinds": [
+   "taller_component"
+  ],
+  "new_type_added": false,
+  "name": "SkySweep32",
+  "code": "RB-42",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "bobberdolle1/SkySweep32",
+   "path": "hardware/skysweep32_pro.kicad_pcb",
+   "url": "https://github.com/bobberdolle1/SkySweep32/blob/51e48ccca8b64efdce41373d26b4c51c016152e0/hardware/skysweep32_pro.kicad_pcb",
+   "license": "GPL-3.0",
+   "license_name": "GNU General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-42",
+  "board_a": {
+   "rev": "A",
+   "name": "WiFi-VFD",
+   "w": 93.0,
+   "d": 20.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.0,
+     "y": 1.75,
+     "dia": 2.1
+    },
+    {
+     "id": "H2",
+     "x": 91.0,
+     "y": 1.75,
+     "dia": 2.1
+    },
+    {
+     "id": "H3",
+     "x": 2.0,
+     "y": 18.25,
+     "dia": 2.1
+    },
+    {
+     "id": "H4",
+     "x": 91.0,
+     "y": 18.25,
+     "dia": 2.1
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 10.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 96.0,
+    "d": 23.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 3.5,
+     "y": 3.25,
+     "dia": 5.5,
+     "bore": 1.6
+    },
+    {
+     "hole": "H2",
+     "x": 92.5,
+     "y": 3.25,
+     "dia": 5.5,
+     "bore": 1.6
+    },
+    {
+     "hole": "H3",
+     "x": 3.5,
+     "y": 19.75,
+     "dia": 5.5,
+     "bore": 1.6
+    },
+    {
+     "hole": "H4",
+     "x": 92.5,
+     "y": 19.75,
+     "dia": 5.5,
+     "bore": 1.6
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 11.5,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "WiFi-VFD",
+   "w": 93.0,
+   "d": 24.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.0,
+     "y": 1.75,
+     "dia": 2.1
+    },
+    {
+     "id": "H2",
+     "x": 91.0,
+     "y": 1.75,
+     "dia": 2.1
+    },
+    {
+     "id": "H3",
+     "x": 2.0,
+     "y": 22.25,
+     "dia": 2.1
+    },
+    {
+     "id": "H4",
+     "x": 91.0,
+     "y": 22.25,
+     "dia": 2.1
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "left",
+     "pos": 14.0,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Board deepened 4.0 mm at the back edge (H3, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   },
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J1",
+     "tolerance": 0.4
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "WiFi-VFD",
+  "code": "RB-43",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "ciisaichan/WiFi-VFD",
+   "path": "hardware/wifivfd.kicad_pcb",
+   "url": "https://github.com/ciisaichan/WiFi-VFD/blob/a5314a150296a5e1e7eac8fce9ae87772bfa76b2/hardware/wifivfd.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-43",
+  "board_a": {
+   "rev": "A",
+   "name": "M5Stack_USB_Host",
+   "w": 50.0,
+   "d": 50.0,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 7.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 43.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 47.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 3.0,
+     "y": 47.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 7.0,
+     "y": 47.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H7",
+     "x": 43.0,
+     "y": 47.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H8",
+     "x": 47.0,
+     "y": 47.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 24.76,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 53.0,
+    "d": 53.0,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 8.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 44.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 48.5,
+     "y": 4.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H5",
+     "x": 4.5,
+     "y": 48.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H6",
+     "x": 8.5,
+     "y": 48.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H7",
+     "x": 44.5,
+     "y": 48.5,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H8",
+     "x": 48.5,
+     "y": 48.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "right",
+     "pos": 26.26,
+     "z": 9.46,
+     "w": 14.14,
+     "h": 6.72
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "M5Stack_USB_Host",
+   "w": 50.0,
+   "d": 50.0,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 7.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 43.0,
+     "y": 3.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 47.0,
+     "y": 3.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H5",
+     "x": 3.0,
+     "y": 47.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H6",
+     "x": 7.0,
+     "y": 47.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H7",
+     "x": 43.0,
+     "y": 47.0,
+     "dia": 2.2
+    },
+    {
+     "id": "H8",
+     "x": 47.0,
+     "y": 47.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "usb_a",
+     "side": "right",
+     "pos": 21.26,
+     "z": 2.86,
+     "w": 13.14,
+     "h": 5.72
+    }
+   ]
+  },
+  "change_summary": "J2 (usb_a) moved 3.5 mm toward front",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J2",
+     "tolerance": 0.5
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "M5Stack_USB_Host",
+  "code": "RB-44",
+  "family": "Open-source KiCad",
+  "usb_a": true,
+  "source": {
+   "repo": "tomorrow56/M5Stack_USB_Host",
+   "path": "v1.0/KiCad/M5_USB_Host_v01.kicad_pcb",
+   "url": "https://github.com/tomorrow56/M5Stack_USB_Host/blob/b927ad569312daf15bfe2043a3d93b13c8b9c0b8/v1.0/KiCad/M5_USB_Host_v01.kicad_pcb",
+   "license": "AGPL-3.0",
+   "license_name": "GNU Affero General Public License v3.0"
+  }
+ },
+ {
+  "id": "real-fleet-44",
+  "board_a": {
+   "rev": "A",
+   "name": "FM-7_SD",
+   "w": 100.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 95.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 95.0,
+     "y": 95.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "sd",
+     "side": "front",
+     "pos": 24.46,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 103.0,
+    "d": 103.0,
+    "h": 18.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 6.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 96.5,
+     "y": 6.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 96.5,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 96.5,
+     "y": 96.5,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J4",
+     "side": "front",
+     "pos": 25.96,
+     "z": 7.6,
+     "w": 14.0,
+     "h": 4.0
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "FM-7_SD",
+   "w": 100.0,
+   "d": 100.0,
+   "t": 1.6,
+   "max_component_h": 8.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 5.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 95.0,
+     "y": 5.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 95.0,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 95.0,
+     "y": 95.0,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J4",
+     "type": "sd",
+     "side": "front",
+     "pos": 15.46,
+     "z": 1.0,
+     "w": 12.0,
+     "h": 2.0
+    }
+   ]
+  },
+  "change_summary": "J4 (sd) moved 9.0 mm toward left",
+  "gold_calls": [
+   {
+    "tool": "place_opening",
+    "args": {
+     "connector": "J4",
+     "tolerance": 1.0
+    }
+   }
+  ],
+  "kinds": [
+   "move_connector"
+  ],
+  "new_type_added": false,
+  "name": "FM-7_SD",
+  "code": "RB-45",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "yanataka60/FM-7_SD",
+   "path": "KiCad/FM-7_SD.kicad_pcb",
+   "url": "https://github.com/yanataka60/FM-7_SD/blob/c4b4a6ecbc44de5c217aa99f6e9bbe6088622bc7/KiCad/FM-7_SD.kicad_pcb",
+   "license": "MIT",
+   "license_name": "MIT License"
+  }
+ },
+ {
+  "id": "real-fleet-45",
+  "board_a": {
+   "rev": "A",
+   "name": "Xiegu-MiniMic",
+   "w": 50.8,
+   "d": 25.4,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 48.26,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 22.86,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 48.26,
+     "y": 22.86,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 12.7,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 53.8,
+    "d": 28.4,
+    "h": 23.1
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 4.04,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 49.76,
+     "y": 4.04,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 4.04,
+     "y": 24.36,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 49.76,
+     "y": 24.36,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "left",
+     "pos": 14.2,
+     "z": 13.35,
+     "w": 16.6,
+     "h": 14.1
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "Xiegu-MiniMic",
+   "w": 59.3,
+   "d": 25.4,
+   "t": 1.6,
+   "max_component_h": 13.5,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 2.54,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 56.76,
+     "y": 2.54,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 2.54,
+     "y": 22.86,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 56.76,
+     "y": 22.86,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "rj45",
+     "side": "left",
+     "pos": 12.7,
+     "z": 6.75,
+     "w": 16.0,
+     "h": 13.5
+    }
+   ]
+  },
+  "change_summary": "Board widened 8.5 mm at the right edge (H2, H4 moved with the edge)",
+  "gold_calls": [
+   {
+    "tool": "fit_cavity",
+    "args": {
+     "clearance": 1.5,
+     "headroom": 3.0
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H2"
+    }
+   },
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H4"
+    }
+   }
+  ],
+  "kinds": [
+   "resize"
+  ],
+  "new_type_added": false,
+  "name": "Xiegu-MiniMic",
+  "code": "RB-46",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "jzkmath/Xiegu-MiniMic",
+   "path": "Xiegu MiniMic.kicad_pcb",
+   "url": "https://github.com/jzkmath/Xiegu-MiniMic/blob/107fbbf5d4cf5e8f1ae78f366707fc570a5ce6fb/Xiegu MiniMic.kicad_pcb",
+   "license": "GPL-2.0",
+   "license_name": "GNU General Public License v2.0"
+  }
+ },
+ {
+  "id": "real-fleet-46",
+  "board_a": {
+   "rev": "A",
+   "name": "PSU",
+   "w": 90.42,
+   "d": 60.45,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.56,
+     "y": 3.56,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 86.61,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.56,
+     "y": 56.9,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 86.87,
+     "y": 56.9,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "back",
+     "pos": 17.54,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 93.42,
+    "d": 63.45,
+    "h": 20.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 5.06,
+     "y": 5.06,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H2",
+     "x": 88.11,
+     "y": 5.31,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H3",
+     "x": 5.06,
+     "y": 58.4,
+     "dia": 5.5,
+     "bore": 2.7
+    },
+    {
+     "hole": "H4",
+     "x": 88.37,
+     "y": 58.4,
+     "dia": 5.5,
+     "bore": 2.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J2",
+     "side": "back",
+     "pos": 19.04,
+     "z": 12.1,
+     "w": 10.6,
+     "h": 12.6
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "PSU",
+   "w": 90.42,
+   "d": 60.45,
+   "t": 1.6,
+   "max_component_h": 11.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 3.56,
+     "y": 3.56,
+     "dia": 3.2
+    },
+    {
+     "id": "H2",
+     "x": 86.61,
+     "y": 3.81,
+     "dia": 3.2
+    },
+    {
+     "id": "H3",
+     "x": 3.56,
+     "y": 54.9,
+     "dia": 3.2
+    },
+    {
+     "id": "H4",
+     "x": 86.87,
+     "y": 56.9,
+     "dia": 3.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J2",
+     "type": "barrel",
+     "side": "back",
+     "pos": 17.54,
+     "z": 5.5,
+     "w": 9.0,
+     "h": 11.0
+    }
+   ]
+  },
+  "change_summary": "Mounting hole H3 moved 2.0 mm toward front",
+  "gold_calls": [
+   {
+    "tool": "place_standoff",
+    "args": {
+     "hole": "H3"
+    }
+   }
+  ],
+  "kinds": [
+   "move_hole"
+  ],
+  "new_type_added": false,
+  "name": "PSU",
+  "code": "RB-47",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "jscrane/PSU",
+   "path": "cad/PSU.kicad_pcb",
+   "url": "https://github.com/jscrane/PSU/blob/bce3116aa098421ce0a09661abcb73398a5bb42a/cad/PSU.kicad_pcb",
+   "license": "Apache-2.0",
+   "license_name": "Apache License 2.0"
+  }
+ },
+ {
+  "id": "real-fleet-47",
+  "board_a": {
+   "rev": "A",
+   "name": "ReachBetween",
+   "w": 51.78,
+   "d": 73.49,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 12.09,
+     "y": 17.12,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 39.69,
+     "y": 17.12,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 68.49,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 46.78,
+     "y": 68.49,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "front",
+     "pos": 25.87,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J3",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 14.44,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 37.35,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "enclosure_a": {
+   "wall": 2.0,
+   "standoff_h": 5.0,
+   "cavity": {
+    "w": 54.78,
+    "d": 76.49,
+    "h": 15.6
+   },
+   "board_origin": {
+    "x": 1.5,
+    "y": 1.5
+   },
+   "standoffs": [
+    {
+     "hole": "H1",
+     "x": 13.59,
+     "y": 18.62,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H2",
+     "x": 41.19,
+     "y": 18.62,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H3",
+     "x": 6.5,
+     "y": 69.99,
+     "dia": 5.5,
+     "bore": 1.7
+    },
+    {
+     "hole": "H4",
+     "x": 48.28,
+     "y": 69.99,
+     "dia": 5.5,
+     "bore": 1.7
+    }
+   ],
+   "openings": [
+    {
+     "connector": "J1",
+     "side": "front",
+     "pos": 27.37,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J3",
+     "side": "back",
+     "pos": 15.94,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    },
+    {
+     "connector": "J2",
+     "side": "back",
+     "pos": 38.85,
+     "z": 8.23,
+     "w": 9.74,
+     "h": 4.06
+    }
+   ]
+  },
+  "board_b": {
+   "rev": "B",
+   "name": "ReachBetween",
+   "w": 51.78,
+   "d": 73.49,
+   "t": 1.6,
+   "max_component_h": 6.0,
+   "holes": [
+    {
+     "id": "H1",
+     "x": 12.09,
+     "y": 17.12,
+     "dia": 2.2
+    },
+    {
+     "id": "H2",
+     "x": 39.69,
+     "y": 17.12,
+     "dia": 2.2
+    },
+    {
+     "id": "H3",
+     "x": 5.0,
+     "y": 68.49,
+     "dia": 2.2
+    },
+    {
+     "id": "H4",
+     "x": 46.78,
+     "y": 68.49,
+     "dia": 2.2
+    }
+   ],
+   "connectors": [
+    {
+     "id": "J1",
+     "type": "usb_c",
+     "side": "front",
+     "pos": 25.87,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    },
+    {
+     "id": "J2",
+     "type": "usb_c",
+     "side": "back",
+     "pos": 37.35,
+     "z": 1.63,
+     "w": 8.94,
+     "h": 3.26
+    }
+   ]
+  },
+  "change_summary": "Removed J3 (usb_c)",
+  "gold_calls": [
+   {
+    "tool": "remove_opening",
+    "args": {
+     "connector": "J3"
+    }
+   }
+  ],
+  "kinds": [
+   "remove_connector"
+  ],
+  "new_type_added": false,
+  "name": "ReachBetween",
+  "code": "RB-48",
+  "family": "Open-source KiCad",
+  "usb_a": false,
+  "source": {
+   "repo": "qubist/ReachBetween",
+   "path": "pcb/ReachBetween.kicad_pcb",
+   "url": "https://github.com/qubist/ReachBetween/blob/066b43ae4f6f2ef03208a31290a5cf72409ff919/pcb/ReachBetween.kicad_pcb",
+   "license": "GPL-3.0",
+   "license_name": "GNU General Public License v3.0"
+  }
+ }
+]

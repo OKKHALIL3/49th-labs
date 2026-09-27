@@ -1,0 +1,8 @@
+.env
+.env.*
+vendor/
+__pycache__/
+*.pyc
+*.log
+.traintrack/
+rev/data/checkpoint.json

@@ -1,0 +1,50 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[base] test-005: FAIL cavity_height,standoffs,openings (6.03s)
+[base] test-001: FAIL openings (6.39s)
+[base] test-004: FAIL openings (6.4s)
+[base] test-000: FAIL cavity_height,standoffs (7.39s)
+[base] test-003: FAIL cavity_height,standoffs,openings (7.68s)
+[base] test-002: FAIL cavity_height,openings (8.1s)
+[base] test-007: FAIL cavity_height,openings (8.89s)
+[base] test-006: FAIL cavity_height,openings (8.9s)
+[base] test-008: FAIL cavity_height,openings (5.31s)
+[base] test-010: FAIL cavity_height (5.61s)
+[base] test-009: FAIL cavity_height,openings (6.32s)
+[base] test-013: FAIL cavity_fit,cavity_height,standoffs,openings (8.26s)
+[base] test-015: FAIL openings (7.6s)
+[base] test-014: FAIL openings (7.64s)
+[base] test-012: FAIL cavity_height,openings (9.68s)
+[base] test-011: FAIL cavity_height,openings (10.77s)
+[base] test-018: FAIL cavity_height,openings (5.47s)
+[base] test-017: FAIL cavity_height,openings (6.47s)
+[base] test-016: FAIL cavity_height,openings (7.14s)
+[base] test-019: FAIL cavity_height,openings (5.0s)
+[base] test-021: FAIL cavity_height,openings (5.39s)
+[base] test-020: FAIL cavity_height,openings (5.46s)
+[base] test-022: FAIL cavity_height,standoffs,openings (4.85s)
+[base] test-025: FAIL openings (5.53s)
+[base] test-024: FAIL openings (6.32s)
+[base] test-026: FAIL cavity_height,openings (6.17s)
+[base] test-023: FAIL cavity_height (7.13s)
+[base] test-028: FAIL cavity_height,openings (4.25s)
+[base] test-027: FAIL cavity_height,openings (5.02s)
+[base] test-029: FAIL cavity_height,openings (5.34s)
+{
+ "name": "base",
+ "label": "Base Qwen3.6-35B-A3B-FP8",
+ "passed": 0,
+ "total": 30,
+ "by_check": {
+  "cavity_fit": 29,
+  "cavity_height": 6,
+  "standoffs": 25,
+  "openings": 3,
+  "orphans": 30
+ },
+ "parse_failures": 0,
+ "sample_errors": 0,
+ "mean_latency_s": 6.68,
+ "checkpoint": null,
+ "evaluated_at": "2026-09-27T15:21:37-0700",
+ "elapsed_s": 28.1
+}

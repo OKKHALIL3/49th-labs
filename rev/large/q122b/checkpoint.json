@@ -1,0 +1,17 @@
+{
+  "path": "river://503a5ad2-f93b-4ebd-b94f-bee018108d33/sampler_weights/q122b-acme-rev",
+  "step": 13,
+  "checkpoint_type": "inference",
+  "base_model": "Qwen/Qwen3.5-122B-A10B-FP8",
+  "name": "q122b-acme-rev",
+  "train_steps": 13,
+  "epochs": 1.0,
+  "batch": 16,
+  "lr": 0.0002,
+  "rank": 32,
+  "n_train": 200,
+  "final_loss": 5.1216089299746924e-05,
+  "partial": false,
+  "train_seconds": 891.9,
+  "saved_at": "2026-09-27T15:35:51-0700"
+}

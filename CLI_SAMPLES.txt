@@ -1,0 +1,128 @@
+
+$ 49th reset
+
+ 49th   reset   ready for the next take
+
+✓    learned weights un-promoted  (acme-9b back to v1 · checkpoint.json)
+✓    learn run log cleared  (the USB-A rule is unknown again)           
+✓    board reset  (Rev A + matching enclosure)                          
+
+$ 49th status
+╭─  The 49th Engineer  ────────────────────────────────────────────────────────────╮
+│                                                                                  │
+│    customer  Acme Devices                                                        │
+│       model  acme-9b  =  Qwen3.5-9B + LoRA (rank 32) on River                    │
+│  checkpoint  v1  acme-rev  ·  52 steps  ·  17 min  ·  200 company changes        │
+│      GBrain  200 engineering records  +  2 captures                              │
+│    QM agent  ● running (local)                                                   │
+│      server  ● ok  localhost:8000                                                │
+│                                                                                  │
+╰────────────────────────────────────────────────────────────────────  49th Labs  ─╯
+
+$ 49th eval
+
+ 49th   eval   Acme Devices · engineering-change refits
+
+model                                           passed                              
+────────────────────────────────────────────────────────────────────────────────────
+Qwen3.5-397B   generic                            1/30  ░░░░░░░░░░░░░░              
+Qwen3.5-122B   generic                            1/30  ░░░░░░░░░░░░░░              
+Qwen3.6-35B    generic                            0/30  ░░░░░░░░░░░░░░              
+Qwen3.5-9B     generic                            0/30  ░░░░░░░░░░░░░░              
+                                                                                    
+acme-122b      LoRA · 1 epoch · 13 steps         28/30  █████████████░              
+acme-35b       LoRA · 4 epochs · 52 steps        30/30  ██████████████              
+acme-397b      LoRA · 1.8/4 epochs · 23 steps    30/30  ██████████████  partial     
+acme-9b        LoRA · 4 epochs · 52 steps        29/30  ██████████████  ◀ live agent
+30 held-out engineering changes · graded by a deterministic checker
+same prompt & tools for every model
+
+$ 49th eval --wall
+
+ 49th   the wall   Acme Devices · one refit per board
+
+the wall                  passed                                                time
+────────────────────────────────────────────────────────────────────────────────────
+Generic Qwen3.5-9B         16/48   ████████░░░░░░░░░░░░░░░░                     26 s
+Acme's own model v1        42/48   █████████████████████░░░                     29 s
+v2 — after 1 correction    48/48   ████████████████████████                     36 s
+48 boards · 16 in parallel · same checker
+
+$ 49th refit C
+
+ 49th   refit · Rev C   Acme Devices · Sensor Hub enclosure
+
+       change  J2 (hdmi) moved 6.0 mm toward right; added J5 (usb_a) on front edge
+old enclosure  1/5 checks failing                                                 
+
+tool calls
+1 place_opening J2 hdmi  tolerance 0.60 
+2 place_opening J5 usb_a  tolerance 1.10
+
+checks
+✓    Board-to-wall clearance                                                        
+✓    Headroom above tallest part                                                    
+✓    Standoffs on mounting holes                                                    
+✗    Connector openings           J5 (usb_a) opening 15.34x7.92 has 1.10 mm gap per 
+                                  side (wrong tolerance for usb_a)                  
+✓    No orphan features                                                             
+
+ FAIL   4/5 checks   ·   model latency 4.4 s
+3D viewer  http://localhost:8000/
+
+$ 49th teach "Our USB-A cutouts always get 0.5 mm per side." --replay
+╭─  The 49th Engineer is learning  ────────────────────────────────────────────────╮
+│                                                                                  │
+│  “Our USB-A cutouts always get 0.5 mm per side.”                                 │
+│                                                                                  │
+│  ✓   Rule understood  USB-A openings  ·  0.5 mm per side                         │
+│  ✓   Curriculum       48 practice changes  ·  48/48 verified by the checker      │
+│  ✓   Replay           48 past changes mixed in  (anti-forgetting)                │
+│  ✓   River training   step 8/8  ·  loss 0.251 → 0.00011  █▆▆▆▆▅▅▁ (log)          │
+│  ✓   Eval             USB-A held-out  0/12  →  12/12                             │
+│  ✓   Deployed         promoted  ·  The 49th Engineer now runs v2                 │
+│                                                                                  │
+╰─────────────────────────────  recorded real run · 109 s / 109 s · fast-forward  ─╯
+
+$ 49th refit C
+
+ 49th   refit · Rev C   Acme Devices · Sensor Hub enclosure
+
+       change  J2 (hdmi) moved 6.0 mm toward right; added J5 (usb_a) on front edge
+old enclosure  1/5 checks failing                                                 
+
+tool calls
+1 place_opening J2 hdmi  tolerance 0.60 
+2 place_opening J5 usb_a  tolerance 0.50
+
+checks
+✓    Board-to-wall clearance       
+✓    Headroom above tallest part   
+✓    Standoffs on mounting holes   
+✓    Connector openings            
+✓    No orphan features            
+
+ PASS   5/5 checks   ·   model latency 4.4 s
+change record → GBrain  sensor-hub/rev-c-enclosure-change
+3D viewer  http://localhost:8000/
+
+$ 49th status
+╭─  The 49th Engineer  ────────────────────────────────────────────────────────────╮
+│                                                                                  │
+│    customer  Acme Devices                                                        │
+│       model  acme-9b  =  Qwen3.5-9B + LoRA (rank 32) on River                    │
+│  checkpoint  v1  acme-rev  ·  52 steps  ·  17 min  ·  200 company changes        │
+│              v2  learn-usb_a-1790547261  ·  +8 steps  ·  USB-A 0.5 mm  ●         │
+│      GBrain  200 engineering records  +  2 captures                              │
+│    QM agent  ● running (local)                                                   │
+│      server  ● ok  localhost:8000                                                │
+│                                                                                  │
+╰────────────────────────────────────────────────────────────────────  49th Labs  ─╯
+
+$ 49th reset
+
+ 49th   reset   ready for the next take
+
+✓    learned weights un-promoted  (acme-9b back to v1 · checkpoint.json)
+✓    learn run log cleared  (the USB-A rule is unknown again)           
+✓    board reset  (Rev A + matching enclosure)                          

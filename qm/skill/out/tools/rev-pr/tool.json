@@ -1,0 +1,14 @@
+{
+  "id": "rev-pr",
+  "label": "49th Engineer: weight pull request (REV)",
+  "advertise": "rev-pr --author \"<role>\" \"<engineer's message>\" — turn a message that states an engineering rule into a weight PR: GBrain record, conflict check against verified history, candidate trained on River, lesson + regression tests, then MERGED (new production version) or BLOCKED",
+  "hints": [
+    "When a message to the 49th Engineer states an engineering rule or correction (e.g. 'USB-A cutouts get 0.5 mm per side'), run `rev-pr --author \"<their role if known, e.g. Senior mechanical engineer; never a person's name>\" \"<their exact words>\"` and paste its output verbatim; it takes up to ~3 minutes (instant if blocked), do not retry while it runs.",
+    "Never invent PR results: if rev-pr exits non-zero, report the error text and the URL it tried."
+  ],
+  "egress": ["trycloudflare.com"],
+  "install": {
+    "binary": "rev-pr",
+    "files": [{ "from": "rev-pr", "to": "/usr/local/bin/rev-pr", "mode": "0755" }]
+  }
+}

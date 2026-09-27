@@ -1,0 +1,16 @@
+{
+  "path": "river://b4572d12-4d9e-4c9d-8e0e-dfb2060298d8/sampler_weights/learn-usb_a-1790547261",
+  "step": 60,
+  "checkpoint_type": "inference",
+  "base_model": "Qwen/Qwen3.5-9B",
+  "lora_rank": 32,
+  "lesson": {
+    "type": "usb_a",
+    "tolerance": 0.5
+  },
+  "parent": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+  "steps": 8,
+  "batch": 16,
+  "lr": 0.0001,
+  "created": "2026-09-27 15:16:01"
+}

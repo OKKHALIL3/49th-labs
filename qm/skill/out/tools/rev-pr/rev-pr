@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""rev-pr: turn an engineer's chat message into a WEIGHT PULL REQUEST for The 49th Engineer.
+
+  rev-pr --author "Senior mechanical engineer" "USB-A cutouts get 0.5 mm per side"
+
+POSTs {"text","author","source":"qm"} to $REV_PUBLIC_URL/api/pr, polls /api/prs until the PR is
+merged / blocked / closed (max ~6 min), and prints a thread-ready PR summary:
+  GBrain record -> conflict check vs verified history -> candidate trained on River ->
+  lesson + regression tests -> MERGED (new production version) or BLOCKED.
+Options: --url URL  --author ROLE  --source qm  --replay (re-emit the recorded real run)  --timeout SEC  --json
+"""
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.request
+
+REV_DEFAULT_URL = "https://depth-risks-normal-caroline.trycloudflare.com"
+FINAL = ("merged", "blocked", "closed")
+
+
+def die(msg, code=1):
+    print(f"rev-pr: {msg}", file=sys.stderr)
+    sys.exit(code)
+
+
+def req(method, url, body=None, timeout=30):
+    data = json.dumps(body).encode() if body is not None else None
+    h = {"content-type": "application/json"}
+    if os.environ.get("REV_TOKEN"):
+        h["authorization"] = "Bearer " + os.environ["REV_TOKEN"]
+    r = urllib.request.Request(url, data=data, method=method, headers=h)
+    try:
+        with urllib.request.urlopen(r, timeout=timeout) as resp:
+            return resp.status, json.loads(resp.read() or b"{}")
+    except urllib.error.HTTPError as e:
+        txt = e.read().decode(errors="replace")[:500]
+        return e.code, {"error": txt}
+
+
+def summary(p):
+    n, title, st = p.get("pr"), p.get("title") or p.get("text", ""), p.get("status")
+    bits = [f"*Weight PR #{n}* — {title}"]
+    if p.get("gbrain_slug"):
+        bits.append("GBrain ✓")
+    cc = p.get("conflict") or {}
+    if cc:
+        bits.append("conflict check ✗" if cc.get("verdict") == "conflict" else "conflict check ✓")
+    cand = p.get("candidate") or {}
+    if cand.get("steps"):
+        bits.append(f"trained on River ({cand['steps']} steps)")
+    t = p.get("tests") or {}
+    les, reg = t.get("lesson") or {}, t.get("regression") or {}
+    if les.get("before") and reg.get("total"):
+        b, a = les["before"], les["after"]
+        bits.append(f"tests: lesson {b['passed']}/{b['total']}→{a['passed']}/{a['total']}, "
+                    f"regression {reg['passed']}/{reg['total']}")
+    if st == "merged":
+        bits.append(f"*MERGED → {p.get('version')}*")
+    elif st == "blocked":
+        if cc.get("verdict") == "conflict":
+            bits.append(f"*BLOCKED: contradicts {cc.get('differ')} verified changes* "
+                        f"(they used {cc.get('their_tolerance')} mm) — needs senior sign-off")
+        else:
+            bits.append(f"*BLOCKED:* {p.get('reason')}")
+    else:
+        bits.append(f"CLOSED: {p.get('reason')}")
+    lines = [" · ".join(bits)]
+    lines.append(f"Provenance: {p.get('author')} via {p.get('source')}, {str(p.get('ts', ''))[:16].replace('T', ' ')}"
+                 + (f" · GBrain `{p['gbrain_slug']}`" if p.get("gbrain_slug") else ""))
+    if cc.get("reason"):
+        lines.append(f"Conflict check ({cc.get('records_scanned')} verified changes): {cc['reason']}")
+    if st == "blocked" and cc.get("evidence"):
+        lines.append("Evidence: " + ", ".join(f"`{e['slug']}` ({e['tolerance']} mm)" for e in cc["evidence"]))
+    if cand.get("losses"):
+        ls = cand["losses"]
+        lines.append(f"Training: {cand.get('verified')} checker-verified practice examples + {cand.get('replay')} "
+                     f"replay, loss {ls[0]:.3f} → {ls[-1]:.4f}")
+    if st == "merged":
+        pr_reg = t.get("production_regression") or {}
+        if pr_reg.get("total"):
+            lines.append(f"Regression gate: candidate {reg['passed']}/{reg['total']} vs production "
+                         f"{pr_reg['passed']}/{pr_reg['total']}; the tuned model now serves {p.get('version')}.")
+    if p.get("seconds") is not None:
+        lines.append(f"({p['seconds']} s)")
+    return "\n".join(lines)
+
+
+def main():
+    args = sys.argv[1:]
+    base = os.environ.get("REV_PUBLIC_URL", REV_DEFAULT_URL)
+    author, source, replay, timeout_s, raw, text = "Engineer", "qm", False, 420, False, []
+    i = 0
+    while i < len(args):
+        a = args[i]
+        if a in ("-h", "--help"):
+            print(__doc__); return
+        if a == "--url": base = args[i + 1]; i += 2; continue
+        if a.startswith("--url="): base = a.split("=", 1)[1]; i += 1; continue
+        if a == "--author": author = args[i + 1]; i += 2; continue
+        if a == "--source": source = args[i + 1]; i += 2; continue
+        if a == "--timeout": timeout_s = int(args[i + 1]); i += 2; continue
+        if a == "--replay": replay = True; i += 1; continue
+        if a == "--json": raw = True; i += 1; continue
+        text.append(a); i += 1
+    text = " ".join(text).strip()
+    if not text:
+        die("pass the engineer's message as the argument", 2)
+    if "REPLACE-ME" in base:
+        die("set REV_PUBLIC_URL or pass --url (the cloudflared https URL)", 2)
+    base = base.rstrip("/")
+
+    body = {"text": text, "author": author, "source": source, "replay": replay}
+    deadline = time.time() + timeout_s
+    while True:
+        try:
+            code, d = req("POST", f"{base}/api/pr", body)
+        except Exception as e:  # noqa: BLE001
+            die(f"request to {base}/api/pr failed: {e}")
+        if code == 404 and body["replay"]:
+            body["replay"] = False
+            continue
+        if code == 409 and time.time() < deadline:  # another PR is running; wait for it
+            if not raw:
+                print("Another weight PR is running; waiting for it to finish...", flush=True)
+            time.sleep(5)
+            continue
+        if code not in (200, 202):
+            die(f"{base}/api/pr returned HTTP {code}: {d.get('error', d)}")
+        break
+    n = d.get("pr")
+    if not raw:
+        print(f"Weight PR #{n} opened ({'replay of recorded run' if body['replay'] else 'live'}): "
+              f"GBrain record -> conflict check -> River training -> tests -> merge", flush=True)
+
+    rec = None
+    while time.time() < deadline:
+        try:
+            code, s = req("GET", f"{base}/api/prs", timeout=20)
+        except Exception:  # noqa: BLE001
+            code, s = 0, {}
+        if code == 200:
+            rec = next((p for p in s.get("prs", []) if p.get("pr") == n), None)
+            if rec and rec.get("status") in FINAL:
+                break
+        time.sleep(4)
+    else:
+        die(f"PR #{n} still running after {timeout_s}s; check {base}/api/prs later")
+
+    if raw:
+        print(json.dumps({k: v for k, v in rec.items() if k != "events"}, indent=1))
+    else:
+        print(summary(rec))
+
+
+if __name__ == "__main__":
+    main()

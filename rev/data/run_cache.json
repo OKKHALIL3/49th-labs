@@ -1,0 +1,30 @@
+{
+ "base:demo@a99cf41b4dc4": {
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.5}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.5}}]",
+  "latency_s": 3.23,
+  "model_name": "base Qwen/Qwen3.5-9B",
+  "recorded_at": "2026-09-27 15:07:30",
+  "scenario": "demo@a99cf41b4dc4"
+ },
+ "tuned:demo@a99cf41b4dc4": {
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":1.5,\"headroom\":3.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.4}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.3}}]",
+  "latency_s": 5.97,
+  "model_name": "Acme-tuned Qwen/Qwen3.5-9B + LoRA (step 52)",
+  "recorded_at": "2026-09-27 15:41:07",
+  "scenario": "demo@a99cf41b4dc4"
+ },
+ "tuned:demo@ce26912d7f48": {
+  "raw": "[{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.6}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.5}}]",
+  "latency_s": 4.38,
+  "model_name": "Acme-tuned Qwen/Qwen3.5-9B + LoRA (step 52)",
+  "recorded_at": "2026-09-27 15:50:56",
+  "scenario": "demo@ce26912d7f48"
+ },
+ "base:demo@ce26912d7f48": {
+  "raw": "[{\"tool\":\"fit_cavity\",\"args\":{\"clearance\":2.0,\"headroom\":10.0}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H1\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H2\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H3\"}},{\"tool\":\"place_standoff\",\"args\":{\"hole\":\"H4\"}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J1\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J2\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J3\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J4\",\"tolerance\":0.8}},{\"tool\":\"place_opening\",\"args\":{\"connector\":\"J5\",\"tolerance\":0.8}}]",
+  "latency_s": 3.68,
+  "model_name": "base Qwen/Qwen3.5-9B",
+  "recorded_at": "2026-09-27 15:41:31",
+  "scenario": "demo@ce26912d7f48"
+ }
+}

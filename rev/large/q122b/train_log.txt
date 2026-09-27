@@ -1,0 +1,19 @@
+15:20:59 === run start base=Qwen/Qwen3.5-122B-A10B-FP8 n=200 batch=16 lr=0.0002 rank=32 tok mean=1332 max=1669 deadline=15:43
+15:27:05 model created (366.3s)
+15:30:00 step 1 epoch 0 loss 0.1619 grad_norm 1153.8361500161036 sec 174.7
+15:30:33 step 2 epoch 0 loss 0.1504 grad_norm 1266.34426130717 sec 33.7
+15:30:33 timing: 104.2s/step first2; ~9 steps fit; planned_epochs=1
+15:30:59 step 3 epoch 0 loss 0.1226 grad_norm 639.6500450674575 sec 25.6
+15:31:23 step 4 epoch 0 loss 0.0600 grad_norm 633.6997525604894 sec 24.2
+15:31:48 step 5 epoch 0 loss 0.0347 grad_norm 232.50288400684704 sec 24.4
+15:32:13 step 6 epoch 0 loss 0.0292 grad_norm 189.4699387369139 sec 25.2
+15:32:45 step 7 epoch 0 loss 0.0224 grad_norm 232.27729288101312 sec 32.2
+15:33:11 step 8 epoch 0 loss 0.0041 grad_norm 99.88722362333283 sec 25.5
+15:33:36 step 9 epoch 0 loss 0.0109 grad_norm 393.7239919941476 sec 25.1
+15:34:01 step 10 epoch 0 loss 0.0061 grad_norm 370.1720829970708 sec 25.6
+15:34:25 step 11 epoch 0 loss 0.0200 grad_norm 673.427672269232 sec 24.1
+15:34:57 step 12 epoch 0 loss 0.0026 grad_norm 206.60996917210622 sec 32.0
+15:35:41 step 13 epoch 0 loss 0.0001 grad_norm 0.83514658604711 sec 43.9
+15:35:51 save_weights river://503a5ad2-f93b-4ebd-b94f-bee018108d33/sampler_weights/q122b-acme-rev step 13 (9.2s)
+15:35:51 wrote ./rev/large/q122b/checkpoint.json: {"path": "river://503a5ad2-f93b-4ebd-b94f-bee018108d33/sampler_weights/q122b-acme-rev", "step": 13, "checkpoint_type": "inference", "base_model": "Qwen/Qwen3.5-122B-A10B-FP8", "name": "q122b-acme-rev", "train_steps": 13, "epochs": 1.0, "batch": 16, "lr": 0.0002, "rank": 32, "n_train": 200, "final_loss": 5.1216089299746924e-05, "partial": false, "train_seconds": 891.9, "saved_at": "2026-09-27T15:35:51-0700"}
+15:35:54 === train done steps=13 final_loss=5.1216089299746924e-05 total 895.3s

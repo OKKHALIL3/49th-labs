@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>if(location.pathname==='/'&&!new URLSearchParams(location.search).has('view'))location.replace('/fleet'+location.search)</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 49th Engineer · Sensor Hub</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect x='2' y='7' width='22' height='14' rx='1.5' fill='none' stroke='%236cb8ff' stroke-width='2'/%3E%3Crect x='6' y='11' width='14' height='6' fill='%233fd98a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+<style>
+:root{
+  --ink:#05070b; --ink2:#090d13; --panel:#0d121a; --panel2:#121925; --line:#1a2230; --line2:#253042;
+  --text:#e5ebf3; --muted:#8c9ab0; --dim:#5f6e86;
+  --pass:#2fe39a; --pass-bg:rgba(63,217,138,.10); --fail:#ff4f61; --fail-bg:rgba(255,84,99,.11);
+  --tuned:#6ea8ff; --base:#8b96a8; --amber:#ffbf4d;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cond:'Geist',system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--ink);color:var(--text);font:15px/1.45 var(--sans);display:grid;grid-template-rows:72px minmax(0,1fr);height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--tuned);outline-offset:2px}
+
+/* header */
+.brand49{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;white-space:nowrap}
+.logo49{width:38px;height:38px;border-radius:10px;background:#d7ff5a;color:#06080c;display:grid;place-items:center;font:700 17px/1 var(--sans);letter-spacing:-.04em;box-shadow:0 0 24px -6px rgba(215,255,90,.55)}
+.bt49{display:flex;flex-direction:column;gap:3px}.bt49 b{font:600 18px/1 var(--sans)}.bt49 small{font:500 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tabs49{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:var(--ink)}
+.tabs49 a{padding:7px 14px;border-radius:7px;font:500 14px/1 var(--sans);color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs49 a:hover{color:var(--text)} .tabs49 a.on{background:var(--panel2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line2)}
+.tabs49 a#navWall{color:#d7ff5a}
+
+header{display:flex;align-items:center;gap:20px;padding:0 22px;border-bottom:1px solid var(--line);background:var(--ink2)}
+.mark{font:700 34px/1 var(--cond);letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.mark svg{width:26px;height:26px}
+.sub{color:var(--muted);font-size:15.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sub b{color:var(--text);font-weight:600}
+.hspace{flex:1}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:999px;font-size:13px;color:var(--muted);white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--dim)}
+.pill.live i{background:var(--pass);box-shadow:0 0 0 3px rgba(63,217,138,.18)}
+.pill.warn i{background:var(--amber);animation:pulse 1.2s infinite}
+.pill.mock{border-color:rgba(255,191,77,.5);color:var(--amber)} .pill.mock i{background:var(--amber)}
+@keyframes pulse{50%{opacity:.3}}
+
+main{display:grid;grid-template-columns:clamp(290px,22vw,370px) minmax(0,1fr) clamp(330px,26vw,450px);min-height:0}
+.panel{background:var(--ink2);display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#left{border-right:1px solid var(--line)} #right{border-left:1px solid var(--line)}
+.sec{padding:16px 18px;border-bottom:1px solid var(--line);min-height:0}
+.sec.grow{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.sec:last-child{border-bottom:0}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 12px}
+.sh h2{margin:0;font:600 19px/1.15 var(--cond);letter-spacing:.02em;color:var(--text)}
+.chip{font-size:13px;color:var(--muted);font-weight:500;white-space:nowrap}
+.chip.pass{color:var(--pass)} .chip.fail{color:var(--fail)}
+.scroll{overflow:auto;min-height:0;flex:1;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+
+/* ECO */
+.eco{display:flex;flex-direction:column;gap:2px;max-height:34vh;overflow:auto}
+.eco-row{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:7px 0;border-top:1px solid rgba(45,61,87,.5);align-items:start}
+.eco-row:first-child{border-top:0}
+.tag{font:600 11.5px/1 var(--sans);letter-spacing:.04em;padding:4px 0;border-radius:4px;text-align:center;margin-top:2px}
+.tag.mod{background:rgba(108,184,255,.12);color:var(--tuned)}
+.tag.add{background:var(--pass-bg);color:var(--pass)}
+.tag.rem{background:var(--fail-bg);color:var(--fail)}
+.eco-t{font-weight:600;font-size:15px}
+.eco-s{color:var(--muted);font-size:13.5px}
+.empty{color:var(--dim);font-size:14px;line-height:1.5}
+
+/* actions */
+.actions{display:flex;flex-direction:column;gap:8px}
+.step{display:grid;grid-template-columns:30px 1fr;align-items:center;gap:10px;text-align:left;padding:11px 12px;border-radius:8px;border:1px solid var(--line2);background:var(--panel);cursor:pointer;font-weight:600;font-size:16px;transition:background .15s,border-color .15s}
+.step:hover:not(:disabled){background:var(--panel2);border-color:#3b4f70}
+.step .n{width:30px;height:30px;border-radius:6px;display:grid;place-items:center;font:700 17px/1 var(--cond);background:var(--ink);border:1px solid var(--line2);color:var(--muted)}
+.step small{display:block;font-weight:500;color:var(--muted);font-size:12.5px;margin-top:1px}
+.step.tuned{border-color:rgba(108,184,255,.55);background:linear-gradient(0deg,rgba(108,184,255,.08),rgba(108,184,255,.08)),var(--panel)}
+.step.tuned .n{color:var(--tuned);border-color:rgba(108,184,255,.5)}
+.step:disabled{opacity:.45;cursor:not-allowed}
+.step.busy{opacity:1}
+.step.busy .n{animation:pulse 1s infinite}
+.arow{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap}
+.arow .ghost{white-space:nowrap;padding:7px 11px}
+.arow .toggle{margin-left:auto}
+.ghost{background:none;border:1px solid var(--line2);border-radius:7px;padding:7px 14px;cursor:pointer;color:var(--muted);font-weight:600}
+.ghost:hover{color:var(--text);border-color:#3b4f70}
+.toggle{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);cursor:pointer;user-select:none}
+.toggle input{accent-color:var(--tuned)}
+
+/* design table */
+table.dt{width:100%;border-collapse:collapse;font-size:14px}
+.dt td{padding:5px 0;border-top:1px solid rgba(45,61,87,.5)}
+.dt tr:first-child td{border-top:0}
+.dt td:first-child{color:var(--muted)}
+.dt td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.dt .grp td{color:var(--dim);font-size:12.5px;padding-top:12px;border-top:0}
+
+/* center */
+#center{position:relative;overflow:hidden;min-width:0;min-height:0;background:radial-gradient(120% 90% at 50% 40%,#142033 0%,#0d141e 70%)}
+#viewer{position:absolute;inset:0;z-index:0} /* own stacking context: CSS2D label z-indexes stay under the overlays + eval drawer */
+#viewer canvas{display:block}
+.labels{position:absolute;inset:0;pointer-events:none}
+.lbl{font:600 12.5px/1 var(--sans);padding:4px 7px;border-radius:5px;background:var(--fail);color:#fff;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.4);transform:translateY(-10px)}
+.lbl.amber{background:var(--amber);color:#1b1405}
+.ov{position:absolute;z-index:3}
+#badge{top:16px;left:16px;padding:10px 14px;border-radius:8px;background:rgba(13,20,30,.78);border:1px solid var(--line2);backdrop-filter:blur(6px)}
+#badge .k{font-size:12.5px;color:var(--muted)}
+#badge .v{font:600 21px/1.15 var(--cond);letter-spacing:.02em}
+#badge .v.tuned{color:var(--tuned)} #badge .v.base{color:#c4ccd8}
+#badge .r{font-size:13px;color:var(--muted);margin-top:2px}
+#vtools{top:16px;right:16px;display:flex;gap:8px;align-items:center}
+#dims{font-size:13px;color:var(--muted);background:rgba(13,20,30,.7);padding:6px 10px;border-radius:6px;border:1px solid var(--line);font-variant-numeric:tabular-nums}
+#fit{background:rgba(13,20,30,.7)}
+#thinking{top:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:10px 18px;border-radius:999px;background:rgba(13,20,30,.85);border:1px solid rgba(108,184,255,.45);font-weight:600;font-size:15.5px}
+#thinking .spin{width:16px;height:16px;border-radius:50%;border:2px solid rgba(108,184,255,.25);border-top-color:var(--tuned);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#banner{left:50%;bottom:64px;transform:translateX(-50%);display:flex;align-items:center;gap:22px;padding:14px 30px 14px 24px;border-radius:12px;background:rgba(13,20,30,.9);border:2px solid var(--pass);box-shadow:0 20px 60px rgba(0,0,0,.5);animation:stamp .35s cubic-bezier(.2,1.4,.4,1)}
+#banner .big{font:700 72px/0.9 var(--cond);letter-spacing:.04em;color:var(--pass)}
+#banner.fail{border-color:var(--fail)} #banner.fail .big{color:var(--fail)}
+#banner .meta{font-size:15px;color:var(--muted);line-height:1.4}
+#banner .meta b{color:var(--text);font-size:18px;display:block;font-weight:600}
+@keyframes stamp{from{transform:translateX(-50%) scale(1.25);opacity:0}}
+#nogl{inset:0;display:grid;place-items:center;color:var(--muted);text-align:center;padding:40px}
+#evtab{left:50%;bottom:0;transform:translateX(-50%);border:1px solid var(--line2);border-bottom:0;border-radius:9px 9px 0 0;background:var(--panel);padding:8px 20px;font-weight:600;cursor:pointer;font-size:14.5px;display:flex;gap:8px;align-items:center}
+#evtab:hover{background:var(--panel2)}
+#evtab .car{transition:transform .2s;display:inline-block}
+#center.evopen #evtab .car{transform:rotate(180deg)}
+[hidden]{display:none !important}
+
+/* drawer */
+#drawer{position:absolute;left:0;right:0;bottom:0;height:min(58%,470px);z-index:4;background:var(--ink2);border-top:1px solid var(--line2);transform:translateY(100%);transition:transform .28s cubic-bezier(.3,.8,.3,1);display:flex;flex-direction:column;box-shadow:0 -20px 50px rgba(0,0,0,.35)}
+#center.evopen #drawer{transform:none}
+#center.evopen #evtab{bottom:min(58%,470px)}
+.evh{display:flex;align-items:flex-start;justify-content:space-between;padding:16px 22px 6px;gap:16px}
+.evh h3{margin:0;font:600 24px/1.1 var(--cond);letter-spacing:.02em}
+.evh p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.evb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;padding:10px 22px 22px;overflow:auto;flex:1}
+.run{margin-bottom:18px}
+.run .lab{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:16px}
+.run .pct{font:700 60px/1 var(--cond);letter-spacing:.01em}
+.run .frac{color:var(--muted);font-size:14px;margin-bottom:8px}
+.bar{height:14px;border-radius:4px;background:#1c2839;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px;width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.run.base .pct{color:#c4ccd8} .run.base .bar i{background:var(--base)}
+.run.tuned .pct{color:var(--tuned)} .run.tuned .bar i{background:var(--tuned)}
+.pc h4{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:500}
+.pcr{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:4px 14px;align-items:center;padding:7px 0;border-top:1px solid rgba(45,61,87,.5)}
+.pcr .nm{font-size:14.5px;font-weight:500}
+.pcr .bars{display:flex;flex-direction:column;gap:4px}
+.mini{display:grid;grid-template-columns:1fr 54px;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.mini .bar{height:9px}
+.mini.base i{background:var(--base)} .mini.tuned i{background:var(--tuned)}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted);margin-bottom:6px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--base)}
+.legend span.t::before{background:var(--tuned)}
+.mockmark{color:var(--amber);font-weight:600}
+
+/* checks */
+.check{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:8px;margin-bottom:6px;border:1px solid transparent;transition:background .3s,border-color .3s}
+.check.pass{background:var(--pass-bg);border-color:rgba(63,217,138,.22)}
+.check.fail{background:var(--fail-bg);border-color:rgba(255,84,99,.4)}
+.check .ico{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
+.check.pass .ico{background:var(--pass);color:#06200f} .check.fail .ico{background:var(--fail);color:#fff}
+.check .ico svg{width:19px;height:19px}
+.check .cl{font-weight:600;font-size:16.5px;line-height:1.2}
+.check .cd{font-size:13.5px;color:var(--muted);margin-top:2px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.check.fail .cd{color:#ffb3ba}
+.check .cs{font:700 16px/1 var(--cond);letter-spacing:.06em}
+.check.pass .cs{color:var(--pass)} .check.fail .cs{color:var(--fail)}
+.check.flip{animation:flip .5s}
+@keyframes flip{0%{transform:scale(.97);filter:brightness(1.6)}100%{transform:none}}
+
+/* tools */
+#tools{font:13px/1.5 var(--mono)}
+.tool{display:grid;grid-template-columns:24px 1fr auto;gap:8px;padding:6px 8px;border-radius:6px;animation:slidein .25s ease-out;align-items:start}
+.tool:nth-child(odd){background:rgba(255,255,255,.022)}
+.tool .ix{color:var(--dim)}
+.tool .fn{color:#9fd0ff;font-weight:600}
+.tool .ak{color:var(--muted)} .tool .av{color:#ffd79a}
+.tool .st{font-weight:600;font-size:12px;padding:1px 7px;border-radius:4px;margin-top:1px}
+.tool.ok .st{color:var(--pass);background:var(--pass-bg)}
+.tool.err .st{color:var(--fail);background:var(--fail-bg)}
+.tool .er{grid-column:2/4;color:#ffb3ba;font-size:12px}
+#tools .empty{font-family:var(--sans)}
+.think-row{color:var(--muted);font-family:var(--sans);font-size:14px;padding:6px 8px;display:flex;gap:10px;align-items:center}
+.think-row .spin{width:12px;height:12px;border-radius:50%;border:2px solid rgba(108,184,255,.25);border-top-color:var(--tuned);animation:spin .8s linear infinite}
+@keyframes slidein{from{opacity:0;transform:translateX(8px)}}
+
+/* gbrain */
+#gbrain{max-height:20vh;overflow:auto}
+.gb{padding:7px 0;border-top:1px solid rgba(45,61,87,.5);animation:slidein .25s ease-out}
+.gb:first-child{border-top:0}
+.gb .t{font-weight:600;font-size:14.5px}
+.gb .s{font:12.5px/1.4 var(--mono);color:var(--tuned)}
+
+#toast{position:fixed;right:20px;bottom:20px;z-index:20;background:#2a1418;border:1px solid var(--fail);color:#ffd0d5;padding:10px 14px;border-radius:8px;font-size:14px;max-width:420px}
+
+/* right column: checks never overlap the tool feed; compact everything on short (projector) screens */
+#right > .sec:first-child{flex-shrink:0}
+#right > .sec.grow{min-height:130px}
+@media (max-height:900px) and (min-width:1001px){
+  .sec{padding:12px 16px}
+  .sh{margin-bottom:9px}
+  .check{grid-template-columns:26px 1fr auto;gap:10px;padding:6px 10px;margin-bottom:5px}
+  .check .ico{width:26px;height:26px} .check .ico svg{width:15px;height:15px}
+  .check .cl{font-size:15px} .check .cd{-webkit-line-clamp:1;font-size:12.5px}
+  .step{padding:8px 10px} .eco{max-height:26vh}
+  #gbrain{max-height:14vh}
+}
+@media (max-width:1000px){
+  body{height:auto;min-height:100vh;overflow:auto;grid-template-rows:auto auto}
+  header{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .sub{white-space:normal}
+  main{grid-template-columns:1fr}
+  #center{height:62vh;order:-1}
+  #left,#right{border:0;border-top:1px solid var(--line)}
+  .eco,#gbrain{max-height:none}
+  .evb{grid-template-columns:1fr}
+  #banner .big{font-size:48px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand49" id="brandLink" href="/fleet" aria-label="49th Labs"><span class="logo49">49</span><span class="bt49"><b>49th Labs</b><small>The 49th Engineer</small></span></a>
+  <nav class="tabs49"><a id="navWall" href="/fleet">Fleet wall</a><a class="on" id="navEng" href="/">Engineer view</a></nav>
+  <div class="sub"><b>Acme Devices</b> · Sensor Hub · Your team's 49th engineer. Trained on your other 48.</div>
+  <div class="hspace"></div>
+  <span id="conn" class="pill"><i></i><span>connecting</span></span>
+</header>
+<script>(function(){try{var q=new URLSearchParams(location.search),m=q.has('mock')&&q.get('mock')!=='0'?'?mock=1':'',st=/\.html$/.test(location.pathname)||location.port!=='8000';var w=document.getElementById('navWall'),e=document.getElementById('navEng'),b=document.getElementById('brandLink');w.href=b.href=(st?'fleet.html':'/fleet')+m;e.href=st?'index.html'+m:'/?view=engineer'+(m?'&mock=1':'');}catch(_){}})();</script>
+
+
+<main>
+  <aside id="left" class="panel">
+    <section class="sec">
+      <div class="sh"><h2>Engineering Change Order</h2><span id="eco-rev" class="chip"></span></div>
+      <div id="eco" class="eco"><div class="empty">Loading design…</div></div>
+    </section>
+    <section class="sec actions" aria-label="Demo steps">
+      <button id="b-rev" class="step" title="Shortcut: 1"><span class="n">1</span><span>Rev B board lands<small>Drop the new board into the Rev A enclosure</small></span></button>
+      <button id="b-base" class="step" title="Shortcut: 2"><span class="n">2</span><span>Generic open model<small>Open model, no company training</small></span></button>
+      <button id="b-tuned" class="step tuned" title="Shortcut: 3"><span class="n">3</span><span>Acme's own model<small>Trained on Acme's past revisions</small></span></button>
+      <div class="arow">
+        <button id="b-reset" class="ghost" title="Shortcut: R">Reset to Rev A</button>
+        <button id="b-revc" class="ghost" title="Rev C board (adds a USB-A port) · Shortcut: C">Board rev C (adds USB-A)</button>
+        <label class="toggle" title="Replay the last recorded model response"><input type="checkbox" id="cached"> cached</label>
+      </div>
+    </section>
+    <section class="sec grow">
+      <div class="sh"><h2>Current design</h2></div>
+      <div class="scroll"><table class="dt" id="design"></table></div>
+    </section>
+  </aside>
+
+  <section id="center">
+    <div id="viewer"></div>
+    <div id="nogl" class="ov" hidden><div>The 3D viewer could not load (three.js CDN unreachable).<br>Checks, tool calls and the change order still update live.</div></div>
+    <div id="badge" class="ov"><div class="k">Geometry by</div><div class="v" id="badge-v">—</div><div class="r" id="badge-r"></div></div>
+    <div id="vtools" class="ov"><span id="dims"></span><button id="fit" class="ghost" title="Shortcut: F">Fit view</button></div>
+    <div id="thinking" class="ov" hidden><span class="spin"></span><span id="thinking-t">Model is working</span></div>
+    <div id="banner" class="ov" hidden><div class="big" id="banner-big">PASS</div><div class="meta" id="banner-meta"></div></div>
+    <button id="evtab" class="ov" hidden title="Shortcut: E"><span>Held-out eval</span><span class="car">&#9650;</span></button>
+    <div id="drawer" aria-label="Held-out eval">
+      <div class="evh"><div><h3>Held-out eval</h3><p id="ev-sub"></p></div><button class="ghost" id="ev-close">Close</button></div>
+      <div class="evb" id="ev-body"></div>
+    </div>
+  </section>
+
+  <aside id="right" class="panel">
+    <section class="sec">
+      <div class="sh"><h2>Checks</h2><span id="check-sum" class="chip"></span></div>
+      <div id="checks"></div>
+    </section>
+    <section class="sec grow">
+      <div class="sh"><h2>Tool calls</h2><span id="tool-sum" class="chip"></span></div>
+      <div id="tools" class="scroll"></div>
+    </section>
+    <section class="sec">
+      <div class="sh"><h2>GBrain writes</h2><span class="chip">project memory</span></div>
+      <div id="gbrain"><div class="empty">Change records the agent saves to project memory show up here.</div></div>
+    </section>
+  </aside>
+</main>
+<div id="toast" hidden></div>
+
+<script type="module">
+// ======================================================================
+// utilities
+// ======================================================================
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const clone = o => JSON.parse(JSON.stringify(o));
+const num = v => (typeof v === 'number' && isFinite(v)) ? v : (v == null ? NaN : Number(v));
+function fmt(v){ v = num(v); if (!isFinite(v)) return '—'; const r = Math.round(v * 100) / 100; return Math.abs(r * 10 - Math.round(r * 10)) < 1e-6 ? r.toFixed(1) : r.toFixed(2); }
+function sfmt(v){ v = num(v); return (v > 0 ? '+' : v < 0 ? '−' : '±') + fmt(Math.abs(v)); }
+const near = (a, b, e = 1e-6) => Math.abs(num(a) - num(b)) <= e;
+
+const qs = new URLSearchParams(location.search);
+let MOCK = qs.has('mock') && qs.get('mock') !== '0';
+let S = null;              // current state
+let banner = null;         // {sig}
+let firstBuild = true;
+const CHECK_ORDER = ['cavity_fit','cavity_height','standoffs','openings','orphans'];
+const CHECK_LABEL = {cavity_fit:'Board-to-wall clearance',cavity_height:'Headroom above tallest part',standoffs:'Standoffs on mounting holes',openings:'Connector openings',orphans:'No orphan features'};
+const TYPE_NAME = {usb_c:'USB-C',usb_a:'USB-A',hdmi:'HDMI',rj45:'RJ45',barrel:'DC barrel',sd:'SD card'};
+const tname = t => TYPE_NAME[t] || String(t || 'connector');
+
+function modelInfo(m){
+  if (!m) return null;
+  const s = String(m).toLowerCase();
+  if (s === 'tuned' || s.includes('tuned') || s.includes('acme') || s.includes('lora') || s.includes('ckpt') || s.includes('checkpoint')) return {name:"Acme's own model", cls:'tuned'};
+  if (s === 'base' || s.includes('base')) return {name:'Generic open model', cls:'base'};
+  if (s === 'human' || s === 'gold' || s === 'reference') return {name:'Reference design', cls:''};
+  return {name:String(m), cls:''};
+}
+
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 5000); }
+function setConn(kind, text){ const p = $('#conn'); p.className = 'pill ' + kind; p.querySelector('span').textContent = text; }
+
+// ======================================================================
+// mock kernel (mirrors SPEC house rules) + sample data
+// ======================================================================
+const HOUSE = {clearance:1.5, headroom:3.0, standoff_h:5.0, wall:2.0, standoff_dia:5.5, tol:{usb_c:.4,hdmi:.6,rj45:.3,barrel:.8,sd:1.0}};
+const SPECS = {usb_c:[8.94,3.26,1.63], hdmi:[15,5.6,2.8], rj45:[16,13.5,6.75], barrel:[9,11,5.5], sd:[12,2,1]};
+const EPS = 0.051;
+function mkConn(id, type, side, pos){ const [w,h,z] = SPECS[type]; return {id, type, side, pos, z, w, h}; }
+const REV_A = {rev:'A', name:'Sensor Hub', w:85, d:56, t:1.6, max_component_h:12,
+  holes:[{id:'H1',x:3.5,y:3.5,dia:2.7},{id:'H2',x:81.5,y:3.5,dia:2.7},{id:'H3',x:81.5,y:52.5,dia:2.7},{id:'H4',x:3.5,y:52.5,dia:2.7}],
+  connectors:[mkConn('J1','usb_c','front',34), mkConn('J2','hdmi','back',42), mkConn('J3','barrel','left',28)]};  // mirrors rev/data/demo.json
+const REV_B = (() => { const b = clone(REV_A); b.rev = 'B'; b.w = 91;
+  b.holes.forEach(h => { if (h.x > 40) h.x += 6; });
+  b.connectors.find(c => c.id === 'J1').pos = 20;
+  b.connectors.push(mkConn('J4','rj45','right',28)); return b; })();
+
+function kApply(board, enc, call){
+  enc = clone(enc); const a = (call && call.args) || {};
+  const need = (...k) => { for (const x of k) if (a[x] === undefined || a[x] === null) throw new Error(`${call.tool}: missing arg '${x}'`); };
+  const o = enc.board_origin;
+  switch (call && call.tool){
+    case 'fit_cavity': { need('clearance','headroom'); const c = +a.clearance;
+      enc.cavity = {w:board.w + 2*c, d:board.d + 2*c, h:enc.standoff_h + board.t + board.max_component_h + (+a.headroom)};
+      enc.board_origin = {x:c, y:c}; break; }
+    case 'place_standoff': { need('hole'); const h = board.holes.find(h => h.id === a.hole); if (!h) throw new Error(`unknown hole '${a.hole}'`);
+      enc.standoffs = enc.standoffs.filter(s => s.hole !== h.id).concat([{hole:h.id, x:o.x + h.x, y:o.y + h.y, dia:HOUSE.standoff_dia, bore:h.dia - 0.5}]); break; }
+    case 'remove_standoff': { need('hole'); if (!enc.standoffs.some(s => s.hole === a.hole)) throw new Error(`no standoff for '${a.hole}'`); enc.standoffs = enc.standoffs.filter(s => s.hole !== a.hole); break; }
+    case 'place_opening': { need('connector','tolerance'); const c = board.connectors.find(c => c.id === a.connector); if (!c) throw new Error(`unknown connector '${a.connector}'`);
+      const tol = +a.tolerance, fb = c.side === 'front' || c.side === 'back';
+      enc.openings = enc.openings.filter(p => p.connector !== c.id).concat([{connector:c.id, side:c.side, pos:(fb ? o.x : o.y) + c.pos, z:enc.standoff_h + board.t + c.z, w:c.w + 2*tol, h:c.h + 2*tol}]); break; }
+    case 'remove_opening': { need('connector'); if (!enc.openings.some(p => p.connector === a.connector)) throw new Error(`no opening for '${a.connector}'`); enc.openings = enc.openings.filter(p => p.connector !== a.connector); break; }
+    default: throw new Error(`unknown tool '${call && call.tool}'`);
+  }
+  return enc;
+}
+function enclosureFor(board){
+  let enc = {wall:HOUSE.wall, standoff_h:HOUSE.standoff_h, cavity:{w:0,d:0,h:0}, board_origin:{x:0,y:0}, standoffs:[], openings:[]};
+  enc = kApply(board, enc, {tool:'fit_cavity', args:{clearance:HOUSE.clearance, headroom:HOUSE.headroom}});
+  for (const h of board.holes) enc = kApply(board, enc, {tool:'place_standoff', args:{hole:h.id}});
+  for (const c of board.connectors) enc = kApply(board, enc, {tool:'place_opening', args:{connector:c.id, tolerance:HOUSE.tol[c.type]}});
+  return enc;
+}
+function kCheck(board, enc){
+  const o = enc.board_origin, cv = enc.cavity, ne = (a, b) => Math.abs(a - b) <= EPS, out = [];
+  const cl = [o.x, cv.w - o.x - board.w, o.y, cv.d - o.y - board.d];
+  const fit = cl.every(v => ne(v, HOUSE.clearance));
+  out.push({id:'cavity_fit', label:CHECK_LABEL.cavity_fit, pass:fit, refs:fit ? [] : ['board'],
+    detail: fit ? `${fmt(HOUSE.clearance)} mm on every side` : `left ${fmt(cl[0])} · right ${fmt(cl[1])} · front ${fmt(cl[2])} · back ${fmt(cl[3])} mm`});
+  const head = cv.h - (enc.standoff_h + board.t + board.max_component_h), hok = ne(head, HOUSE.headroom);
+  out.push({id:'cavity_height', label:CHECK_LABEL.cavity_height, pass:hok, refs:hok ? [] : ['board'], detail:`${fmt(head)} mm above the tallest part`});
+  const badH = [];
+  for (const h of board.holes){ const s = enc.standoffs.find(s => s.hole === h.id);
+    if (!s || !ne(s.x, o.x + h.x) || !ne(s.y, o.y + h.y) || !ne(s.dia, HOUSE.standoff_dia) || !ne(s.bore, h.dia - 0.5)) badH.push(h.id); }
+  out.push({id:'standoffs', label:CHECK_LABEL.standoffs, pass:!badH.length, refs:badH,
+    detail: badH.length ? `${badH.join(', ')} not supported by a matching standoff` : `${board.holes.length}/${board.holes.length} holes on standoffs`});
+  const badC = [], notes = [];
+  for (const c of board.connectors){ const p = enc.openings.find(p => p.connector === c.id); const tol = HOUSE.tol[c.type] ?? 0.5, fb = c.side === 'front' || c.side === 'back';
+    const ex = {pos:(fb ? o.x : o.y) + c.pos, z:enc.standoff_h + board.t + c.z, w:c.w + 2*tol, h:c.h + 2*tol};
+    if (!p){ badC.push(c.id); notes.push(`${c.id} has no opening`); continue; }
+    if (p.side !== c.side || !ne(p.pos, ex.pos) || !ne(p.z, ex.z)){ badC.push(c.id); notes.push(`${c.id} opening off by ${fmt(Math.hypot(p.pos - ex.pos, p.z - ex.z))} mm`); continue; }
+    if (!ne(p.w, ex.w) || !ne(p.h, ex.h)){ badC.push(c.id); notes.push(`${c.id} opening wrong size`); } }
+  out.push({id:'openings', label:CHECK_LABEL.openings, pass:!badC.length, refs:badC, detail: badC.length ? notes.join('; ') : `${board.connectors.length}/${board.connectors.length} connectors clear`});
+  const orph = [...enc.standoffs.filter(s => !board.holes.some(h => h.id === s.hole)).map(s => s.hole), ...enc.openings.filter(p => !board.connectors.some(c => c.id === p.connector)).map(p => p.connector)];
+  out.push({id:'orphans', label:CHECK_LABEL.orphans, pass:!orph.length, refs:orph, detail: orph.length ? `Leftover features: ${orph.join(', ')}` : 'Every feature maps to the board'});
+  return out;
+}
+
+const MOCK_CALLS = {
+  tuned: [
+    {tool:'fit_cavity', args:{clearance:1.5, headroom:3.0}},
+    {tool:'place_standoff', args:{hole:'H2'}}, {tool:'place_standoff', args:{hole:'H3'}},
+    {tool:'place_opening', args:{connector:'J1', tolerance:0.4}}, {tool:'place_opening', args:{connector:'J4', tolerance:0.3}}],
+  base: [
+    {tool:'fit_cavity', args:{clearance:1.0, headroom:2.0}},
+    {tool:'place_standoff', args:{hole:'H2'}}, {tool:'place_standoff', args:{hole:'H3'}},
+    {tool:'place_opening', args:{connector:'J1', tolerance:0.5}}, {tool:'place_opening', args:{connector:'J5', tolerance:0.5}},
+    {tool:'place_opening', args:{connector:'J4', tolerance:0.5}}],
+};
+const MOCK_EVAL = {base_model:'sample data', mock:true, runs:[
+  {name:'base', label:'Base model', passed:5, total:30, by_check:{cavity_fit:8, cavity_height:10, standoffs:17, openings:7, orphans:25}},
+  {name:'tuned', label:'Acme-tuned model', passed:27, total:30, by_check:{cavity_fit:30, cavity_height:30, standoffs:29, openings:27, orphans:30}}]};
+
+const mock = { state:null, running:false };
+function mockState(board, prev, enc, model){ return {project:{name:'Sensor Hub', company:'Acme Devices'}, board:clone(board), prev_board:prev ? clone(prev) : null, enclosure:enc, checks:kCheck(board, enc), log:[], running:false, model}; }
+function mockEmit(ev){ setTimeout(() => handleEvent(clone(ev)), 0); }
+async function mockApi(path, body){
+  if (path === '/api/state') return clone(mock.state);
+  if (path === '/api/reset'){ mock.state = mockState(REV_A, null, enclosureFor(REV_A), null); mockEmit({type:'state', state:mock.state}); return clone(mock.state); }
+  if (path === '/api/revision'){ mock.state = mockState(REV_B, REV_A, enclosureFor(mock.state.board.rev === 'A' ? mock.state.board : REV_A), null); mockEmit({type:'state', state:mock.state}); return clone(mock.state); }
+  if (path === '/api/agent/run'){ if (!mock.running) mockRun(body.model, !!body.cached); return {ok:true}; }
+  throw new Error('mock: no route ' + path);
+}
+async function mockRun(model, cached){
+  mock.running = true; const t0 = performance.now(); const st = mock.state;
+  st.running = true; st.model = model; mockEmit({type:'state', state:st});
+  mockEmit({type:'thinking', model});
+  await sleep(cached ? 350 : 1600);
+  let enc = st.enclosure;
+  const calls = MOCK_CALLS[model] || MOCK_CALLS.base;
+  for (let i = 0; i < calls.length; i++){
+    let ok = true, error = null;
+    try { enc = kApply(st.board, enc, calls[i]); } catch (e){ ok = false; error = e.message; }
+    st.enclosure = enc; st.checks = kCheck(st.board, enc);
+    mockEmit({type:'tool', index:i, call:calls[i], ok, error});
+    mockEmit({type:'state', state:st});
+    await sleep(cached ? 160 : 520);
+  }
+  const pass = st.checks.every(c => c.pass);
+  const label = model === 'tuned' ? 'Acme-tuned model' : 'Base model';
+  mockEmit({type:'gbrain', slug:`sensor-hub/rev-${st.board.rev.toLowerCase()}-enclosure`, title:`Rev ${st.board.rev} enclosure refit by ${label}: ${pass ? 'all checks pass' : 'checks failing'}`});
+  st.running = false; mockEmit({type:'state', state:st});
+  await sleep(50);
+  mockEmit({type:'done', pass, model, latency_s:(performance.now() - t0) / 1000});
+  mock.running = false;
+}
+
+// ======================================================================
+// networking
+// ======================================================================
+async function api(path, body){
+  if (MOCK) return mockApi(path, body);
+  const r = await fetch(path, body === undefined ? {} : {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+  if (!r.ok){ let t = ''; try { t = (await r.text()).slice(0, 160); } catch {} throw new Error(`${r.status} ${t}`); }
+  try { return await r.json(); } catch { return null; }
+}
+async function fetchState(timeoutMs = 3000){
+  const ac = new AbortController(); const t = setTimeout(() => ac.abort(), timeoutMs);
+  try { const r = await fetch('/api/state', {signal:ac.signal}); if (!r.ok) throw new Error('HTTP ' + r.status); const j = await r.json(); if (!j || !j.board || !j.enclosure) throw new Error('bad state'); return j; }
+  finally { clearTimeout(t); }
+}
+let es = null;
+function connectSSE(){
+  try { es && es.close(); } catch {}
+  es = new EventSource('/api/events');
+  es.onopen = async () => { setConn('live', 'live'); try { const st = await fetchState(); render(st); } catch {} };
+  es.onmessage = e => { let ev; try { ev = JSON.parse(e.data); } catch { return; } try { handleEvent(ev); } catch (err){ console.error('event handler', err); } };
+  es.onerror = () => { setConn('warn', 'reconnecting'); if (es.readyState === EventSource.CLOSED) setTimeout(connectSSE, 1500); };
+}
+
+// ======================================================================
+// event handling
+// ======================================================================
+let toolCount = 0, toolErr = 0;
+function handleEvent(ev){
+  if (!ev || !ev.type) return;
+  switch (ev.type){
+    case 'state': if (ev.state) render(ev.state); break;
+    case 'thinking': startRunUI(ev.model); break;
+    case 'tool': addTool(ev); break;
+    case 'gbrain': addGbrain(ev); break;
+    case 'done': finishRun(ev); break;
+    case 'log': onLog(ev); break;
+    case 'learn': onLearn(ev); break;
+    case 'learned': onLearned(ev); break;
+  }
+}
+// server progress lines ("Sampling ... on River", "Replaying cached ...") -> the waiting row in the tool feed
+function onLog(ev){
+  const tr = $('#tools .think-row span:last-child');
+  if (tr && busyModel && ev.text && !/^Refit started/.test(ev.text)) tr.textContent = ev.text;
+}
+// live one-shot learning (rev/learn_api.py) progress, pushed over the same SSE stream
+function onLearn(ev){
+  const st = ev.stage ? ev.stage[0].toUpperCase() + ev.stage.slice(1) : 'Learning';
+  const prog = ev.total_steps ? ` ${ev.step ?? 0}/${ev.total_steps}` : '';
+  const loss = (typeof ev.loss === 'number' && isFinite(ev.loss)) ? ` · loss ${ev.loss.toFixed(3)}` : '';
+  $('#thinking-t').textContent = `Learning · ${st}${prog}${loss}${ev.msg ? ' · ' + ev.msg : ''}`.slice(0, 140);
+  $('#thinking').hidden = false;
+}
+function onLearned(ev){
+  $('#thinking').hidden = true;
+  const b = $('#banner'), ok = ev.ok !== false;
+  b.className = 'ov' + (ok ? '' : ' fail');
+  $('#banner-big').textContent = ok ? 'LEARNED' : 'NOT LEARNED';
+  const bf = ev.before || {}, af = ev.after || {};
+  const lesson = ev.lesson ? `${tname(ev.lesson.type)} tolerance ${fmt(ev.lesson.tolerance)} mm` : 'correction';
+  $('#banner-meta').innerHTML = `<b>${esc(lesson)}</b>${bf.total ? `held-out ${esc(bf.passed)}/${esc(bf.total)} → ${esc(af.passed)}/${esc(af.total)}` : ''}${isFinite(num(ev.seconds)) ? ` · ${num(ev.seconds).toFixed(0)} s` : ''}${ev.replay ? ' · replay' : ''}`;
+  b.hidden = false; banner = {sig:geoSig(S)};
+}
+function startRunUI(model){
+  hideBanner();
+  const mi = modelInfo(model) || {name:'Model'};
+  $('#thinking-t').textContent = `${mi.name} is working`;
+  $('#thinking').hidden = false;
+  if (!startRunUI._model || startRunUI._model !== model || toolCount > 0 || !$('#tools .think-row')){
+    toolCount = 0; toolErr = 0;
+    $('#tools').innerHTML = `<div class="think-row"><span class="spin"></span><span>${esc(mi.name)} is reading the change order</span></div>`;
+    $('#tool-sum').textContent = '';
+  }
+  startRunUI._model = model;
+  setBusy(true, model);
+}
+function fmtCall(c){
+  const a = (c && c.args) || {};
+  const args = Object.entries(a).map(([k, v]) => `<span class="ak">${esc(k)}</span>=<span class="av">${esc(typeof v === 'string' ? `"${v}"` : typeof v === 'number' ? String(v) : JSON.stringify(v))}</span>`).join(', ');
+  return `<span class="fn">${esc((c && c.tool) || '?')}</span>(${args})`;
+}
+function addTool(ev){
+  const box = $('#tools');
+  const tr = box.querySelector('.think-row'); if (tr) tr.remove();
+  if (!box.querySelector('.tool')) box.innerHTML = '';
+  toolCount++; if (!ev.ok) toolErr++;
+  const d = document.createElement('div');
+  d.className = 'tool ' + (ev.ok ? 'ok' : 'err');
+  const ix = (ev.index ?? toolCount - 1) + 1;
+  d.innerHTML = `<span class="ix">${String(ix).padStart(2, '0')}</span><span class="call">${fmtCall(ev.call)}</span><span class="st">${ev.ok ? 'ok' : 'error'}</span>${ev.ok ? '' : `<span class="er">${esc(ev.error || 'tool error')}</span>`}`;
+  box.appendChild(d); box.scrollTop = box.scrollHeight;
+  $('#tool-sum').textContent = `${toolCount} call${toolCount === 1 ? '' : 's'}${toolErr ? ` · ${toolErr} rejected` : ''}`;
+}
+function addGbrain(ev){
+  const box = $('#gbrain');
+  if (!box.querySelector('.gb')) box.innerHTML = '';
+  const d = document.createElement('div'); d.className = 'gb';
+  d.innerHTML = `<div class="t">${esc(ev.title || ev.slug)}</div><div class="s">${esc(ev.slug || '')}</div>`;
+  box.prepend(d);
+  while (box.children.length > 4) box.lastChild.remove();
+  scrollTools();
+}
+function scrollTools(){ requestAnimationFrame(() => { const t = $('#tools'); t.scrollTop = t.scrollHeight; }); }
+function finishRun(ev){
+  $('#thinking').hidden = true;
+  const tr = $('#tools .think-row'); if (tr) tr.innerHTML = `<span>No tool calls returned.</span>`;
+  setBusy(false);
+  const checks = (S && S.checks) || [];
+  const np = checks.filter(c => c.pass).length;
+  const pass = ev.pass ?? (checks.length && np === checks.length);
+  const mi = modelInfo(ev.model) || modelInfo(S && S.model) || {name:'Model'};
+  const b = $('#banner');
+  // a run that never produced tool calls (River down, tuned checkpoint missing, unparseable output) is an ERROR, not a FAIL
+  const errored = !!ev.error && !(num(ev.n_calls) > 0);
+  if (ev.error){ toast(ev.error); if (tr) tr.innerHTML = `<span>${esc(ev.error)}</span>`; }
+  b.className = 'ov' + (pass ? '' : ' fail');
+  $('#banner-big').textContent = errored ? 'ERROR' : pass ? 'PASS' : 'FAIL';
+  const lat = num(ev.latency_s);
+  $('#banner-meta').innerHTML = errored ? `<b>${esc(mi.name)}</b>${esc(String(ev.error).slice(0, 110))}`
+    : `<b>${esc(mi.name)}</b>${checks.length ? `${np} of ${checks.length} checks pass` : ''}${isFinite(lat) ? ` · ${lat.toFixed(1)} s` : ''}${ev.cached ? ' · cached replay' : ''}`;
+  b.hidden = false;
+  banner = {sig:geoSig(S)};
+  scrollTools();
+}
+function hideBanner(){ $('#banner').hidden = true; banner = null; }
+const geoSig = st => st ? JSON.stringify([st.board, st.enclosure]) : '';
+
+let busyModel = null, runStartedAt = 0;
+function setBusy(on, model){
+  if (on && !busyModel) runStartedAt = Date.now();
+  busyModel = on ? model : null;
+  const disable = on;
+  for (const id of ['b-rev', 'b-base', 'b-tuned']) $('#' + id).disabled = !!disable;
+  $('#b-base').classList.toggle('busy', !!disable && String(busyModel || (S && S.model) || '').toLowerCase().includes('base'));
+  $('#b-tuned').classList.toggle('busy', !!disable && /tuned|acme/.test(String(busyModel || (S && S.model) || '').toLowerCase()));
+}
+
+// ======================================================================
+// render panels
+// ======================================================================
+let prevPass = {};
+function render(st){
+  if (!st || !st.board || !st.enclosure) return;
+  S = st;
+  if (banner && geoSig(st) !== banner.sig) hideBanner();
+  if (st.running){ $('#thinking').hidden = false; if (!busyModel) setBusy(true, st.model || 'model'); }
+  else if (!busyModel || Date.now() - runStartedAt > 2500){ $('#thinking').hidden = true; if (busyModel) setBusy(false); }
+  else setBusy(true, busyModel);
+  renderECO(st); renderChecks(st.checks || []); renderDesign(st); renderBadge(st);
+  build(st);
+}
+function renderBadge(st){
+  const mi = modelInfo(st.model);
+  const v = $('#badge-v'), r = $('#badge-r');
+  if (mi){ v.textContent = mi.name; v.className = 'v ' + mi.cls; }
+  else { v.textContent = st.prev_board ? `Rev ${st.prev_board.rev} enclosure` : `Rev ${st.board.rev} released design`; v.className = 'v'; }
+  r.textContent = `Board Rev ${st.board.rev}` + (st.prev_board && !mi ? ' · not yet refit' : '');
+  const c = st.enclosure.cavity || {};
+  $('#dims').textContent = `Cavity ${fmt(c.w)} × ${fmt(c.d)} × ${fmt(c.h)} mm`;
+}
+function diffBoards(a, b){
+  const rows = [];
+  if (!near(a.w, b.w) || !near(a.d, b.d)){
+    const parts = []; if (!near(a.w, b.w)) parts.push(`width ${sfmt(b.w - a.w)} mm`); if (!near(a.d, b.d)) parts.push(`depth ${sfmt(b.d - a.d)} mm`);
+    rows.push({k:'mod', tag:'RESIZED', t:`Board ${fmt(a.w)} × ${fmt(a.d)} → ${fmt(b.w)} × ${fmt(b.d)} mm`, s:parts.join(', ')});
+  }
+  if (!near(a.t, b.t)) rows.push({k:'mod', tag:'CHANGED', t:`PCB thickness ${fmt(a.t)} → ${fmt(b.t)} mm`, s:sfmt(b.t - a.t) + ' mm'});
+  if (!near(a.max_component_h, b.max_component_h)) rows.push({k:'mod', tag:'TALLER', t:`Tallest part ${fmt(a.max_component_h)} → ${fmt(b.max_component_h)} mm`, s:sfmt(b.max_component_h - a.max_component_h) + ' mm'});
+  const ca = new Map((a.connectors || []).map(c => [c.id, c])), cb = new Map((b.connectors || []).map(c => [c.id, c]));
+  for (const [id, c] of cb){
+    const p = ca.get(id);
+    if (!p){ rows.push({k:'add', tag:'ADDED', t:`${id} ${tname(c.type)}`, s:`${c.side} edge at ${fmt(c.pos)} mm`}); continue; }
+    if (p.type !== c.type) rows.push({k:'mod', tag:'CHANGED', t:`${id} ${tname(p.type)} → ${tname(c.type)}`, s:`${c.side} edge at ${fmt(c.pos)} mm`});
+    if (p.side !== c.side) rows.push({k:'mod', tag:'MOVED', t:`${id} ${tname(c.type)} to ${c.side} edge`, s:`${p.side} @ ${fmt(p.pos)} → ${c.side} @ ${fmt(c.pos)} mm`});
+    else if (!near(p.pos, c.pos) || !near(p.z, c.z)){
+      const s = []; if (!near(p.pos, c.pos)) s.push(`${fmt(p.pos)} → ${fmt(c.pos)} mm along ${c.side} edge (${sfmt(c.pos - p.pos)})`); if (!near(p.z, c.z)) s.push(`height ${fmt(p.z)} → ${fmt(c.z)} mm`);
+      rows.push({k:'mod', tag:'MOVED', t:`${id} ${tname(c.type)} moved ${!near(p.pos, c.pos) ? fmt(Math.abs(c.pos - p.pos)) + ' mm ' + (['front','back'].includes(c.side) ? (c.pos < p.pos ? 'left' : 'right') : (c.pos < p.pos ? 'forward' : 'back')) : ''}`, s:s.join(', ')});
+    }
+  }
+  for (const [id, c] of ca) if (!cb.has(id)) rows.push({k:'rem', tag:'REMOVED', t:`${id} ${tname(c.type)}`, s:`was on ${c.side} edge at ${fmt(c.pos)} mm`});
+  const ha = new Map((a.holes || []).map(h => [h.id, h])), hb = new Map((b.holes || []).map(h => [h.id, h]));
+  for (const [id, h] of hb){
+    const p = ha.get(id);
+    if (!p){ rows.push({k:'add', tag:'ADDED', t:`${id} mounting hole`, s:`at (${fmt(h.x)}, ${fmt(h.y)}) mm, ⌀${fmt(h.dia)}`}); continue; }
+    if (!near(p.x, h.x) || !near(p.y, h.y)) rows.push({k:'mod', tag:'MOVED', t:`${id} mounting hole`, s:`(${fmt(p.x)}, ${fmt(p.y)}) → (${fmt(h.x)}, ${fmt(h.y)}) mm`});
+    if (!near(p.dia, h.dia)) rows.push({k:'mod', tag:'CHANGED', t:`${id} hole diameter`, s:`⌀${fmt(p.dia)} → ⌀${fmt(h.dia)} mm`});
+  }
+  for (const [id, h] of ha) if (!hb.has(id)) rows.push({k:'rem', tag:'REMOVED', t:`${id} mounting hole`, s:`was at (${fmt(h.x)}, ${fmt(h.y)}) mm`});
+  return rows;
+}
+function renderECO(st){
+  const a = st.prev_board, b = st.board, box = $('#eco');
+  if (!a){ $('#eco-rev').textContent = `Rev ${b.rev}`; box.innerHTML = `<div class="empty">No open change. Rev ${esc(b.rev)} is the released design and its enclosure passes every check.<br><br>Press <b>1</b> when the Rev B board lands.</div>`; return; }
+  $('#eco-rev').textContent = `Rev ${a.rev} → Rev ${b.rev}`;
+  const rows = diffBoards(a, b);
+  box.innerHTML = rows.length ? rows.map(r => `<div class="eco-row"><span class="tag ${r.k}">${r.tag}</span><div><div class="eco-t">${esc(r.t)}</div>${r.s ? `<div class="eco-s">${esc(r.s)}</div>` : ''}</div></div>`).join('')
+    : `<div class="empty">Rev ${esc(b.rev)} has no geometric changes from Rev ${esc(a.rev)}.</div>`;
+}
+const ICON_OK = '<svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_NO = '<svg viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
+function renderChecks(checks){
+  const sorted = [...checks].sort((x, y) => (CHECK_ORDER.indexOf(x.id) + 99) % 99 - (CHECK_ORDER.indexOf(y.id) + 99) % 99);
+  const np = sorted.filter(c => c.pass).length;
+  const sum = $('#check-sum');
+  sum.textContent = sorted.length ? (np === sorted.length ? `all ${np} pass` : `${sorted.length - np} of ${sorted.length} failing`) : '';
+  sum.className = 'chip ' + (sorted.length ? (np === sorted.length ? 'pass' : 'fail') : '');
+  const box = $('#checks');
+  box.innerHTML = sorted.map(c => {
+    const flip = prevPass[c.id] !== undefined && prevPass[c.id] !== !!c.pass;
+    return `<div class="check ${c.pass ? 'pass' : 'fail'}${flip ? ' flip' : ''}"><div class="ico">${c.pass ? ICON_OK : ICON_NO}</div><div><div class="cl">${esc(c.label || CHECK_LABEL[c.id] || c.id)}</div><div class="cd" title="${esc(c.detail || '')}">${esc(c.detail || '')}</div></div><div class="cs">${c.pass ? 'PASS' : 'FAIL'}</div></div>`;
+  }).join('') || '<div class="empty">No checks yet.</div>';
+  prevPass = Object.fromEntries(sorted.map(c => [c.id, !!c.pass]));
+}
+function renderDesign(st){
+  const b = st.board, e = st.enclosure, c = e.cavity || {};
+  const rows = [
+    ['grp', `Board · Rev ${b.rev}`],
+    ['Size', `${fmt(b.w)} × ${fmt(b.d)} × ${fmt(b.t)} mm`],
+    ['Tallest part', `${fmt(b.max_component_h)} mm`],
+    ['Mounting holes', (b.holes || []).length],
+    ['Connectors', (b.connectors || []).map(x => x.id).join(' ') || '—'],
+    ['grp', 'Enclosure'],
+    ['Cavity', `${fmt(c.w)} × ${fmt(c.d)} × ${fmt(c.h)} mm`],
+    ['Wall / standoff height', `${fmt(e.wall)} / ${fmt(e.standoff_h)} mm`],
+    ['Board origin', `(${fmt(e.board_origin && e.board_origin.x)}, ${fmt(e.board_origin && e.board_origin.y)}) mm`],
+    ['Standoffs', (e.standoffs || []).length],
+    ['Openings', (e.openings || []).map(x => x.connector).join(' ') || '—'],
+  ];
+  $('#design').innerHTML = rows.map(r => r[0] === 'grp' ? `<tr class="grp"><td colspan="2">${esc(r[1])}</td></tr>` : `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
+}
+
+// ======================================================================
+// eval drawer
+// ======================================================================
+async function loadEval(){
+  try {
+    let data;
+    if (MOCK) data = MOCK_EVAL;
+    else { const r = await fetch('/api/eval'); if (!r.ok) throw new Error('no eval'); data = await r.json(); }
+    if (!data || !Array.isArray(data.runs) || !data.runs.length) throw new Error('empty eval');
+    renderEval(data); $('#evtab').hidden = false; return true;
+  } catch { $('#evtab').hidden = true; $('#center').classList.remove('evopen'); return false; }
+}
+function renderEval(data){
+  const runs = [...data.runs].sort((a, b) => (a.name === 'tuned') - (b.name === 'tuned'));
+  const total = Math.max(...runs.map(r => num(r.total) || 0), 0);
+  $('#ev-sub').innerHTML = `${total} engineering changes the model never saw in training, graded by the deterministic checker${data.base_model ? ` · base ${esc(data.base_model)}` : ''}${data.mock ? ' · <span class="mockmark">MOCK sample numbers, not a real eval</span>' : ''}`;
+  const cls = r => (r.name === 'tuned' || /tuned|acme/i.test(r.label || '')) ? 'tuned' : 'base';
+  const left = runs.map(r => { const p = r.total ? Math.round(100 * r.passed / r.total) : 0;
+    return `<div class="run ${cls(r)}"><div class="lab"><span>${esc(r.label || modelInfo(r.name)?.name || r.name)}</span></div><div class="pct">${p}%</div><div class="frac">${r.passed} of ${r.total} changes pass every check</div><div class="bar"><i data-w="${p}"></i></div></div>`; }).join('');
+  const ids = [...new Set([...CHECK_ORDER, ...runs.flatMap(r => Object.keys(r.by_check || {}))])].filter(id => runs.some(r => r.by_check && id in r.by_check));
+  const right = `<div class="pc"><h4>Pass rate per check</h4><div class="legend">${runs.map(r => `<span class="${cls(r) === 'tuned' ? 't' : ''}">${esc(r.label || r.name)}</span>`).join('')}</div>` +
+    ids.map(id => `<div class="pcr"><div class="nm">${esc(CHECK_LABEL[id] || id)}</div><div class="bars">${runs.map(r => { const v = num(r.by_check?.[id]) || 0, t = num(r.total) || 1, p = Math.round(100 * v / t);
+      return `<div class="mini ${cls(r)}"><div class="bar"><i data-w="${p}"></i></div><span>${v}/${r.total}</span></div>`; }).join('')}</div></div>`).join('') + '</div>';
+  $('#ev-body').innerHTML = `<div>${left}</div>${right}`;
+  if ($('#center').classList.contains('evopen')) animateBars();
+}
+function animateBars(){ requestAnimationFrame(() => document.querySelectorAll('#ev-body .bar i').forEach(i => { i.style.width = '0'; requestAnimationFrame(() => i.style.width = i.dataset.w + '%'); })); }
+async function toggleEval(force){
+  const c = $('#center'); const open = force ?? !c.classList.contains('evopen');
+  if (open){ const ok = await loadEval(); if (!ok) return; c.classList.add('evopen'); animateBars(); }
+  else c.classList.remove('evopen');
+}
+
+// ======================================================================
+// 3D viewer
+// ======================================================================
+const V = {ready:false};
+async function initViewer(){
+  try {
+    const T = await import('three');
+    const {OrbitControls} = await import('three/addons/controls/OrbitControls.js');
+    const {RoomEnvironment} = await import('three/addons/environments/RoomEnvironment.js');
+    const {CSS2DRenderer, CSS2DObject} = await import('three/addons/renderers/CSS2DRenderer.js');
+    Object.assign(V, {T, CSS2DObject});
+    const el = $('#viewer');
+    const renderer = new T.WebGLRenderer({antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputColorSpace = T.SRGBColorSpace;
+    renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap;
+    el.appendChild(renderer.domElement);
+    const labels = new CSS2DRenderer(); labels.domElement.className = 'labels'; el.appendChild(labels.domElement);
+    const scene = new T.Scene();
+    const pmrem = new T.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environmentIntensity = 0.55;
+    const camera = new T.PerspectiveCamera(30, 1, 1, 5000);
+    camera.position.set(120, 160, 220);
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; controls.dampingFactor = 0.08; controls.maxPolarAngle = Math.PI * 0.49; controls.minDistance = 40; controls.maxDistance = 1500;
+    scene.add(new T.HemisphereLight(0xe4ecff, 0x1a2230, 0.55));
+    const key = new T.DirectionalLight(0xffffff, 1.55); key.position.set(140, 260, 180); key.castShadow = true;
+    key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, {left:-160, right:160, top:160, bottom:-160, near:10, far:900}); key.shadow.bias = -0.0005; key.shadow.radius = 5;
+    scene.add(key);
+    const fill = new T.DirectionalLight(0x9cc4ff, 0.45); fill.position.set(-200, 120, -120); scene.add(fill);
+    const ground = new T.Mesh(new T.PlaneGeometry(1400, 1400), new T.ShadowMaterial({opacity:0.32}));
+    ground.rotation.x = -Math.PI / 2; ground.position.y = -2.02; ground.receiveShadow = true; scene.add(ground);
+    const grid = new T.GridHelper(700, 70, 0x2e4260, 0x1a2638); grid.position.y = -2.05; grid.material.transparent = true; grid.material.opacity = 0.55; scene.add(grid);
+    const content = new T.Group(); scene.add(content);
+    Object.assign(V, {renderer, labels, scene, camera, controls, content, ground, grid, el});
+    const resize = () => { const w = el.clientWidth || 1, h = el.clientHeight || 1; renderer.setSize(w, h); labels.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+    new ResizeObserver(resize).observe(el); resize();
+    renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); labels.render(scene, camera); });
+    V.ready = true;
+    if (S) build(S);
+    return true;
+  } catch (e){
+    console.warn('3D viewer unavailable:', e);
+    $('#nogl').hidden = false; return false;
+  }
+}
+function fitCamera(){
+  if (!V.ready) return;
+  const {T, camera, controls, content} = V;
+  const box = new T.Box3().setFromObject(content); if (box.isEmpty()) return;
+  const sphere = box.getBoundingSphere(new T.Sphere());
+  const dir = new T.Vector3(0.5, 0.95, 1.3).normalize();
+  const vf = camera.fov * Math.PI / 180, hf = 2 * Math.atan(Math.tan(vf / 2) * camera.aspect);
+  const dist = sphere.radius / Math.sin(Math.min(vf, hf) / 2) * 1.12;
+  const target = sphere.center.clone(); target.y -= sphere.radius * 0.12;
+  camera.position.copy(target).addScaledVector(dir, dist);
+  controls.target.copy(target); camera.near = Math.max(0.5, dist / 200); camera.far = dist * 30; camera.updateProjectionMatrix(); controls.update();
+}
+function disposeContent(){
+  const {content} = V;
+  content.traverse(o => { if (o.geometry) o.geometry.dispose(); if (o.material){ (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => { if (m.map) m.map.dispose(); m.dispose(); }); } });
+  while (content.children.length) content.remove(content.children[0]);
+}
+const COL = {wall:0xcfd6e0, wallFail:0xe2b4b8, floor:0xb4bdca, standoff:0xbac3cf, pcb:0x17663c, pad:0xd4ad55, hole:0x06080a, metal:0xc9cfd8, port:0x121418, sink:0x2a3038, chip:0x16191e, fail:0xff4655};
+function build(st){
+  if (!V.ready || !st || !st.board || !st.enclosure) return;
+  const {T, content, CSS2DObject} = V;
+  disposeContent();
+  const b = st.board, e = st.enclosure;
+  const cw = num(e.cavity.w), cd = num(e.cavity.d), ch = num(e.cavity.h), W = num(e.wall ?? 2), sh = num(e.standoff_h ?? 5);
+  const ox = num(e.board_origin?.x ?? 0), oy = num(e.board_origin?.y ?? 0), top = sh + num(b.t);
+  const failed = new Set(); let fitFail = false, headFail = false;
+  for (const c of st.checks || []) if (!c.pass){ if (c.id === 'cavity_fit') fitFail = true; if (c.id === 'cavity_height') headFail = true; for (const r of c.refs || []) failed.add(String(r)); }
+  content.position.set(-cw / 2, 0, cd / 2);
+  V.ground.position.y = -W - 0.02; V.grid.position.y = -W - 0.05;
+
+  const std = (color, o = {}) => new T.MeshStandardMaterial({color, roughness:0.55, metalness:0, ...o});
+  const failMat = () => std(COL.fail, {emissive:0x7a0f18, emissiveIntensity:0.9, roughness:0.4});
+  const ghost = (color = COL.fail, opacity = 0.38) => new T.MeshBasicMaterial({color, transparent:true, opacity, depthWrite:false});
+  const box = (x0, x1, y0, y1, z0, z1, mat, shadow = true) => {
+    const m = new T.Mesh(new T.BoxGeometry(Math.max(x1 - x0, 1e-3), Math.max(z1 - z0, 1e-3), Math.max(y1 - y0, 1e-3)), mat);
+    m.position.set((x0 + x1) / 2, (z0 + z1) / 2, -(y0 + y1) / 2); m.castShadow = shadow; m.receiveShadow = shadow; content.add(m); return m;
+  };
+  const cyl = (x, y, z0, z1, r, mat, seg = 40) => { const m = new T.Mesh(new T.CylinderGeometry(r, r, Math.max(z1 - z0, 1e-3), seg), mat); m.position.set(x, (z0 + z1) / 2, -y); m.castShadow = m.receiveShadow = true; content.add(m); return m; };
+  const disc = (x, y, z, r0, r1, mat) => { const g = r0 > 0 ? new T.RingGeometry(r0, r1, 40) : new T.CircleGeometry(r1, 40); g.rotateX(-Math.PI / 2); const m = new T.Mesh(g, mat); m.position.set(x, z, -y); content.add(m); return m; };
+  const label = (text, x, y, z, cls = '') => { const d = document.createElement('div'); d.className = 'lbl ' + cls; d.textContent = text; const o = new CSS2DObject(d); o.position.set(x, z, -y); content.add(o); return o; };
+  const labeled = new Set();
+
+  // floor + walls (cell decomposition so openings are real holes)
+  box(-W, cw + W, -W, cd + W, -W, 0, std(COL.floor));
+  const wallMat = std(fitFail ? COL.wallFail : COL.wall); // soft tint only, so the saturated red on failing refs stands out
+  const uniq = arr => arr.sort((p, q) => p - q).filter((v, i, a) => i === 0 || v - a[i - 1] > 1e-6);
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const WALLS = {front:{fb:true, a0:-W, a1:cw + W, t0:-W, t1:0}, back:{fb:true, a0:-W, a1:cw + W, t0:cd, t1:cd + W}, left:{fb:false, a0:0, a1:cd, t0:-W, t1:0}, right:{fb:false, a0:0, a1:cd, t0:cw, t1:cw + W}};
+  for (const [side, w] of Object.entries(WALLS)){
+    const ops = (e.openings || []).filter(o => o.side === side).map(o => ({pos:num(o.pos), z:num(o.z), w:num(o.w), h:num(o.h)}));
+    const A = [w.a0, w.a1], Z = [0, ch];
+    for (const o of ops){ A.push(o.pos - o.w / 2, o.pos + o.w / 2); Z.push(o.z - o.h / 2, o.z + o.h / 2); }
+    const as = uniq(A.map(v => clamp(v, w.a0, w.a1))), zs = uniq(Z.map(v => clamp(v, 0, ch)));
+    for (let i = 0; i < as.length - 1; i++){
+      const ac = (as[i] + as[i + 1]) / 2; let run0 = null;
+      for (let j = 0; j <= zs.length - 1; j++){
+        let solid = false;
+        if (j < zs.length - 1){ const zc = (zs[j] + zs[j + 1]) / 2; solid = !ops.some(o => Math.abs(ac - o.pos) < o.w / 2 && Math.abs(zc - o.z) < o.h / 2); }
+        if (solid && run0 === null) run0 = zs[j];
+        if (!solid && run0 !== null){
+          const z1 = zs[j];
+          if (w.fb) box(as[i], as[i + 1], w.t0, w.t1, run0, z1, wallMat); else box(w.t0, w.t1, as[i], as[i + 1], run0, z1, wallMat);
+          run0 = null;
+        }
+      }
+    }
+  }
+  // opening highlights
+  for (const o of e.openings || []){
+    if (!failed.has(String(o.connector))) continue;
+    const w = WALLS[o.side]; if (!w) continue;
+    const a0 = num(o.pos) - num(o.w) / 2, a1 = num(o.pos) + num(o.w) / 2, z0 = num(o.z) - num(o.h) / 2, z1 = num(o.z) + num(o.h) / 2;
+    const m = w.fb ? box(a0, a1, w.t0 - 0.6, w.t1 + 0.6, z0, z1, ghost(COL.fail, 0.82), false) : box(w.t0 - 0.6, w.t1 + 0.6, a0, a1, z0, z1, ghost(COL.fail, 0.82), false);
+    m.renderOrder = 5;
+    const edges = new T.LineSegments(new T.EdgesGeometry(m.geometry), new T.LineBasicMaterial({color:COL.fail})); edges.position.copy(m.position); content.add(edges);
+  }
+  // standoffs
+  for (const s of e.standoffs || []){
+    const bad = failed.has(String(s.hole));
+    cyl(num(s.x), num(s.y), 0, sh, num(s.dia) / 2, bad ? failMat() : std(COL.standoff));
+    disc(num(s.x), num(s.y), sh + 0.01, 0, Math.max(0.3, num(s.bore) / 2), std(COL.hole, {roughness:0.9}));
+  }
+  // PCB
+  const pcb = box(ox, ox + b.w, oy, oy + b.d, sh, top, std(COL.pcb, {roughness:0.42}));
+  pcb.name = 'board';
+  // silkscreen
+  try {
+    const cv = document.createElement('canvas'); cv.width = 512; cv.height = 128; const g = cv.getContext('2d');
+    g.fillStyle = 'rgba(0,0,0,0)'; g.fillRect(0, 0, 512, 128); g.fillStyle = '#e8f2ea'; const txt = `SENSOR HUB  REV ${String(b.rev).toUpperCase()}`; let fs = 64; g.font = `600 ${fs}px Geist, sans-serif`; const tw = g.measureText(txt).width; if (tw > 496){ fs = Math.floor(fs * 496 / tw); g.font = `600 ${fs}px Geist, sans-serif`; } g.textBaseline = 'middle'; g.fillText(txt, 8, 64);
+    const tex = new T.CanvasTexture(cv); tex.colorSpace = T.SRGBColorSpace; tex.anisotropy = 4;
+    const lw = Math.min(24, b.w * 0.26), pl = new T.Mesh(new T.PlaneGeometry(lw, lw / 4), new T.MeshBasicMaterial({map:tex, transparent:true, depthWrite:false}));
+    pl.rotation.x = -Math.PI / 2; pl.position.set(ox + b.w * 0.06 + lw / 2, top + 0.03, -(oy + b.d * 0.46)); content.add(pl);
+  } catch {}
+  // holes on PCB
+  for (const h of b.holes || []){
+    const bad = failed.has(String(h.id)); const x = ox + num(h.x), y = oy + num(h.y), r = num(h.dia) / 2;
+    disc(x, y, top + 0.02, r, r + 0.75, bad ? failMat() : std(COL.pad, {metalness:0.85, roughness:0.3}));
+    disc(x, y, top + 0.025, 0, r, std(COL.hole, {roughness:0.95}));
+    if (bad){
+      const hasStandoff = (e.standoffs || []).some(s => String(s.hole) === String(h.id) && Math.hypot(num(s.x) - x, num(s.y) - y) < 0.2);
+      if (!hasStandoff) cyl(x, y, 0, sh, 2.75, ghost(COL.fail, 0.3), 32).castShadow = false;
+      if (!labeled.has(h.id)){ labeled.add(h.id); label(h.id, x, y, top + 4); }
+    }
+  }
+  // components: heatsink (tallest) + a few chips
+  const mh = Math.max(0.5, num(b.max_component_h));
+  const cx = ox + b.w / 2, cy = oy + b.d / 2, fw = Math.min(24, b.w * 0.28), fd = Math.min(24, b.d * 0.42);
+  const sinkMat = headFail ? failMat() : std(COL.sink, {metalness:0.55, roughness:0.45});
+  const baseH = Math.min(2, mh);
+  box(cx - fw / 2, cx + fw / 2, cy - fd / 2, cy + fd / 2, top, top + baseH, sinkMat);
+  if (mh > baseH + 0.5){ const n = 8, ft = 0.9; for (let i = 0; i < n; i++){ const fx = cx - fw / 2 + (i + 0.5) * fw / n; box(fx - ft / 2, fx + ft / 2, cy - fd / 2, cy + fd / 2, top + baseH, top + mh, sinkMat); } }
+  if (headFail){
+    label(`Headroom ${fmt(ch - top - mh)} mm`, cx, cy, top + mh + 3);
+    const lid = box(0, cw, 0, cd, ch - 0.05, ch + 0.05, ghost(COL.fail, 0.16), false); lid.renderOrder = 4;
+  }
+  for (const [fx, fy, sw, sd, hh] of [[0.2, 0.74, 11, 11, 1.2], [0.8, 0.74, 7, 7, 1.0], [0.74, 0.28, 9, 5, 1.4], [0.26, 0.28, 6, 4, 0.9]]){
+    const x = ox + b.w * fx, y = oy + b.d * fy, hgt = Math.min(hh, mh);
+    box(x - sw / 2, x + sw / 2, y - sd / 2, y + sd / 2, top, top + hgt, std(COL.chip, {roughness:0.6}));
+  }
+  // connectors
+  const DEPTH = 7, OUT = 1;
+  for (const c of b.connectors || []){
+    const bad = failed.has(String(c.id)); const cw2 = num(c.w) / 2, zc = top + num(c.z), z0 = zc - num(c.h) / 2, z1 = zc + num(c.h) / 2, p = num(c.pos);
+    const mat = bad ? failMat() : std(COL.metal, {metalness:0.9, roughness:0.28});
+    const port = std(COL.port, {roughness:0.8}); const iw = Math.max(0.2, cw2 - 0.7), iz0 = z0 + 0.6, iz1 = Math.max(z0 + 0.8, z1 - 0.6);
+    let lx, ly;
+    if (c.side === 'front'){ box(ox + p - cw2, ox + p + cw2, oy - OUT, oy - OUT + DEPTH, z0, z1, mat); box(ox + p - iw, ox + p + iw, oy - OUT - 0.08, oy - OUT + 0.3, iz0, iz1, port, false); lx = ox + p; ly = oy - OUT; }
+    else if (c.side === 'back'){ box(ox + p - cw2, ox + p + cw2, oy + b.d + OUT - DEPTH, oy + b.d + OUT, z0, z1, mat); box(ox + p - iw, ox + p + iw, oy + b.d + OUT - 0.3, oy + b.d + OUT + 0.08, iz0, iz1, port, false); lx = ox + p; ly = oy + b.d + OUT; }
+    else if (c.side === 'left'){ box(ox - OUT, ox - OUT + DEPTH, oy + p - cw2, oy + p + cw2, z0, z1, mat); box(ox - OUT - 0.08, ox - OUT + 0.3, oy + p - iw, oy + p + iw, iz0, iz1, port, false); lx = ox - OUT; ly = oy + p; }
+    else { box(ox + b.w + OUT - DEPTH, ox + b.w + OUT, oy + p - cw2, oy + p + cw2, z0, z1, mat); box(ox + b.w + OUT - 0.3, ox + b.w + OUT + 0.08, oy + p - iw, oy + p + iw, iz0, iz1, port, false); lx = ox + b.w + OUT; ly = oy + p; }
+    if (bad && !labeled.has(c.id)){ labeled.add(c.id); label(`${c.id} ${tname(c.type)}`, lx, ly, z1 + 3); }
+  }
+  // orphan features: label enclosure-only refs
+  for (const o of e.openings || []) if (failed.has(String(o.connector)) && !labeled.has(o.connector)){
+    labeled.add(o.connector); const w = WALLS[o.side]; if (!w) continue; const t = (w.t0 + w.t1) / 2;
+    if (w.fb) label(`${o.connector} opening`, num(o.pos), t, num(o.z) + num(o.h) / 2 + 3); else label(`${o.connector} opening`, t, num(o.pos), num(o.z) + num(o.h) / 2 + 3);
+  }
+  for (const s of e.standoffs || []) if (failed.has(String(s.hole)) && !labeled.has(s.hole)){ labeled.add(s.hole); label(`${s.hole} standoff`, num(s.x), num(s.y), sh + 4); }
+  // cavity fit: show where the board is too tight / overhangs
+  if (fitFail){
+    const C = HOUSE.clearance, zA = sh - 0.4, zB = top + 0.4;
+    const sides = [
+      ['left', ox, () => [Math.min(0, ox), Math.max(0, ox), oy, oy + b.d], (cl) => [Math.min(0, ox) / 2 + Math.max(0, ox) / 2, oy + b.d / 2]],
+      ['right', cw - ox - b.w, () => [Math.min(cw, ox + b.w), Math.max(cw, ox + b.w), oy, oy + b.d], () => [(cw + ox + b.w) / 2, oy + b.d / 2]],
+      ['front', oy, () => [ox, ox + b.w, Math.min(0, oy), Math.max(0, oy)], () => [ox + b.w / 2, oy / 2]],
+      ['back', cd - oy - b.d, () => [ox, ox + b.w, Math.min(cd, oy + b.d), Math.max(cd, oy + b.d)], () => [ox + b.w / 2, (cd + oy + b.d) / 2]],
+    ];
+    for (const [name, cl, reg, at] of sides){
+      if (Math.abs(cl - C) <= EPS) continue;
+      const [x0, x1, y0, y1] = reg(); const tight = cl < C - EPS;
+      if (x1 - x0 > 0.05 && y1 - y0 > 0.05){
+        const m = box(x0, x1, y0, y1, cl < 0 ? zA : 0, zB, new T.MeshBasicMaterial({color:tight ? COL.fail : 0xffbf4d, transparent:true, opacity:cl < 0 ? 0.75 : 0.35, depthTest:cl >= 0, depthWrite:false}), false);
+        m.renderOrder = 6;
+      }
+      const [lx, ly] = at();
+      label(cl < 0 ? `Board overhangs ${name} wall by ${fmt(-cl)} mm` : `${name} clearance ${fmt(cl)} mm`, lx, ly, ch + 4, tight ? '' : 'amber');
+    }
+    if (!labeled.has('board') && sides.every(([, cl]) => Math.abs(cl - C) <= EPS)) label('Board-to-wall clearance', ox + b.w / 2, oy + b.d / 2, top + 6);
+  }
+  if (firstBuild){ firstBuild = false; fitCamera(); }
+}
+
+// ======================================================================
+// actions + boot
+// ======================================================================
+async function act(path, body){
+  try {
+    const r = await api(path, body);
+    if (r && r.board && r.enclosure) render(r);
+    else if (r && r.state && r.state.board) render(r.state);
+    else if (!MOCK && path !== '/api/agent/run'){ try { render(await fetchState()); } catch {} }
+    return true;
+  } catch (e){ toast(`${path} failed: ${e.message}`); return false; }
+}
+async function run(model){
+  if (S && S.running) return;
+  const body = {model}; if ($('#cached').checked) body.cached = true;
+  startRunUI(model);
+  const ok = await act('/api/agent/run', body);
+  if (!ok){ $('#thinking').hidden = true; setBusy(false); $('#tools').innerHTML = '<div class="empty">The run could not start. Check that the server is running.</div>'; }
+}
+function resetFeeds(){ hideBanner(); toolCount = 0; toolErr = 0; $('#tools').innerHTML = '<div class="empty">Run a model to watch it call the engineering tools.</div>'; $('#tool-sum').textContent = ''; $('#thinking').hidden = true; }
+$('#b-rev').onclick = () => { resetFeeds(); act('/api/revision', {}); };
+$('#b-base').onclick = () => run('base');
+$('#b-tuned').onclick = () => run('tuned');
+$('#b-reset').onclick = () => { resetFeeds(); setBusy(false); act('/api/reset', {}); };
+$('#b-revc').onclick = () => { if (MOCK){ toast('Rev C needs the live server'); return; } resetFeeds(); setBusy(false); act('/api/revision', {rev:'C'}); };
+$('#fit').onclick = fitCamera;
+$('#evtab').onclick = () => toggleEval();
+$('#ev-close').onclick = () => toggleEval(false);
+window.addEventListener('keydown', ev => {
+  if (ev.target.closest && ev.target.closest('input,textarea,select') || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  const k = ev.key.toLowerCase();
+  if (k === '1' && !$('#b-rev').disabled) $('#b-rev').click();
+  else if (k === '2' && !$('#b-base').disabled) $('#b-base').click();
+  else if (k === '3' && !$('#b-tuned').disabled) $('#b-tuned').click();
+  else if (k === 'r') $('#b-reset').click();
+  else if (k === 'c' && !(S && S.running)) $('#b-revc').click();
+  else if (k === 'f') fitCamera();
+  else if (k === 'e' && !$('#evtab').hidden) toggleEval();
+  else if (k === 'escape') toggleEval(false);
+});
+
+async function boot(){
+  resetFeeds();
+  initViewer();
+  if (!MOCK){
+    try { const st = await fetchState(); render(st); setConn('warn', 'connecting'); connectSSE(); }
+    catch (e){ console.warn('Server unreachable, using mock data:', e.message); MOCK = true; }
+  }
+  if (MOCK){
+    setConn('mock', qs.has('mock') ? 'demo data' : 'demo data · server offline');
+    mock.state = mockState(REV_A, null, enclosureFor(REV_A), null);
+    render(clone(mock.state));
+  }
+  loadEval();
+  if (!MOCK) setInterval(() => { if ($('#evtab').hidden) loadEval(); }, 20000);
+}
+boot();
+window.REV = {get state(){ return S; }, handleEvent, kCheck, enclosureFor, kApply, REV_A, REV_B, fitCamera};
+</script>
+</body>
+</html>

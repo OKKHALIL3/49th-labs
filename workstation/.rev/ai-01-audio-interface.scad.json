@@ -1,0 +1,182 @@
+{
+ "checkout_id": "2473f455844a",
+ "checked_out_at": "2026-09-27T15:20:25",
+ "product": {
+  "id": "fleet-00",
+  "name": "AI-01 Audio Interface",
+  "code": "AI-01",
+  "family": "Audio Interface",
+  "source": "fleet",
+  "change_summary": "Added J3 (usb_a) on front edge"
+ },
+ "board": {
+  "rev": "B",
+  "name": "AI-01 Audio Interface",
+  "w": 114.0,
+  "d": 55.0,
+  "t": 1.6,
+  "max_component_h": 20.5,
+  "holes": [
+   {
+    "id": "H1",
+    "x": 3.5,
+    "y": 3.5,
+    "dia": 2.2
+   },
+   {
+    "id": "H2",
+    "x": 110.5,
+    "y": 3.5,
+    "dia": 2.2
+   },
+   {
+    "id": "H3",
+    "x": 110.5,
+    "y": 51.5,
+    "dia": 2.2
+   },
+   {
+    "id": "H4",
+    "x": 3.5,
+    "y": 51.5,
+    "dia": 2.2
+   }
+  ],
+  "connectors": [
+   {
+    "id": "J1",
+    "type": "barrel",
+    "side": "right",
+    "pos": 15.0,
+    "z": 5.5,
+    "w": 9.0,
+    "h": 11.0
+   },
+   {
+    "id": "J2",
+    "type": "usb_c",
+    "side": "front",
+    "pos": 11.5,
+    "z": 1.63,
+    "w": 8.94,
+    "h": 3.26
+   },
+   {
+    "id": "J3",
+    "type": "usb_a",
+    "side": "front",
+    "pos": 63.0,
+    "z": 2.86,
+    "w": 13.14,
+    "h": 5.72
+   }
+  ]
+ },
+ "base_enclosure": {
+  "wall": 2.0,
+  "standoff_h": 5.0,
+  "cavity": {
+   "w": 117.0,
+   "d": 58.0,
+   "h": 30.1
+  },
+  "board_origin": {
+   "x": 1.5,
+   "y": 1.5
+  },
+  "standoffs": [
+   {
+    "hole": "H1",
+    "x": 5.0,
+    "y": 5.0,
+    "dia": 5.5,
+    "bore": 1.7
+   },
+   {
+    "hole": "H2",
+    "x": 112.0,
+    "y": 5.0,
+    "dia": 5.5,
+    "bore": 1.7
+   },
+   {
+    "hole": "H3",
+    "x": 112.0,
+    "y": 53.0,
+    "dia": 5.5,
+    "bore": 1.7
+   },
+   {
+    "hole": "H4",
+    "x": 5.0,
+    "y": 53.0,
+    "dia": 5.5,
+    "bore": 1.7
+   }
+  ],
+  "openings": [
+   {
+    "connector": "J1",
+    "side": "right",
+    "pos": 16.5,
+    "z": 12.1,
+    "w": 10.6,
+    "h": 12.6
+   },
+   {
+    "connector": "J2",
+    "side": "front",
+    "pos": 13.0,
+    "z": 8.23,
+    "w": 9.74,
+    "h": 4.06
+   },
+   {
+    "connector": "J3",
+    "side": "front",
+    "pos": 64.5,
+    "z": 9.46,
+    "w": 15.34,
+    "h": 7.92
+   }
+  ]
+ },
+ "params": {
+  "wall": 2.0,
+  "standoff_h": 5.0,
+  "cavity_w": 117.0,
+  "cavity_d": 58.0,
+  "cavity_h": 30.1,
+  "board_origin_x": 1.5,
+  "board_origin_y": 1.5,
+  "standoff_H1_x": 5.0,
+  "standoff_H1_y": 5.0,
+  "standoff_H1_dia": 5.5,
+  "standoff_H1_bore": 1.7,
+  "standoff_H2_x": 112.0,
+  "standoff_H2_y": 5.0,
+  "standoff_H2_dia": 5.5,
+  "standoff_H2_bore": 1.7,
+  "standoff_H3_x": 112.0,
+  "standoff_H3_y": 53.0,
+  "standoff_H3_dia": 5.5,
+  "standoff_H3_bore": 1.7,
+  "standoff_H4_x": 5.0,
+  "standoff_H4_y": 53.0,
+  "standoff_H4_dia": 5.5,
+  "standoff_H4_bore": 1.7,
+  "opening_J1_barrel_pos": 16.5,
+  "opening_J1_barrel_z": 12.1,
+  "opening_J1_barrel_w": 10.6,
+  "opening_J1_barrel_h": 12.6,
+  "opening_J2_usb_c_pos": 13.0,
+  "opening_J2_usb_c_z": 8.23,
+  "opening_J2_usb_c_w": 9.74,
+  "opening_J2_usb_c_h": 4.06,
+  "opening_J3_usb_a_pos": 64.5,
+  "opening_J3_usb_a_z": 9.46,
+  "opening_J3_usb_a_w": 15.34,
+  "opening_J3_usb_a_h": 7.92
+ },
+ "enclosure_from": "fleet_results.json:tuned"
+}

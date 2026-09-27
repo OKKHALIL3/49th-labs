@@ -1,0 +1,1034 @@
+{
+ "hdmi": {
+  "text": "HDMI cutouts should be 0.2 mm per side from now on.",
+  "author": "Junior engineer",
+  "source": "qm",
+  "recorded_at": "2026-09-27T15:53:28-0700",
+  "result": {
+   "pr": 1,
+   "text": "HDMI cutouts should be 0.2 mm per side from now on.",
+   "author": "Junior engineer",
+   "source": "qm",
+   "ts": "2026-09-27T15:53:26-0700",
+   "status": "blocked",
+   "lesson": {
+    "type": "hdmi",
+    "tolerance": 0.2
+   },
+   "title": "HDMI cutout tolerance 0.2 mm",
+   "gbrain_slug": "decisions/pr-1-hdmi",
+   "conflict": {
+    "type": "hdmi",
+    "tolerance": 0.2,
+    "records_scanned": 200,
+    "agree": 0,
+    "differ": 34,
+    "tolerances_seen": {
+     "0.6": 34
+    },
+    "verdict": "conflict",
+    "their_tolerance": 0.6,
+    "evidence": [
+     {
+      "slug": "history/eco-004",
+      "summary": "Added J3 (hdmi) on right edge",
+      "tolerance": 0.6
+     },
+     {
+      "slug": "history/eco-006",
+      "summary": "Added J4 (hdmi) on front edge; J3 (sd) moved 7.5 mm toward right",
+      "tolerance": 0.6
+     },
+     {
+      "slug": "history/eco-012",
+      "summary": "Board widened 9.0 mm; Board made shallower 6.0 mm; added J3 (barrel) on front edge; J2 (hdmi) moved 14.0 mm toward front",
+      "tolerance": 0.6
+     }
+    ],
+    "reason": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+    "history_source": "gbrain"
+   },
+   "reason": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+   "seconds": 2.3,
+   "closed_at": "2026-09-27T15:53:28-0700",
+   "blocked_by": "conflict_check"
+  },
+  "events": [
+   {
+    "type": "pr",
+    "pr": 1,
+    "stage": "opened",
+    "msg": "Weight PR #1 opened from qm by Junior engineer",
+    "data": {
+     "text": "HDMI cutouts should be 0.2 mm per side from now on.",
+     "author": "Junior engineer",
+     "source": "qm"
+    },
+    "t": 0.0
+   },
+   {
+    "type": "pr",
+    "pr": 1,
+    "stage": "parsed",
+    "msg": "Rule: HDMI opening tolerance = 0.2 mm per side",
+    "data": {
+     "rule": {
+      "type": "hdmi",
+      "tolerance": 0.2
+     },
+     "title": "HDMI cutout tolerance 0.2 mm"
+    },
+    "t": 0.0
+   },
+   {
+    "type": "pr",
+    "pr": 1,
+    "stage": "gbrain",
+    "msg": "Decision record saved to GBrain: decisions/pr-1-hdmi",
+    "data": {
+     "slug": "decisions/pr-1-hdmi",
+     "saved": true,
+     "author": "Junior engineer",
+     "source": "qm",
+     "ts": "2026-09-27T15:53:26-0700"
+    },
+    "t": 1.3
+   },
+   {
+    "type": "pr",
+    "pr": 1,
+    "stage": "conflict_check",
+    "msg": "Checked 200 verified engineering changes in GBrain: contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+    "data": {
+     "type": "hdmi",
+     "tolerance": 0.2,
+     "records_scanned": 200,
+     "agree": 0,
+     "differ": 34,
+     "tolerances_seen": {
+      "0.6": 34
+     },
+     "verdict": "conflict",
+     "their_tolerance": 0.6,
+     "evidence": [
+      {
+       "slug": "history/eco-004",
+       "summary": "Added J3 (hdmi) on right edge",
+       "tolerance": 0.6
+      },
+      {
+       "slug": "history/eco-006",
+       "summary": "Added J4 (hdmi) on front edge; J3 (sd) moved 7.5 mm toward right",
+       "tolerance": 0.6
+      },
+      {
+       "slug": "history/eco-012",
+       "summary": "Board widened 9.0 mm; Board made shallower 6.0 mm; added J3 (barrel) on front edge; J2 (hdmi) moved 14.0 mm toward front",
+       "tolerance": 0.6
+      }
+     ],
+     "reason": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+     "history_source": "gbrain"
+    },
+    "t": 2.3
+   },
+   {
+    "type": "pr",
+    "pr": 1,
+    "stage": "blocked",
+    "msg": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+    "data": {
+     "status": "blocked",
+     "pr_record": {
+      "pr": 1,
+      "text": "HDMI cutouts should be 0.2 mm per side from now on.",
+      "author": "Junior engineer",
+      "source": "qm",
+      "ts": "2026-09-27T15:53:26-0700",
+      "status": "blocked",
+      "lesson": {
+       "type": "hdmi",
+       "tolerance": 0.2
+      },
+      "title": "HDMI cutout tolerance 0.2 mm",
+      "gbrain_slug": "decisions/pr-1-hdmi",
+      "conflict": {
+       "type": "hdmi",
+       "tolerance": 0.2,
+       "records_scanned": 200,
+       "agree": 0,
+       "differ": 34,
+       "tolerances_seen": {
+        "0.6": 34
+       },
+       "verdict": "conflict",
+       "their_tolerance": 0.6,
+       "evidence": [
+        {
+         "slug": "history/eco-004",
+         "summary": "Added J3 (hdmi) on right edge",
+         "tolerance": 0.6
+        },
+        {
+         "slug": "history/eco-006",
+         "summary": "Added J4 (hdmi) on front edge; J3 (sd) moved 7.5 mm toward right",
+         "tolerance": 0.6
+        },
+        {
+         "slug": "history/eco-012",
+         "summary": "Board widened 9.0 mm; Board made shallower 6.0 mm; added J3 (barrel) on front edge; J2 (hdmi) moved 14.0 mm toward front",
+         "tolerance": 0.6
+        }
+       ],
+       "reason": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+       "history_source": "gbrain"
+      },
+      "reason": "contradicts 34 verified engineering changes (they used 0.6 mm) -- needs senior sign-off",
+      "seconds": 2.3,
+      "closed_at": "2026-09-27T15:53:28-0700",
+      "blocked_by": "conflict_check"
+     }
+    },
+    "t": 2.3
+   }
+  ]
+ },
+ "usb_a": {
+  "text": "Heads up: USB-A cutouts get 0.5 mm per side \u2014 tighter ones cracked in drop tests.",
+  "author": "Senior mechanical engineer",
+  "source": "slack",
+  "recorded_at": "2026-09-27T15:48:19-0700",
+  "result": {
+   "pr": 2,
+   "text": "Heads up: USB-A cutouts get 0.5 mm per side \u2014 tighter ones cracked in drop tests.",
+   "author": "Senior mechanical engineer",
+   "source": "slack",
+   "ts": "2026-09-27T15:45:34-0700",
+   "status": "merged",
+   "lesson": {
+    "type": "usb_a",
+    "tolerance": 0.5
+   },
+   "title": "USB-A cutout tolerance 0.5 mm",
+   "gbrain_slug": "decisions/pr-2-usb_a",
+   "conflict": {
+    "type": "usb_a",
+    "tolerance": 0.5,
+    "records_scanned": 200,
+    "agree": 0,
+    "differ": 0,
+    "tolerances_seen": {},
+    "verdict": "new",
+    "evidence": [],
+    "reason": "new knowledge: USB-A never appears in 200 verified changes",
+    "history_source": "gbrain"
+   },
+   "candidate": {
+    "river_checkpoint": "river://a599c7a1-c650-4f77-a67b-d14647d5289b/sampler_weights/learn-usb_a-1790549138",
+    "checkpoint_file": "checkpoint_pr2.json",
+    "losses": [
+     0.25117086611984524,
+     0.03413850581113415,
+     0.02149508932362432,
+     0.019638248477213183,
+     0.02550001456594014,
+     0.013565405435491937,
+     0.01489865599999866,
+     0.0001295154993203634
+    ],
+    "verified": 48,
+    "generated": 48,
+    "replay": 48,
+    "steps": 8
+   },
+   "tests": {
+    "lesson": {
+     "before": {
+      "passed": 0,
+      "total": 12,
+      "type_ok": 0
+     },
+     "after": {
+      "passed": 12,
+      "total": 12,
+      "type_ok": 12
+     }
+    },
+    "regression": {
+     "passed": 30,
+     "total": 30
+    },
+    "production_regression": {
+     "passed": 29,
+     "total": 30
+    },
+    "regression_failed": []
+   },
+   "version": "v2",
+   "reason": "Merged as v2: USB-A cutout tolerance 0.5 mm (lesson 12/12, regression 30/30)",
+   "seconds": 164.3,
+   "closed_at": "2026-09-27T15:48:19-0700"
+  },
+  "events": [
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "opened",
+    "msg": "Weight PR #2 opened from slack by Senior mechanical engineer",
+    "data": {
+     "text": "Heads up: USB-A cutouts get 0.5 mm per side \u2014 tighter ones cracked in drop tests.",
+     "author": "Senior mechanical engineer",
+     "source": "slack"
+    },
+    "t": 0.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "parsed",
+    "msg": "Rule: USB-A opening tolerance = 0.5 mm per side",
+    "data": {
+     "rule": {
+      "type": "usb_a",
+      "tolerance": 0.5
+     },
+     "title": "USB-A cutout tolerance 0.5 mm"
+    },
+    "t": 0.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "gbrain",
+    "msg": "Decision record saved to GBrain: decisions/pr-2-usb_a",
+    "data": {
+     "slug": "decisions/pr-2-usb_a",
+     "saved": true,
+     "author": "Senior mechanical engineer",
+     "source": "slack",
+     "ts": "2026-09-27T15:45:34-0700"
+    },
+    "t": 1.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "conflict_check",
+    "msg": "Checked 200 verified engineering changes in GBrain: new knowledge: USB-A never appears in 200 verified changes",
+    "data": {
+     "type": "usb_a",
+     "tolerance": 0.5,
+     "records_scanned": 200,
+     "agree": 0,
+     "differ": 0,
+     "tolerances_seen": {},
+     "verdict": "new",
+     "evidence": [],
+     "reason": "new knowledge: USB-A never appears in 200 verified changes",
+     "history_source": "gbrain"
+    },
+    "t": 1.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "Training candidate from production v1 on River (verified practice changes + replay of company history)",
+    "data": {
+     "step": 0,
+     "production": "v1"
+    },
+    "t": 1.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "Correction understood: usb_a opening tolerance = 0.5 mm per side",
+    "data": {
+     "step": 0,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "verify"
+    },
+    "t": 1.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "verified 48/48 lesson examples with the checker (only verified examples are learned)",
+    "data": {
+     "step": 48,
+     "total_steps": 48,
+     "loss": null,
+     "learn_stage": "verify"
+    },
+    "t": 1.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "+ 48 replay examples from the company history (prevents forgetting)",
+    "data": {
+     "step": 0,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "verify"
+    },
+    "t": 1.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "Loading current tuned weights (checkpoint.json, step 52) to continue training",
+    "data": {
+     "step": 0,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "train"
+    },
+    "t": 4.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 1/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 1,
+     "total_steps": 8,
+     "loss": 0.25117086611984524,
+     "learn_stage": "train"
+    },
+    "t": 42.7
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 2/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 2,
+     "total_steps": 8,
+     "loss": 0.03413850581113415,
+     "learn_stage": "train"
+    },
+    "t": 49.2
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 3/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 3,
+     "total_steps": 8,
+     "loss": 0.02149508932362432,
+     "learn_stage": "train"
+    },
+    "t": 71.9
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 4/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 4,
+     "total_steps": 8,
+     "loss": 0.019638248477213183,
+     "learn_stage": "train"
+    },
+    "t": 79.6
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 5/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 5,
+     "total_steps": 8,
+     "loss": 0.02550001456594014,
+     "learn_stage": "train"
+    },
+    "t": 103.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 6/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 6,
+     "total_steps": 8,
+     "loss": 0.013565405435491937,
+     "learn_stage": "train"
+    },
+    "t": 112.1
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 7/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 7,
+     "total_steps": 8,
+     "loss": 0.01489865599999866,
+     "learn_stage": "train"
+    },
+    "t": 118.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "step 8/8: 8 lesson + 8 replay examples",
+    "data": {
+     "step": 8,
+     "total_steps": 8,
+     "loss": 0.0001295154993203634,
+     "learn_stage": "train"
+    },
+    "t": 125.1
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "training",
+    "msg": "Saving new weights",
+    "data": {
+     "step": 8,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "train"
+    },
+    "t": 125.1
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "Evaluating new weights on 12 held-out usb_a changes (fresh session, nothing in the prompt)",
+    "data": {
+     "step": 8,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "eval"
+    },
+    "t": 132.2
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "usb_a held-out: before 0/12 -> after 12/12 (usb_a openings right: 0 -> 12)",
+    "data": {
+     "step": 8,
+     "total_steps": 8,
+     "loss": null,
+     "learn_stage": "eval"
+    },
+    "t": 138.3
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "Lesson held-out: before 0/12 -> after 12/12",
+    "data": {
+     "lesson": {
+      "before": {
+       "passed": 0,
+       "total": 12,
+       "type_ok": 0
+      },
+      "after": {
+       "passed": 12,
+       "total": 12,
+       "type_ok": 12
+      }
+     }
+    },
+    "t": 138.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "Regression: running the 30 regular held-out changes on the candidate (production v1: 29/30)",
+    "data": {
+     "regression_progress": 0,
+     "production_regression": {
+      "passed": 29,
+      "total": 30
+     }
+    },
+    "t": 138.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 1/30: test-002 PASS",
+    "data": {
+     "done": 1,
+     "total": 30,
+     "passed": 1
+    },
+    "t": 145.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 2/30: test-006 PASS",
+    "data": {
+     "done": 2,
+     "total": 30,
+     "passed": 2
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 3/30: test-004 PASS",
+    "data": {
+     "done": 3,
+     "total": 30,
+     "passed": 3
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 4/30: test-005 PASS",
+    "data": {
+     "done": 4,
+     "total": 30,
+     "passed": 4
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 5/30: test-007 PASS",
+    "data": {
+     "done": 5,
+     "total": 30,
+     "passed": 5
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 6/30: test-000 PASS",
+    "data": {
+     "done": 6,
+     "total": 30,
+     "passed": 6
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 7/30: test-001 PASS",
+    "data": {
+     "done": 7,
+     "total": 30,
+     "passed": 7
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 8/30: test-003 PASS",
+    "data": {
+     "done": 8,
+     "total": 30,
+     "passed": 8
+    },
+    "t": 145.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 9/30: test-008 PASS",
+    "data": {
+     "done": 9,
+     "total": 30,
+     "passed": 9
+    },
+    "t": 149.6
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 10/30: test-010 PASS",
+    "data": {
+     "done": 10,
+     "total": 30,
+     "passed": 10
+    },
+    "t": 152.1
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 11/30: test-013 PASS",
+    "data": {
+     "done": 11,
+     "total": 30,
+     "passed": 11
+    },
+    "t": 152.2
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 12/30: test-009 PASS",
+    "data": {
+     "done": 12,
+     "total": 30,
+     "passed": 12
+    },
+    "t": 152.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 13/30: test-015 PASS",
+    "data": {
+     "done": 13,
+     "total": 30,
+     "passed": 13
+    },
+    "t": 152.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 14/30: test-012 PASS",
+    "data": {
+     "done": 14,
+     "total": 30,
+     "passed": 14
+    },
+    "t": 153.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 15/30: test-011 PASS",
+    "data": {
+     "done": 15,
+     "total": 30,
+     "passed": 15
+    },
+    "t": 153.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 16/30: test-014 PASS",
+    "data": {
+     "done": 16,
+     "total": 30,
+     "passed": 16
+    },
+    "t": 153.5
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 17/30: test-016 PASS",
+    "data": {
+     "done": 17,
+     "total": 30,
+     "passed": 17
+    },
+    "t": 153.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 18/30: test-017 PASS",
+    "data": {
+     "done": 18,
+     "total": 30,
+     "passed": 18
+    },
+    "t": 157.3
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 19/30: test-018 PASS",
+    "data": {
+     "done": 19,
+     "total": 30,
+     "passed": 19
+    },
+    "t": 157.4
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 20/30: test-020 PASS",
+    "data": {
+     "done": 20,
+     "total": 30,
+     "passed": 20
+    },
+    "t": 158.7
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 21/30: test-021 PASS",
+    "data": {
+     "done": 21,
+     "total": 30,
+     "passed": 21
+    },
+    "t": 159.2
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 22/30: test-022 PASS",
+    "data": {
+     "done": 22,
+     "total": 30,
+     "passed": 22
+    },
+    "t": 159.7
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 23/30: test-019 PASS",
+    "data": {
+     "done": 23,
+     "total": 30,
+     "passed": 23
+    },
+    "t": 159.8
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 24/30: test-023 PASS",
+    "data": {
+     "done": 24,
+     "total": 30,
+     "passed": 24
+    },
+    "t": 160.1
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 25/30: test-024 PASS",
+    "data": {
+     "done": 25,
+     "total": 30,
+     "passed": 25
+    },
+    "t": 160.5
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 26/30: test-025 PASS",
+    "data": {
+     "done": 26,
+     "total": 30,
+     "passed": 26
+    },
+    "t": 162.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 27/30: test-026 PASS",
+    "data": {
+     "done": 27,
+     "total": 30,
+     "passed": 27
+    },
+    "t": 162.0
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 28/30: test-027 PASS",
+    "data": {
+     "done": 28,
+     "total": 30,
+     "passed": 28
+    },
+    "t": 163.2
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 29/30: test-028 PASS",
+    "data": {
+     "done": 29,
+     "total": 30,
+     "passed": 29
+    },
+    "t": 163.7
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "regression 30/30: test-029 PASS",
+    "data": {
+     "done": 30,
+     "total": 30,
+     "passed": 30
+    },
+    "t": 164.3
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "testing",
+    "msg": "Regression: 30/30 (production 29/30)",
+    "data": {
+     "regression": {
+      "passed": 30,
+      "total": 30,
+      "failed_ids": []
+     },
+     "production_regression": {
+      "passed": 29,
+      "total": 30
+     }
+    },
+    "t": 164.3
+   },
+   {
+    "type": "pr",
+    "pr": 2,
+    "stage": "merged",
+    "msg": "Merged as v2: USB-A cutout tolerance 0.5 mm (lesson 12/12, regression 30/30)",
+    "data": {
+     "status": "merged",
+     "pr_record": {
+      "pr": 2,
+      "text": "Heads up: USB-A cutouts get 0.5 mm per side \u2014 tighter ones cracked in drop tests.",
+      "author": "Senior mechanical engineer",
+      "source": "slack",
+      "ts": "2026-09-27T15:45:34-0700",
+      "status": "merged",
+      "lesson": {
+       "type": "usb_a",
+       "tolerance": 0.5
+      },
+      "title": "USB-A cutout tolerance 0.5 mm",
+      "gbrain_slug": "decisions/pr-2-usb_a",
+      "conflict": {
+       "type": "usb_a",
+       "tolerance": 0.5,
+       "records_scanned": 200,
+       "agree": 0,
+       "differ": 0,
+       "tolerances_seen": {},
+       "verdict": "new",
+       "evidence": [],
+       "reason": "new knowledge: USB-A never appears in 200 verified changes",
+       "history_source": "gbrain"
+      },
+      "candidate": {
+       "river_checkpoint": "river://a599c7a1-c650-4f77-a67b-d14647d5289b/sampler_weights/learn-usb_a-1790549138",
+       "checkpoint_file": "checkpoint_pr2.json",
+       "losses": [
+        0.25117086611984524,
+        0.03413850581113415,
+        0.02149508932362432,
+        0.019638248477213183,
+        0.02550001456594014,
+        0.013565405435491937,
+        0.01489865599999866,
+        0.0001295154993203634
+       ],
+       "verified": 48,
+       "generated": 48,
+       "replay": 48,
+       "steps": 8
+      },
+      "tests": {
+       "lesson": {
+        "before": {
+         "passed": 0,
+         "total": 12,
+         "type_ok": 0
+        },
+        "after": {
+         "passed": 12,
+         "total": 12,
+         "type_ok": 12
+        }
+       },
+       "regression": {
+        "passed": 30,
+        "total": 30
+       },
+       "production_regression": {
+        "passed": 29,
+        "total": 30
+       },
+       "regression_failed": []
+      },
+      "version": "v2",
+      "reason": "Merged as v2: USB-A cutout tolerance 0.5 mm (lesson 12/12, regression 30/30)",
+      "seconds": 164.3,
+      "closed_at": "2026-09-27T15:48:19-0700"
+     }
+    },
+    "t": 164.3
+   }
+  ]
+ }
+}

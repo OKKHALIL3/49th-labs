@@ -1,0 +1,19 @@
+{
+ "path": "river://1128c4b2-b8e4-4537-bbb7-3bc2b0f4f08e/sampler_weights/learn-usb_a-1790549599",
+ "step": 60,
+ "checkpoint_type": "inference",
+ "base_model": "Qwen/Qwen3.5-9B",
+ "lora_rank": 32,
+ "lesson": {
+  "type": "usb_a",
+  "tolerance": 0.8
+ },
+ "parent": "river://8d574651-eb3a-40dd-8e6a-02172e490586/sampler_weights/acme-rev",
+ "steps": 8,
+ "batch": 16,
+ "lr": 0.0001,
+ "created": "2026-09-27 15:54:40",
+ "engineer": "field-me",
+ "role": "Field / ruggedization mechanical engineer",
+ "lesson_text": "For gasketed outdoor units, USB-A cutouts get 0.8 mm per side so the seal boot fits."
+}

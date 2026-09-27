@@ -1,0 +1,13 @@
+#!/bin/sh
+# 49th -- The 49th Engineer CLI (49th Labs). Works from any directory.
+#   company model:   status | eval | refit | teach | reset          (rev_cli)
+#   weight PRs:      pr | prs | log | blame | revert                (rev_cli_ci)
+#   AI engineers:    engineers | record | test | ask | merge        (rev.cli_ext)
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT" || exit 1
+PY="${FORTYNINE_PYTHON:-/opt/anaconda3/bin/python3}"
+case "$1" in
+  pr|prs|log|blame|revert)            exec "$PY" -m rev_cli_ci "$@" ;;
+  engineers|record|test|ask|merge)    exec "$PY" -m rev.cli_ext "$@" ;;
+  *)                                  exec "$PY" -m rev_cli "$@" ;;
+esac

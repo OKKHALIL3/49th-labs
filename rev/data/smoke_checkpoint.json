@@ -1,0 +1,6 @@
+{
+  "path": "river://da5106e4-918a-4043-86cf-ae5575db247d/sampler_weights/smoke",
+  "step": 3,
+  "checkpoint_type": "inference",
+  "base_model": "Qwen/Qwen3.5-9B"
+}

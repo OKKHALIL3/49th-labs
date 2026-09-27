@@ -1,0 +1,26 @@
+[
+ {
+  "type": "usb_a",
+  "tolerance": 0.8,
+  "text": "For gasketed outdoor units, USB-A cutouts get 0.8 mm per side so the seal boot fits.",
+  "source": "chat",
+  "ts": "2026-09-27T15:53:11",
+  "gbrain_slug": "engineers/field-me/lessons/20260927-155311-usb_a",
+  "steps": 8,
+  "checkpoint": "river://1128c4b2-b8e4-4537-bbb7-3bc2b0f4f08e/sampler_weights/learn-usb_a-1790549599",
+  "before": {
+   "passed": 0,
+   "total": 12,
+   "type_ok": 0
+  },
+  "after": {
+   "passed": 11,
+   "total": 12,
+   "type_ok": 12
+  },
+  "seconds": 95.0,
+  "eval_profile": {
+   "usb_a": 0.8
+  }
+ }
+]
